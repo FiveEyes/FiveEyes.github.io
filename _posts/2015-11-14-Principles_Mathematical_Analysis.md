@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "数学分析原理"
-date:   2015-11-14
+date:   2015-11-14 15:40:00 -0800
 categories: Math
 ---
 # 数学分析原理
