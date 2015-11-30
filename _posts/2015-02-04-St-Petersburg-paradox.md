@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "St. Petersburg Paradox"
-date: 2015-2-4 15:26:23 -0800
+date: 2015-02-04 15:26:23 -0800
 categories: Math
 ---
 # St. Petersburg Paradox
