@@ -262,7 +262,6 @@ $$.
 
 **Theorem 4.7.9 (Covariance Inequality)**
 
-
 ## 4.9 Miscellanea
 
 
