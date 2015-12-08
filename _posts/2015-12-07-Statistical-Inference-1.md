@@ -1,3 +1,10 @@
+---
+layout: post
+title: "Statistical Inference 1"
+date: 2015-12-07 17:28:00 -0800
+categories: Math
+---
+
 #Statistical Inference 1
 
 # 1 Probability Theory
