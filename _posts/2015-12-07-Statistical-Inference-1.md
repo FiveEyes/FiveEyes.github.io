@@ -59,6 +59,12 @@ $$
 
 ## 2.3 Moments and Moment Generating Functions
 
+**Definition 2.3.6** Let $$X$$ be a random variable with cdf $$F_X$$. The moment generating function (mgf) of $$X$$ (or $$F_X$$), denoted by $$M_X(t)$$, is 
+
+$$
+M_X(t) = \mathrm{E}e^{tX}.
+$$
+
 ## 2.4 Differentiating Under an Integral Sign
 
 **Theorem 2.4.1 (Leibnitz's Rule)** If $$f(x,\theta), a(\theta), b(\theta)$$ are differentiable with respect to $$\theta$$, then
@@ -182,7 +188,9 @@ $$
 
 **Beta Distribution**
 
-$$B(\alpha, \beta)= \int_0^1 x^{\alpha-1}(1-x)^{\beta-1}dx$$.
+$$B(\alpha, \beta) = \int_0^1 x^{\alpha-1}(1-x)^{\beta-1}dx$$.
+
+$$B(\alpha, \beta)= \frac{\Gamma(\alpha)\Gamma(\beta)}{\Gamma(a+b)}$$.
 
 $$
 \begin{eqnarray}
@@ -246,6 +254,19 @@ The marginal pmf
 ## 4.3 Bivariate Transformations
 
 ## 4.4 Hierarchical Models and Mixture Distributions
+
+**Theorem 4.4.3** If X and Y are any two random variables, then
+
+$$
+\mathrm{E}X = \mathrm{E}(\mathrm{E}(X|Y)).
+$$
+
+
+**Theorem 4.4.7** For any two random variables X and Y,
+
+$$
+\mathrm{Var}X = \mathrm{E}(\mathrm{Var}(X|Y)) + \mathrm{Var}(\mathrm{E}(X|Y)).
+$$
 
 ## 4.5 Covariance and Correlation
 
