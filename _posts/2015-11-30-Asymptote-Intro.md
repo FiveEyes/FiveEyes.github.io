@@ -7,7 +7,7 @@ categories: Tech
 
 # Asymptote: the Vector Graphics Language
 
-Just learning Asymptote, there is an example from the offical tutorial. Also, I am learning to insert images in jekyll.
+Just learning Asymptote, there is an example from the offical tutorial.
 
 ![Asy example]({{ site.url }}/assets/img/asy_example.jpg)
 
