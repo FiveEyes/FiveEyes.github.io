@@ -15,7 +15,7 @@ categories: Math
    * $$e^2i$$.
    * $$e^{\cos{1}}(\cos{(\sin{1})} + i\sin{(\sin{1})})$$.
 
-2. * $$sin{3}$$.
+2. * $$\sin{3}$$.
    * $$e^3(\sqrt{3}+i)$$.
    * $$e^2(\cos{2\sqrt{3}} + i\sin{2\sqrt{3}})$$.
 
@@ -31,3 +31,5 @@ categories: Math
 
 
 # 2 解析函数
+
+
