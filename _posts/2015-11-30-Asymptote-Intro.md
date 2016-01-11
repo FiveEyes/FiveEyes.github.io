@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Learning Asymptote"
-date: 2015-11-30 00:44:00 -0800
+date: 2015-11-30 00:44:00
 categories: Tech
 ---
 

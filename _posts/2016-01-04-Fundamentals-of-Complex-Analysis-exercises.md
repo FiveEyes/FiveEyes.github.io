@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "复分析基础及工程应用 习题"
-date:   2016-01-04 23:48:00 -0800
+date:   2016-01-04 23:48:00
 categories: Math
 ---
 

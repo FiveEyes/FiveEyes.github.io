@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Statistical Inference 1~4"
-date: 2015-12-07 17:28:00 -0800
+date: 2015-12-07 17:28:00
 categories: Math
 ---
 

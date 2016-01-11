@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "信息论基础 1~8"
-date:   2015-09-12 23:03:00 -0800
+date:   2015-09-12 23:03:00
 categories: Math
 ---
 
