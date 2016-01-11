@@ -15,4 +15,4 @@ categories: Math
 
 ## 5.3 Sampling from the Normal Distribution
 
-
+## 5.4 Order Statistics
