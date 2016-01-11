@@ -4,4 +4,4 @@ title: About
 permalink: /about/
 ---
 
-[Statistical Inference 1]({% post_url 2015-12-07-Statistical-Inference-1 %})
+### [数学分析原理]({% post_url 2015-01-07-Principles-Mathematical-Analysis %})
