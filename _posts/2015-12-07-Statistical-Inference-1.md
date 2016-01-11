@@ -1,11 +1,11 @@
 ---
 layout: post
-title: "Statistical Inference 1"
+title: "Statistical Inference 1~4"
 date: 2015-12-07 17:28:00 -0800
 categories: Math
 ---
 
-#Statistical Inference 1
+#Statistical Inference 1~4
 
 # 1 Probability Theory
 
