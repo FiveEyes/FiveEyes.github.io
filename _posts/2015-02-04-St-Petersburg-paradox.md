@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "St. Petersburg Paradox"
+title: "圣彼得堡悖论"
 date: 2015-02-04 15:26:23
 categories: Math
 ---
