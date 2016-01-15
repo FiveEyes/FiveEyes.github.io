@@ -219,6 +219,16 @@ f(x|\mu,\sigma^2) &=& \frac{1}{\sqrt{2\pi}\sigma}\frac{1}{x}e^{-(\log{x}-\mu)^2/
 \end{eqnarray}
 $$
 
+**Exponential Distribution**
+
+$$
+\begin{eqnarray}
+f(x|\beta) &=& \frac{1}{\beta}e^{-x/\beta}, \quad 0 \le x < \infty, \beta > 0\\
+\mathrm{E}X &=& \beta\\
+\mathrm{Var}X &=& \beta^2\\
+\end{eqnarray}
+$$
+
 **Double Exponential Distribution**
 
 $$
@@ -317,6 +327,7 @@ Then,
 $$
   (1/p)a^p + (1/q)b^q \ge ab
 $$
+
 with equality if and only $$a^p = b^q$$.
 
 **Theorem 4.7.2 (Holder's Inequality)** Let X and Y be any two random variables, and let p and q satisfy. Then
