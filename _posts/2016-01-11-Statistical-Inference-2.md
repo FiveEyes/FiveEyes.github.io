@@ -36,3 +36,48 @@ $$
 f_{X_{(i)},X_{(j)}}(u,v) &=& \frac{n!}{(i-1)!(j-1-i)!(n-j)!}f_X(u)f_X(v)[F_X(u)]^{i-1} \\
 && \times [F_X(v) - F_X(u)]^{j-1-i}[1-F_X(v)]^{n-j}
 \end{eqnarray}$$
+
+## 5.5 Convergence Concepts
+
+### 5.5.1 Convergence in Probability
+
+### 5.5.2 Almost Sure Convergence
+
+### 5.5.3 Convergence in Distribution
+
+### 5.5.4 The Delta Method
+
+## 5.6 Generating a Random Sample
+
+### 5.6.1 Direct Methods
+
+### 5.6.2 Indirect Methods
+
+### 5.6.3 The Accept/Reject Algorithm
+
+### 5.6.(4) The MCMC methods
+
+**Gibbs Sampler**
+
+**Metropolis Algorithm**
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
