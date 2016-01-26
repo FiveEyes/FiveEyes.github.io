@@ -5,7 +5,7 @@ date: 2016-01-11 11:51:00
 categories: Math
 ---
 
-#Statistical Inference 5~8
+# Statistical Inference 5~8
 
 # 5 Properties of a Random Sample
 
@@ -17,7 +17,7 @@ categories: Math
 
 ## 5.4 Order Statistics
 
-**Theorem 5.4.3**: 
+**Theorem 5.4.3**:
 
 $$P(X_{(j)} \le x_i) = \sum_{k=j}^n \binom{n}{k} P_i^k(1-P_i)^{n-k}$$
 
@@ -60,24 +60,3 @@ f_{X_{(i)},X_{(j)}}(u,v) &=& \frac{n!}{(i-1)!(j-1-i)!(n-j)!}f_X(u)f_X(v)[F_X(u)]
 **Gibbs Sampler**
 
 **Metropolis Algorithm**
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
