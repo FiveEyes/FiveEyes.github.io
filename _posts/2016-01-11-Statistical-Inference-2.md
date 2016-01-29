@@ -13,7 +13,48 @@ categories: Math
 
 ## 5.2 Sums of Random Variables from a Random Sample
 
+**Lemma 5.2.5**: 
+
+  $$\mathrm{E}(\sum_{i=1}^n g(X_i)) = n(\mathrm{E}g(X_1))$$
+
+and
+
+  $$\mathrm{Var}(\sum_{i=1}^n g(X_i)) = n(\mathrm{Var}g(X_1))$$
+
+**Theorem 5.2.6**:
+
+  * $$\mathrm{E}\bar{X} = \mu$$,
+  * $$\mathrm{Var}\bar{X} = \sigma/n$$,
+  * $$\mathrm{E}S^2 = \sigma^2$$.
+  
+**Theorem 5.2.7**:
+
+  $$M_{\bar{X}}(t) = [M_X(t/n)]^n$$
+
+**Example 5.2.8**:Let $$X_1, \dots, X_n$$ be a random sample from a $$n(\mu, \sigma^2)$$ population. Then the mgf of the sample mean is
+
+$$\begin{eqnarray}
+M_{\bar{X}}(t) &=& [\exp(\mu t / n + \sigma^2(t/n)^2/2)]^n \\
+&=&\exp(\mu t + (\sigma^2/n)t^2/2)
+\end{eqnarray}$$
+
+Thus, $$\bar{X}$$ has a $$n(\mu, \sigma^2/n)$$ distribution.
+
+Another simple example is given by a $$gammma(\alpha, \beta)$$ random sameple. Here, we can also easily derive the distribution of the sample mean. The mgf of the sample mean is
+
+$$M_{\bar{X}}(t) = [(\frac{1}{1 - \beta(t/n)}^\alpha)]^n = (\frac{1}{1-(\beta/n)t)}^{n\alpha})$$
+
+which we recognize as the mgf of a $$gamma(n\alpha, \beta/n)$$, the distribution of $$\bar{X}$$.
+
 ## 5.3 Sampling from the Normal Distribution
+
+### 5.3.1 Properties of the Sample Mean and Variance
+
+**Theorem 5.3.1**:
+  
+  * $$\bar{X}$$ and $$S^2$$ are independent random variables,
+  * $$\bar{X}$$ has a $$n(\mu, \sigma^2/n)$$ distribution,
+  * $$(n-1)S^2/\sigma^2$$ has a chi squared distribution with $$n - 1$$ degrees of freedom.
 
 ## 5.4 Order Statistics
 
@@ -31,8 +72,7 @@ $$f_{X_{(j)}}(x) = \frac{n!}{(j-1)!(n-j)!}f_X(X)[F_X(x)]^{j-1}[1-F_X(x)]^{n-j}$$
 
 **Theorem 5.4.6**:
 
-$$
-\begin{eqnarray}
+$$\begin{eqnarray}
 f_{X_{(i)},X_{(j)}}(u,v) &=& \frac{n!}{(i-1)!(j-1-i)!(n-j)!}f_X(u)f_X(v)[F_X(u)]^{i-1} \\
 && \times [F_X(v) - F_X(u)]^{j-1-i}[1-F_X(v)]^{n-j}
 \end{eqnarray}$$
