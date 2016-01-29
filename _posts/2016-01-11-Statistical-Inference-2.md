@@ -50,12 +50,17 @@ which we recognize as the mgf of a $$gamma(n\alpha, \beta/n)$$, the distribution
 
 ### 5.3.1 Properties of the Sample Mean and Variance
 
-**Theorem 5.3.1**:
+**Theorem 5.3.1**: Let $$X_1, \dots, X_n$$ be a random sample from a $$n(\mu, \sigma^2)$$ distribution, and let $$\bar{X}$$ and $$S^2$$. Then
   
   * $$\bar{X}$$ and $$S^2$$ are independent random variables,
   * $$\bar{X}$$ has a $$n(\mu, \sigma^2/n)$$ distribution,
   * $$(n-1)S^2/\sigma^2$$ has a chi squared distribution with $$n - 1$$ degrees of freedom.
 
+**Lemma 5.3.2**:
+
+  * If $$Z$$ is a $$n(0,1)$$ random variable, then $$Z^2 \thicksim \chi_1^2$$.
+  * If $$X_1, \dots, X_n$$ are independent and $$X_i \thicksim \chi_{p_i}^2$$, then $$X_1 + \dots + X_n \thicksim \chi_{p_1 + \dots + p_n}^2$$.  
+  
 ## 5.4 Order Statistics
 
 **Theorem 5.4.3**:
