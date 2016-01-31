@@ -347,7 +347,7 @@ $$
 **Theorem 4.7.7 (Jensen's Inequality)** For any random variable X, if g(x) is a convex function, then
 
 $$
-  \mathrm{E}(X) \ge g(\mathrm{E}X).
+  \mathrm{E}g(X) \ge g(\mathrm{E}X).
 $$
 
 **Theorem 4.7.9 (Covariance Inequality)** Let $$X$$ be any random variable and $$g(x)$$ and $$h(x)$$ any functions such that $$\mathrm{E}g(X)$$, $$\mathrm{E}h(X)$$, and $$\mathrm{E}(g(X)h(X))$$ exist.

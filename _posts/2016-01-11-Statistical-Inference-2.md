@@ -24,7 +24,7 @@ and
 **Theorem 5.2.6**:
 
   * $$\mathrm{E}\bar{X} = \mu$$,
-  * $$\mathrm{Var}\bar{X} = \sigma/n$$,
+  * $$\mathrm{Var}\bar{X} = \sigma^2/n$$,
   * $$\mathrm{E}S^2 = \sigma^2$$.
   
 **Theorem 5.2.7**:
@@ -42,7 +42,7 @@ Thus, $$\bar{X}$$ has a $$n(\mu, \sigma^2/n)$$ distribution.
 
 Another simple example is given by a $$gammma(\alpha, \beta)$$ random sameple. Here, we can also easily derive the distribution of the sample mean. The mgf of the sample mean is
 
-$$M_{\bar{X}}(t) = [(\frac{1}{1 - \beta(t/n)}^\alpha)]^n = (\frac{1}{1-(\beta/n)t)}^{n\alpha})$$
+$$M_{\bar{X}}(t) = [(\frac{1}{1 - \beta(t/n)}^\alpha)]^n = (\frac{1}{1-(\beta/n)t)})^{n\alpha}$$
 
 which we recognize as the mgf of a $$gamma(n\alpha, \beta/n)$$, the distribution of $$\bar{X}$$.
 
@@ -86,9 +86,37 @@ f_{X_{(i)},X_{(j)}}(u,v) &=& \frac{n!}{(i-1)!(j-1-i)!(n-j)!}f_X(u)f_X(v)[F_X(u)]
 
 ### 5.5.1 Convergence in Probability
 
+**Definition 5.5.1**:
+
+  $$\lim_{ n \rightarrow \infty } P(|X_n - X| \ge \epsilon) = 0$$
+
+or,
+
+  $$\lim_{ n \rightarrow \infty } P(|X_n - X| < \epsilon) = 1$$
+
+**Theorem 5.5.2 (Weak Law of Large NUmbers)**:
+  
+  $$\lim_{ n \rightarrow \infty } P(|\bar{X}_n - \mu| < \epsilon) = 1$$ 
+  
 ### 5.5.2 Almost Sure Convergence
 
+**Definition 5.5.6**:
+
+  $$P(\lim_{ n \rightarrow \infty } |X_n - X| < \epsilon) = 1$$
+
+**Theorem 5.5.9 (Strong Law of Large NUmbers)**:
+  
+  $$P(\lim_{ n \rightarrow \infty } |\bar{X}_n - \mu| < \epsilon) = 1$$
+  
 ### 5.5.3 Convergence in Distribution
+
+**Definition 5.5.10**:
+
+  $$\lim_{ n \rightarrow \infty } F_{X_n}(x) = F_X(x)$$
+
+**Theorem 5.5.14 (Central Limit Theorem)**:
+
+
 
 ### 5.5.4 The Delta Method
 
