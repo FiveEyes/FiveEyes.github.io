@@ -15,7 +15,9 @@ Sampling $$m$$ numbers $$X = \{x_1, \dots, x_m\}$$from a discrete uniform distri
 
 ### Basic idea
 
-To explain the basic idea, let $$m = 1$$, then $$k = x_1$$. Because $$P(n/4 < k < 3n/4) = 1/2$$, Then we will get $$P(4k/3 < n < 4k) = 1/2$$. The another example, $$P(0 < k < n/2) = 1/2$$, then $$P(n > 2k) = 1/2$$.
+To explain the basic idea, let $$m = 1$$, then $$k = x_1$$. Because $$P(n/4 < k < 3n/4) = 1/2$$, we will get $$P(4k/3 < n < 4k) = 1/2$$. 
+
+An another example, $$P(0 < k < n/2) = 1/2$$, then $$P(n > 2k) = 1/2$$.
 
 ### Generalize the idea
 
