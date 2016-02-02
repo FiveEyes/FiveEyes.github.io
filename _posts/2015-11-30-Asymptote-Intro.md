@@ -11,7 +11,7 @@ Just learning Asymptote, there is an example from the offical tutorial.
 
 ![Asy example]({{ site.url }}/assets/img/asy_example.jpg)
 
-{% highlight cpp %}
+{% highlight asymptote %}
 size(4cm, 0);
 pen colour1 = red;
 pen colour2 = green;
