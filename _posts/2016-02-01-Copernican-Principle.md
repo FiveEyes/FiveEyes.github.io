@@ -21,11 +21,11 @@ An another example, $$P(0 < k < n/2) = 1/2$$, then $$P(n > 2k) = 1/2$$.
 
 ### Generalize the idea
 
-The probability of all $$m$$ numbers are not greater than $$kn/y$$, 
+The probability of all samples are not greater than $$kn/y$$,
 
 $$P(X \le kn/y) = P(k/y)^m = (k/y)^m = P(k \le kn/y)$$
 
-Then,
+where $$k$$ is the largest number in $$X$$, and $$y$$ is an arbitrary number greater than $$k$$. Then,
 
 $$P(N \ge y) = (k/y)^m$$
 
@@ -47,6 +47,7 @@ $$\begin{eqnarray}
 \mathrm{E}(n | 3, 100) \approx 149.502 &\quad& \mathrm{Var}(n | 3, 100) \approx 7499.833 \\
 \mathrm{E}(n | 6, 100) \approx 119.505 &\quad& \mathrm{Var}(n | 6, 100) \approx 599.883 \\
 \mathrm{E}(n | 9, 100) \approx 112.007 &\quad& \mathrm{Var}(n | 9, 100) \approx 200.789 \\
+\mathrm{E}(n | 100, 100) \approx 100.592 &\quad& \mathrm{Var}(n | 100, 100) \approx 0.960 \\
 \end{eqnarray}$$
 
 The wolfram code to calculate the expectation and the variance.
