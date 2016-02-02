@@ -40,15 +40,14 @@ $$\begin{eqnarray}
   &=& k^2 + 2k^m\zeta(m-1,k+1) - k^m\zeta(m, k+1) - \mathrm{E}(n | m, k)^2
 \end{eqnarray}$$
 
-Examples of the expectation of n:
+Examples of expectations and variances:
 
-$$\mathrm{E}(n | 2, 100) \approx 199.502$$
-
-$$\mathrm{E}(n | 3, 100) \approx 149.502$$
-
-$$\mathrm{E}(n | 6, 100) \approx 119.505$$
-
-$$\mathrm{E}(n | 9, 100) \approx 112.007$$
+$$\begin{eqnarray}
+\mathrm{E}(n | 2, 100) \approx 199.502 &\quad& \mathrm{Var}(n | 2, 100) = \infty \\
+\mathrm{E}(n | 3, 100) \approx 149.502 &\quad& \mathrm{Var}(n | 3, 100) \approx 7499.833 \\
+\mathrm{E}(n | 6, 100) \approx 119.505 &\quad& \mathrm{Var}(n | 6, 100) \approx 599.883 \\
+\mathrm{E}(n | 9, 100) \approx 112.007 &\quad& \mathrm{Var}(n | 9, 100) \approx 200.789 \\
+\end{eqnarray}$$
 
 The wolfram code to calculate the expectation and the variance.
 
@@ -58,15 +57,29 @@ Function[{m, k}, N[Sum[i((k/i)^m-(k/(i+1))^m), {i, k, Infinity}], 50]][3, 100]
 Function[{m, k}, N[k^m * Sum[1/i^m, {i, k, Infinity} + k - 1], 50]][6, 100]
 Function[{m, k}, N[k^m * Zeta[m,k] + k - 1, 50]][9, 100]
 
-en := Function[{m, k}, k^m * Zeta[m, k] + k - 1]
+en1[m_, k_] := Sum[i((k/i)^m-(k/(i+1))^m), {i, k, Infinity}]
 
-ent[m_, k_] := Sum[(i^2) * ((k/i)^m-(k/(i+1))^m), {i, k, Infinity}]
+ent1[m_, k_] := Sum[(i^2) * ((k/i)^m-(k/(i+1))^m), {i, k, Infinity}]
 
-varn[m_, k_] := Sum[((i - en[m, k])^2) * ((k/i)^m-(k/(i+1))^m), {i, k, Infinity}]
+varn1[m_, k_] := ent1[m,k] - en1[m,k]^2
 
-varn1[m_, k_] := ent[m,k] - en[m,k]^2
+varn2[m_, k_] := Sum[((i - en[m, k])^2) * ((k/i)^m-(k/(i+1))^m), {i, k, Infinity}]
 
-varn2[m_, k_] := k^2 + k^m * (-Zeta[m, k+1] + 2 * Zeta[m-1, k+1]) - en[m,k]^2
+en[m_, k_] := k^m * Zeta[m, k] + k - 1
+
+ent[m_, k_] := k^2 + k^m * (-Zeta[m, k+1] + 2 * Zeta[m-1, k+1])
+
+varn[m_, k_] := ent[m,k] - en[m,k]^2
+
+N[en[2, 100], 100]
+N[en[3, 100], 100]
+N[en[6, 100], 100]
+N[en[9, 100], 100]
+
+N[varn[2, 100], 100]
+N[varn[3, 100], 100]
+N[varn[6, 100], 100]
+N[varn[9, 100], 100]
 
 {% endhighlight %}
 
