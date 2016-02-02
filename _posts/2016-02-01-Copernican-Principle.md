@@ -35,7 +35,9 @@ $$P(n = y | m, k) = (k/y)^m - (k/(y+1))^m, \quad y \ge k$$
 
 $$\begin{eqnarray}
 \mathrm{E}(n | m, k) &=& \sum_{i=k}^{\infty} i((\frac{k}{i})^m - (\frac{k}{i+1})^m) \\
- &=& k^m\zeta(m) - \sum_{i=1}^{k-1} (\frac{k}{i})^m + k-1
+  &=& k^m\zeta(m, k) + k-1 \\
+\mathrm{Var}(n | m, k) &=& \mathrm{E}(n^2 | m, k) - \mathrm{E}(n | m, k)^2 \\
+  &=& k^2 + 2k^m\zeta(m-1,k+1) - k^m\zeta(m, k+1) - \mathrm{E}(n | m, k)^2
 \end{eqnarray}$$
 
 Examples of the expectation of n:
