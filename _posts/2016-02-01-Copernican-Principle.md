@@ -52,11 +52,13 @@ Function[{m, k}, N[k^m * Zeta[m,k] + k - 1, 50]][9, 100]
 
 en := Function[{m, k}, k^m * Zeta[m, k] + k - 1]
 
-varn[m_, k_] := Sum[i^2((k/i)^m-(k/(i+1))^m), {i, k, Infinity}] - en[m,k]^2
+ent[m_, k_] := Sum[(i^2) * ((k/i)^m-(k/(i+1))^m), {i, k, Infinity}]
 
-varn1[m_, k_] := k^2 + k^m * (-Zeta[m, k + 1] + 2 * Zeta[m-1,k+1]) - en[m,k]^2
+varn[m_, k_] := Sum[((i - en[m, k])^2) * ((k/i)^m-(k/(i+1))^m), {i, k, Infinity}]
 
+varn1[m_, k_] := ent[m,k] - en[m,k]^2
 
+varn2[m_, k_] := k^2 + k^m * (-Zeta[m, k+1] + 2 * Zeta[m-1, k+1]) - en[m,k]^2
 
 {% endhighlight %}
 
