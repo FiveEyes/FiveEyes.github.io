@@ -9,7 +9,7 @@ categories: Math
 
 ## Problem
 
-Sampling $$m$$ numbers $$X = \{x_1, \dots, x_m\}$$from a discrete $$Uniform(1,N)$$ where $$N$$ is unknown. Let $$k$$ be the largest number of the $$m$$ samples. The problem is estimating $$N$$.
+Sampling $$m$$ numbers $$X = \{x_1, \dots, x_m\}$$from a discrete uniform distribution $$U(1,N)$$ where $$N$$ is unknown. Let $$k$$ be the largest number of the $$m$$ samples. The problem is estimating $$N$$.
 
 ## Solution under the Copernican principle
 
@@ -36,6 +36,8 @@ $$\begin{eqnarray}
  &=& k^m\zeta(m) - \sum_{i=1}^{k-1} (\frac{k}{i})^m + k-1
 \end{eqnarray}$$
 
+Examples of the expectation of n:
+
 $$\mathrm{E}(n | 2, 100) \approx 199.502$$
 
 $$\mathrm{E}(n | 3, 100) \approx 149.502$$
@@ -43,6 +45,8 @@ $$\mathrm{E}(n | 3, 100) \approx 149.502$$
 $$\mathrm{E}(n | 6, 100) \approx 119.505$$
 
 $$\mathrm{E}(n | 9, 100) \approx 112.007$$
+
+The wolfram code to calculate the expectation and the variance.
 
 {% highlight wolfram %}
 
