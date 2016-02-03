@@ -40,9 +40,9 @@ M_{\bar{X}}(t) &=& [\exp(\mu t / n + \sigma^2(t/n)^2/2)]^n \\
 
 Thus, $$\bar{X}$$ has a $$n(\mu, \sigma^2/n)$$ distribution.
 
-Another simple example is given by a $$gammma(\alpha, \beta)$$ random sameple. Here, we can also easily derive the distribution of the sample mean. The mgf of the sample mean is
+Another simple example is given by a $$gamma(\alpha, \beta)$$ random sameple. Here, we can also easily derive the distribution of the sample mean. The mgf of the sample mean is
 
-$$M_{\bar{X}}(t) = [(\frac{1}{1 - \beta(t/n)}^\alpha)]^n = (\frac{1}{1-(\beta/n)t)})^{n\alpha}$$
+$$M_{\bar{X}}(t) = [(\frac{1}{1 - \beta(t/n)})^\alpha]^n = (\frac{1}{1-(\beta/n)t)})^{n\alpha}$$
 
 which we recognize as the mgf of a $$gamma(n\alpha, \beta/n)$$, the distribution of $$\bar{X}$$.
 
