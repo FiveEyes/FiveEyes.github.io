@@ -94,7 +94,7 @@ or,
 
   $$\lim_{ n \rightarrow \infty } P(|X_n - X| < \epsilon) = 1$$
 
-**Theorem 5.5.2 (Weak Law of Large NUmbers)**:
+**Theorem 5.5.2 (Weak Law of Large Numbers)**:
   
   $$\lim_{ n \rightarrow \infty } P(|\bar{X}_n - \mu| < \epsilon) = 1$$ 
   
@@ -104,7 +104,7 @@ or,
 
   $$P(\lim_{ n \rightarrow \infty } |X_n - X| < \epsilon) = 1$$
 
-**Theorem 5.5.9 (Strong Law of Large NUmbers)**:
+**Theorem 5.5.9 (Strong Law of Large Numbers)**:
   
   $$P(\lim_{ n \rightarrow \infty } |\bar{X}_n - \mu| < \epsilon) = 1$$
   
@@ -114,7 +114,7 @@ or,
 
   $$\lim_{ n \rightarrow \infty } F_{X_n}(x) = F_X(x)$$
 
-**Theorem 5.5.14 (Central Limit Theorem)**: Let $$X_1, X_2, \dots $$ be a sequence of iid random variables whose mgfs exist in neighborhood of 0 (that is , $$M_{X_i}(t)$$ exists for ```\(|t| < h\)```, for some positive $$h$$). Let $$\mathrm{E}X_i = \mu$$ and $$\mathrm{Var}X_i = \sigma^2 > 0$$. (Both $$\mu$$ and $$\sigma^2$$ are finite since the mgf exists.) Define $$\bar{X_n} = (1/n)\sum_{i=1}^n X_i$$. Let $$G_n(x)$$ denote the cdf of $$sqrt{n}(\bar{X_n}-\mu)/\sigma$$. Then, for any $$x$$, $$-\infty < x < \infty$$,
+**Theorem 5.5.14 (Central Limit Theorem)**: Let $$X_1, X_2, \dots $$ be a sequence of iid random variables whose mgfs exist in neighborhood of 0 (that is , $$M_{X_i}(t)$$ exists for ```\(|t| < h\)```, for some positive $$h$$). Let $$\mathrm{E}X_i = \mu$$ and $$\mathrm{Var}X_i = \sigma^2 > 0$$. (Both $$\mu$$ and $$\sigma^2$$ are finite since the mgf exists.) Define $$\bar{X_n} = (1/n)\sum_{i=1}^n X_i$$. Let $$G_n(x)$$ denote the cdf of $$\sqrt{n}(\bar{X_n}-\mu)/\sigma$$. Then, for any $$x$$, $$-\infty < x < \infty$$,
 
 $$\lim_{ n \rightarrow \infty} G_n(x) = \int_{-\infty}^x \frac{1}{\sqrt{2\pi}} e^{-y^2/2} dy$$
 
