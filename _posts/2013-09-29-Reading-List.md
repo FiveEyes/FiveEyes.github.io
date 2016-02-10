@@ -15,3 +15,5 @@ categories: Zzz
 [CS 598: Algorithms for Big Data](https://courses.engr.illinois.edu/cs598csc/fa2014/)
 
 [CSE 597A Sublinear Algorithms](http://www.cse.psu.edu/~sxr48/sublinear-course/)
+
+[CS271: RANDOMNESS & COMPUTATION](http://www.cs.berkeley.edu/~sinclair/cs271/f11.html)
