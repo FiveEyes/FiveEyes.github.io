@@ -194,7 +194,7 @@ $$B(\alpha, \beta)= \frac{\Gamma(\alpha)\Gamma(\beta)}{\Gamma(a+b)}$$.
 
 $$
 \begin{eqnarray}
-f(x|\alpha,\beta) &=& \frac{1}{B(\alpha,\beta)}x^{\alpha-1}(1-x)^{\beta-1}, \quad 0 < x < 1, \alpha > 0, \beta > 0\\
+f(x|\alpha,\beta) &=& \frac{1}{B(\alpha,\beta)}x^{\alpha-1}(1-x)^{\beta-1}, \quad 0 \le x \le 1, \alpha > 0, \beta > 0\\
 \mathrm{E}X &=& \frac{\alpha}{\alpha+\beta}\\
 \mathrm{Var}X &=& \frac{\alpha \beta}{(\alpha + \beta)^2(\alpha + \beta + 1)}\\
 \end{eqnarray}

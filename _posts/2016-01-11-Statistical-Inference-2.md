@@ -139,12 +139,18 @@ $$\lim_{ n \rightarrow \infty} G_n(x) = \int_{-\infty}^x \frac{1}{\sqrt{2\pi}} e
 
 ## 6.1 Introduction
 
-## 6.2 The Sufficiency Principles
+Three principles of data reduction:
+
+  * The Sufficiency Principle
+  * The Likelihood Principle
+  * The Equivariance Principle
+
+## 6.2 The Sufficiency Principle
 
 ### 6.2.1 Sufficient Statistics
 
 ### 6.2.2 Minimal Sufficient Statistics
 
-## 6.3 The Likelihood Principles
+## 6.3 The Likelihood Principle
 
-## 6.4 The Equivariance Principles
+## 6.4 The Equivariance Principle
