@@ -149,8 +149,63 @@ Three principles of data reduction:
 
 ### 6.2.1 Sufficient Statistics
 
+**Definition 6.2.1**: A statistic $$T(X)$$ is a sufficient statistic of $$\theta$$ if the conditional distribution of the sample $$X$$ given the value of $$T(X)$$ does not depend on $$\theta$$.
+
+**Theorem 6.2.2**: If ```\(p(x | \theta)\)``` is the joint pdf or pmf of $$X$$ and ```\(q(t | \theta)\)``` is the pdf or pmf of $$T(X)$$, then $$T(X)$$ is a sufficient statistic for $$\theta$$ if, for every $$x$$ in the sample space, the ratio ```\(p(x | \theta)/q(T(X) | \theta)\)``` is constant as a function of $$\theta
+
+**Theorem 6.2.6 (Factorization Theorem)**: Let ```\(f(x | \theta)\)``` denote the joint pdf or pmf of a sample $$X$$. A statistic $$T(X)$$ is a sufficient statistic for $$\theta$$ if and only if there exist functions ```\(g(x | \theta)\)``` and $$h(x)$$ such that, for all sample points $$x$$ and all parameter points $$\theta$$,
+
+$$
+f(x|\theta) = g(T(x)|\theta)h(x)
+$$
+
 ### 6.2.2 Minimal Sufficient Statistics
+
+
+### 6.2.3 Ancillary Statistics
+
+**Definition 6.2.16**: A statistic $$S(X)$$ whose distribution does not depend on the parameter $$\theta$$ is called an ancillary statistic.
+
+### 6.2.4 Sufficient, Ancillary, and Complete Statistics
+
+**Example 6.2.20 (Ancillary precision)**
+
+**Theorem 6.2.24 (Basu's Theorem)**: If T(X) is a complete and minimal sufficient statistic is independent of every ancillary statistic.
+
+**Theorem 6.2.25 (Complete statistic in the exponential family)**: Let $$X_1, \dots, X_n$$ be iid observations from an exponential family with pdf or pmf of the form
+
+$$
+f(x|\theta) = h(x)c(\theta)\exp(\sum_{j=1}^k w(\theta_j)t_j(x))
+$$
+
+where $$\theta = (\theta_1, \dots, \theta_k)$$. Then the statistic
+
+$$
+T(X) = (\sum_{i=1}^n t_1(X_i), \dots, \sum_{i=1}^n t_k(X_i))
+$$
+
+is complete as long as the parameter space $$\Theta$$ contains an open set in $$R^k$$.
+
 
 ## 6.3 The Likelihood Principle
 
 ## 6.4 The Equivariance Principle
+
+
+# 7 Point Estimation
+
+## 7.1 Introduction
+
+This chapter is divided into two parts. The first part deals with methods for finding estimators, and the second part deals with evaluating these estimators.
+
+## 7.2 Methods of Finding Estimators
+
+### 7.2.1 Method of Moments
+
+### 7.2.2 Maximum Likelihood Estimators
+
+### 7.2.3 Bayes Estimators
+
+### 7.2.4 The EM Algorithm
+
+## 7.3 Methos of Evaluating Estimators
