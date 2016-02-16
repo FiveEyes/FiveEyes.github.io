@@ -15,6 +15,8 @@ categories: Algo
 
 [The Well-Separated Pair Decomposition and Its Applications](http://people.scs.carleton.ca/~michiel/aa-handbook.pdf)
 
+### 3.1.1 The construction algorithm
+
 
 
 
