@@ -1,6 +1,6 @@
 ---
 layout: page
-permalink: /links/ml
+permalink: /links/ml/
 ---
 
 # Machine Learning

@@ -6,9 +6,9 @@ permalink: /links/
 
 # Pages
 
-  * [**Algorithm**](algo)
-  * [**Machine Learning**](ml)
-  * [**Programming Language**](pl)
+  * [**Algorithm**](algo/)
+  * [**Machine Learning**](ml/)
+  * [**Programming Language**](pl/)
 
 # Quick Links
 

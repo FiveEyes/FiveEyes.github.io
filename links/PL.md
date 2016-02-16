@@ -1,6 +1,6 @@
 ---
 layout: page
-permalink: /links/pl
+permalink: /links/pl/
 ---
 
 # Programming Language

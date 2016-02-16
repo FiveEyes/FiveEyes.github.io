@@ -1,6 +1,6 @@
 ---
 layout: page
-permalink: /links/algo
+permalink: /links/algo/
 ---
 
 # Algorithm
