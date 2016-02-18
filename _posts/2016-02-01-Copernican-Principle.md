@@ -40,6 +40,12 @@ $$\begin{eqnarray}
   &=& k^2 + 2k^m\zeta(m-1,k+1) - k^m\zeta(m, k+1) - \mathrm{E}(n | m, k)^2
 \end{eqnarray}$$
 
+where
+
+$$
+\zeta(s,a) = \sum_{k=0}^\infty \frac{1}{(k+a)^s}
+$$
+
 Examples of expectations and variances:
 
 $$\begin{eqnarray}

@@ -12,10 +12,6 @@ permalink: /links/
 
 # Quick Links
 
-## Wolfram
-
-[**An Elementary Introduction**](http://www.wolfram.com/language/elementary-introduction/)
-
 ## Coq
 
 [**Documentation for Coq**](https://coq.inria.fr/documentation)
@@ -66,6 +62,10 @@ permalink: /links/
 [**Scala School!**](https://twitter.github.io/scala_school/index.html)
 
 [**Scala  API Doc**](http://www.scala-lang.org/api/current/#package)
+
+## Wolfram
+
+[**An Elementary Introduction**](http://www.wolfram.com/language/elementary-introduction/)
 
 ## Others
 
