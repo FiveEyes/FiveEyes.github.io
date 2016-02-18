@@ -12,6 +12,10 @@ permalink: /links/
 
 # Quick Links
 
+## Wolfram
+
+[**An Elementary Introduction**](http://www.wolfram.com/language/elementary-introduction/)
+
 ## Coq
 
 [**Documentation for Coq**](https://coq.inria.fr/documentation)

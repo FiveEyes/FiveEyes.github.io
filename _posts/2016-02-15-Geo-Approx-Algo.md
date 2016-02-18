@@ -18,9 +18,19 @@ categories: Algo
 ### 3.1.1 The construction algorithm
 
 
-
-
 # 4 Clustering - Definitions and Basic Algorithms
+
+## 4.2 On $$k$$-center clustering
+
+The $$k$$-center clustering is NP-Hard.
+
+A simple 2-approximation algorithm
+
+## 4.3 On $$k$$-median clustering
+
+
+
+## 4.4 On $$k$$-means clustering
 
 # 5 On Complexity, Sampling, and $$\epsilon$$-Nets and $$\epsilon$$-Samples
 
