@@ -53,8 +53,8 @@ $$\begin{eqnarray}
 \end{eqnarray}$$
 
 $$\begin{eqnarray}
-P(X = 94 | N = 1000) &>& 0.99 \\
-P(X = 302 | N = 10000) &>& 0.99 \\
+P(X \le 94 | N = 1000) &>& 0.99 \\
+P(X \le 302 | N = 10000) &>& 0.99 \\
 \end{eqnarray}$$
 
 {% highlight wolfram %}
