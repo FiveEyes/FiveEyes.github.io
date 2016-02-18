@@ -45,12 +45,16 @@ $$\mathrm{Var}(X) = \mathrm{E}(X^2) - (\mathrm{E}X)^2$$
 
 I don't find a good way to calculate it yet.
 
-
 $$\begin{eqnarray}
 \mathrm{E}(10) = 3.660215680,& \quad &\mathrm{Var}(10) = 2.942605496\\
 \mathrm{E}(100) = 12.20996063,& \quad &\mathrm{Var}(100) = 38.70690078\\
 \mathrm{E}(200) = 17.39844386,& \quad &\mathrm{Var}(200) = 79.89570756\\
 \mathrm{E}(10000) = 124.9991219,& \quad &\mathrm{Var}(10000) = 4250.220410\\
+\end{eqnarray}$$
+
+$$\begin{eqnarray}
+P(X = 94 | N = 1000) &>& 0.99 \\
+P(X = 302 | N = 10000) &>& 0.99 \\
 \end{eqnarray}$$
 
 {% highlight wolfram %}
