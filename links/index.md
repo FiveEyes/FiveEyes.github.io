@@ -67,6 +67,10 @@ permalink: /links/
 
 [**An Elementary Introduction**](http://www.wolfram.com/language/elementary-introduction/)
 
+## Z3
+
+[**Github Wiki**](https://github.com/Z3Prover/z3/wiki)
+
 ## Others
 
 [**The Implementation of Functional Programming Languages**](http://research.microsoft.com/en-us/um/people/simonpj/papers/slpj-book-1987/)
