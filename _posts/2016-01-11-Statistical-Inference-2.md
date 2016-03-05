@@ -209,3 +209,12 @@ This chapter is divided into two parts. The first part deals with methods for fi
 ### 7.2.4 The EM Algorithm
 
 ## 7.3 Methos of Evaluating Estimators
+
+### 7.3.1 Mean Squared Error
+
+### 7.3.2 Best Unbiased Estimators
+
+### 7.3.3 Sufficiency and Unbiasedness
+
+### 7.3.4 Loss Function Optimality
+
