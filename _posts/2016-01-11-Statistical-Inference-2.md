@@ -46,6 +46,34 @@ $$M_{\bar{X}}(t) = [(\frac{1}{1 - \beta(t/n)})^\alpha]^n = (\frac{1}{1-(\beta/n)
 
 which we recognize as the mgf of a $$gamma(n\alpha, \beta/n)$$, the distribution of $$\bar{X}$$.
 
+**Theorem 5.2.9** If $$X$$ and $$Y$$ are independent continuous random variables with pdfs $$f_X(x)$$ and $$f_Y(y)$$, then the pdf of $$Z = X + Y$$ is 
+
+$$
+f_Z(z) = \int_{-\infty}^{\infty} f_X(w) f_Y(z-w) dw
+$$
+
+**Example 5.2.10 (Sum of Cauchy random variables)**
+
+**Theorem 5.2.11** Suppose $$X_1, \dots, X_n$$ is a random sample from a pdf or pmf ```\(f(x|\theta)\)```, where
+
+$$
+f(x|\theta = h(x)c(\theta)\exp{(\sum_{i=1}^k w_i(\theta) t_i(x))}
+$$
+
+is a member of an exponential family. Define statistics $$T_1, \dots, T_k$$ by
+
+$$
+T_i(X_1, \dots, X_n) = \sum_{j=1}^n t_i(X_j), \quad i = 1, \dots, k.
+$$
+
+If the set $$\{(w_1(\theta), w_2(\theta), \dots, w_k(\theta))\}$$ contains an open subset of $$R^k$$, then the distribution of $$(T_1, \dots, T_k)$$ is an exponential family of the form
+
+$$
+d_T(u_1, \dots, u_k|\theta) = H(u_1, \dots, u_k)[c(\theta)]^n \exp{(\sum_{i=1}^k w_i(\theta) u_i)}
+$$
+
+**Example 5.2.12 (Sum of Bernoulli random variables)**
+
 ## 5.3 Sampling from the Normal Distribution
 
 ### 5.3.1 Properties of the Sample Mean and Variance
@@ -198,6 +226,8 @@ is complete as long as the parameter space $$\Theta$$ contains an open set in $$
 
 This chapter is divided into two parts. The first part deals with methods for finding estimators, and the second part deals with evaluating these estimators.
 
+**Definition 7.1.1** A point estimator is any function $$W(X_1, \dots, X_x)$$ of a sample; that is, any statistic is a point estimator.
+
 ## 7.2 Methods of Finding Estimators
 
 ### 7.2.1 Method of Moments
@@ -212,9 +242,69 @@ This chapter is divided into two parts. The first part deals with methods for fi
 
 ### 7.3.1 Mean Squared Error
 
+**Definition 7.3.1** The mean squared error of an estimator $$W$$ of a parameter $$\theta$$ is the function of $$\theta$$ defined by $$\mathrm{E}_\theta(W - \theta)^2$$.
+
+$$\mathrm{E}_\theta(W - \theta)^2 = \mathrm{Var}_\theta W + (\mathrm{Bias}_\theta W)^2$$
+
 ### 7.3.2 Best Unbiased Estimators
+
+**Definition 7.3.7** An estimator $$W^*$$ is a best unbiased estimator of $$\tau(\theta)$$ if it satisfies $$E_\theta W^* = \tau(\theta)$$ for all $$\theta$$ and, for any other estimator $$W$$ with $$E_\theta W = \tau(\theta)$$, we have $$\mathrm{Var}_\theta W^* \le \mathrm{Var}_\theta W$$ for all $$\theta$$. $$W^*$$ is also called a uniform minimum variance unbiased estimator (UMVUE) of $$\tau(\theta)$$.
+
+**Theorem 7.3.9 (Cramer-Rao Inequality)**: Let $$X_1, \dots, X_n$$ be a sample with pdf ```\(f(x | \theta)\)```, and let $$W(X) = W(X_1, \dots, X_n)$$ be any estimator satisfying
+
+$$
+\frac{d}{d\theta} E_{\theta}W(X) = \int_{\chi} \frac{\partial}{\partial \theta} [W(x) f(x|\theta)] dx
+$$
+
+and
+
+$$
+\mathrm{Var}_\theta W(X) < \infty
+$$
+
+Then
+
+$$
+\mathrm{Var}_\theta (W(X)) \ge \frac{(\frac{d}{d\theta} \mathrm{E}_\theta W(X))^2}{\mathrm{E}_\theta ((\frac{\partial}{\partial \theta} \log{f(X|\theta)})^2)}
+$$
+
+**Corollary 7.3.10 (Cramer-Rao Inequality, iid case)** If the assumptions of Theorem 7.3.9 are satisfied and, additionally, if $$X_1, \dots, X_n$$ are iid with pdf ```\(f(x|\theta)\)```, then
+
+$$
+\mathrm{Var}_\theta W(X) \ge \frac{(\frac{d}{d\theta} \mathrm{E}_{\theta}W(X))^2}{n \mathrm{E}_\theta ((\frac{\partial}{\partial \theta} \log{f(X|\theta)})^2)}
+$$
+
+**Lemma 7.3.11** If ```\(f(x|\theta)\)``` satisfies 
+
+$$
+\frac{d}{d\theta} \mathrm{E}_\theta (\frac{\partial}{\partial \theta} \log{f(X|\theta)}) = \int \frac{\partial}{\partial \theta} [(\frac{\partial}{\partial \theta} \log{f(x|\theta)})] dx
+$$
+
+(true for an exponential family), then
+
+$$
+\mathrm{E}_\theta ((\frac{\partial}{\partial \theta} \log{f(X|\theta)})^2) = - \mathrm{E}_\theta(\frac{\partial^2}{\partial \theta^2}\log{f(X|\theta)}).
+$$
+
+**Corollary 7.3.15 (Attainment Let $$X_1, \dots, X_n$$ be iid ```\(f(x|\theta)\)```, where ```\(f(x|theta)\)``` satisfies the conditions of Cramer-Rao Theorem. Let ```\(L(\theta|X)=\prod_{i=1}^n f(x_i|\theta)\)```
 
 ### 7.3.3 Sufficiency and Unbiasedness
 
+**Theorem 7.3.17 (Rao-Blackwell)** Let W be any unbiased estimator of $$\tau(\theta)$$, and let T be a sufficient statistic for $$\theta$$. Define ```\(\phi(T) = \mathrm{E}(W|T)\)```. Then $$\mathrm{E}_\theta \phi(T) = \tau(\theta)$$ and $$\mathrm{Var}_\theta \phi(T) \le \mathrm{Var}_\theta W$$ for all $$\theta$$; that is, $$\phi(T)$$ is a uniformly better estimator of $$\tau(\theta)$$.
+
+**Theorem 7.3.19** If W is a best unbiased estimator of $$\tau(\theta)$$, then W is unique.
+
+**Theorem 7.3.20** If $$\mathrm{E}_\theta W = \tau(\theta)$$, W is the best unbiased estimator of $$\tau(\theta)$$ if and only if W is uncorrelated with all unbiased estimators of 0.
+
+**Theorem 7.3.23** Let T be a complete sufficient statistic for a parameter $$\theta$$, and let $$\phi(T)$$ be any estimator based only on T. Then $$\phi(T)$$ is the unique best unbiased estimator of its expected value.
+
 ### 7.3.4 Loss Function Optimality
+
+# 8 Hyppothesis Testing
+
+## 8.1 Introduction
+
+## 8.2 Methods of Finding Tests
+
+## 8.3 Methods of Evaluating Tests
 
