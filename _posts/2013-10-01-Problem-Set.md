@@ -5,6 +5,13 @@ date: 2013-10-01 16:16:00
 categories: Zzz
 ---
 
+### Problem 2
+
+How many time do we need to toss to estimate the fairness of a coin?
+
+[Estimation of A Biased Coin](https://www.youtube.com/watch?v=2_S9ytglwM4)
+
+
 
 ### Problem 1
 

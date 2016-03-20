@@ -251,7 +251,19 @@ $$
 
 ## 3.6 Inequalities and Identities
 
+### 3.6.1 Probability Inequalities
+
+**Theorem 3.6.1 (Chebychev's Inequalilty)** Let $$X$$ be a random variable and let $$g(x)$$ be a nonnegative function. Then, for any $$r$$ > 0,
+
+$$
+P(g(X) \ge r) \le \frac{\mathrm{E}g(X)}{r}
+$$
+
+### 3.6.2 Identities
+
 ## 3.8 Miscellanea
+
+### 3.8.2 Chebychev and Beyound
 
 # 4 Multiple Random Variables
 
