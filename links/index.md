@@ -10,6 +10,8 @@ permalink: /links/
   * [**Machine Learning**](ml/)
   * [**Programming Language**](pl/)
 
+---
+
 # Quick Links
 
 ## Coq

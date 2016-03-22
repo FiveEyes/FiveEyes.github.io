@@ -4,7 +4,7 @@ title: Contents
 permalink: /contents/
 ---
 
-# 1 Almost Finished
+# Almost Finished
 
 ### Statistical Inference
   * [Statistical Inference 1~4]({% post_url 2015-12-07-Statistical-Inference-1 %})
@@ -14,7 +14,7 @@ permalink: /contents/
 
 ---
 
-# 2 Unfinished
+# Unfinished
 
 ### 信息论基础
   * [信息论基础 1~8]({% post_url 2015-09-12-Element-of-Information-Theory-1 %})
@@ -24,7 +24,7 @@ permalink: /contents/
 
 ---
 
-# 3 Lists
+# Lists
 
 ### [Reading List]({% post_url 2013-09-29-Reading-List %})
 

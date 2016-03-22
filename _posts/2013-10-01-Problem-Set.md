@@ -11,7 +11,7 @@ How many time do we need to toss to estimate the fairness of a coin?
 
 [Estimation of A Biased Coin](https://www.youtube.com/watch?v=2_S9ytglwM4)
 
-
+---
 
 ### Problem 1
 

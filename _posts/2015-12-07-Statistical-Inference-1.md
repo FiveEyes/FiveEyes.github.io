@@ -253,7 +253,7 @@ $$
 
 ### 3.6.1 Probability Inequalities
 
-**Theorem 3.6.1 (Chebychev's Inequalilty)** Let $$X$$ be a random variable and let $$g(x)$$ be a nonnegative function. Then, for any $$r$$ > 0,
+**Theorem 3.6.1 (Chebychev's Inequalilty)** Let $$X$$ be a random variable and let $$g(x)$$ be a nonnegative function. Then, for any $$r > 0$$,
 
 $$
 P(g(X) \ge r) \le \frac{\mathrm{E}g(X)}{r}
