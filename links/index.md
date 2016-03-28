@@ -1,11 +1,10 @@
 ---
 layout: page
-title: "Links"
+title: Links
 permalink: /links/
 ---
 
 # Pages
-
   * [**Algorithm**](algo/)
   * [**Machine Learning**](ml/)
   * [**Programming Language**](pl/)
