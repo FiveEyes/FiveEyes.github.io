@@ -304,6 +304,15 @@ $$
 
 ## 8.1 Introduction
 
+**Definition 8.1.1** A hypothesis is a statement about a population parameter.
+
+**Definition 8.1.2** The two complementary hypotheses in a hypothesis testing problem are called null hypothesis and the alternative hypothesis. They are denoted by H_0 and H_1, respectively.
+
+
+
+
+
+
 ## 8.2 Methods of Finding Tests
 
 ## 8.3 Methods of Evaluating Tests
