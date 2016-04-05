@@ -309,10 +309,11 @@ $$
 **Definition 8.1.2** The two complementary hypotheses in a hypothesis testing problem are called null hypothesis and the alternative hypothesis. They are denoted by $$H_0$$ and $$H_1$$, respectively.
 
 **Definition 8.1.3** A hypothesis testing procedure or hypothesis test is a rule that specifies:
+
   * For which sample values the decision is made to accept $$H_0$$ as true.
   * For which sample values $$H_0$$ is rejected and $$H_1$$ is accepted as true.
   
-The subset of the sample space for which $$H_0$$ will be rejected is called the rejection region or ```critical region```. The complement of the rejection region is called the ```accptance region```.
+The subset of the sample space for which $$H_0$$ will be rejected is called the *rejection region* or *critical region*. The complement of the rejection region is called the *accptance region*.
 
 ## 8.2 Methods of Finding Tests
 
