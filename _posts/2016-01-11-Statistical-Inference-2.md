@@ -306,14 +306,31 @@ $$
 
 **Definition 8.1.1** A hypothesis is a statement about a population parameter.
 
-**Definition 8.1.2** The two complementary hypotheses in a hypothesis testing problem are called null hypothesis and the alternative hypothesis. They are denoted by H_0 and H_1, respectively.
+**Definition 8.1.2** The two complementary hypotheses in a hypothesis testing problem are called null hypothesis and the alternative hypothesis. They are denoted by $$H_0$$ and $$H_1$$, respectively.
 
-
-
-
-
+**Definition 8.1.3** A hypothesis testing procedure or hypothesis test is a rule that specifies:
+  * For which sample values the decision is made to accept $$H_0$$ as true.
+  * For which sample values $$H_0$$ is rejected and $$H_1$$ is accepted as true.
+  
+The subset of the sample space for which $$H_0$$ will be rejected is called the ```rejection region``` or ```critical region```. The complement of the rejection region is called the ```accptance region```.
 
 ## 8.2 Methods of Finding Tests
 
+### 8.2.1 Likelihood Ratio Tests
+
+### 8.2.2 Bayesian Tests
+
+### 8.2.3 Union-Intersection and Intersection-Union Tests
+
 ## 8.3 Methods of Evaluating Tests
+
+### 8.3.1 Error Probabilities and the Power Function
+
+### 8.3.2 Most Powerful Tests
+
+### 8.3.3 Sizes of Union-Intersection and Intersection-Union Tests
+
+### 8.3.4 p-Values
+
+### 8.3.5 Loss Function Optimality
 
