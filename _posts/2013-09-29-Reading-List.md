@@ -18,6 +18,10 @@ categories: Zzz
 
 [CS271: RANDOMNESS & COMPUTATION](http://www.cs.berkeley.edu/~sinclair/cs271/f11.html)
 
+# Papers
+
+[Self-adjusting top trees](http://www.cs.princeton.edu/~rwerneck/papers/TW05-self-adjusting-top-tree.pdf)
+
 # Pages
 
 [Finger Tree](https://hackage.haskell.org/package/fingertree-0.1.1.0/docs/Data-FingerTree.html)
