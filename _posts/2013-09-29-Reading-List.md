@@ -17,3 +17,7 @@ categories: Zzz
 [CSE 597A Sublinear Algorithms](http://www.cse.psu.edu/~sxr48/sublinear-course/)
 
 [CS271: RANDOMNESS & COMPUTATION](http://www.cs.berkeley.edu/~sinclair/cs271/f11.html)
+
+# Pages
+
+[Finger Tree](https://hackage.haskell.org/package/fingertree-0.1.1.0/docs/Data-FingerTree.html)
