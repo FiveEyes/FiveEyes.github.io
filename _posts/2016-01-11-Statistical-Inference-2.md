@@ -13,7 +13,7 @@ categories: Math
 
 ## 5.2 Sums of Random Variables from a Random Sample
 
-**Lemma 5.2.5**: 
+**Lemma 5.2.5**:
 
   $$\mathrm{E}(\sum_{i=1}^n g(X_i)) = n(\mathrm{E}g(X_1))$$
 
@@ -26,7 +26,7 @@ and
   * $$\mathrm{E}\bar{X} = \mu$$,
   * $$\mathrm{Var}\bar{X} = \sigma^2/n$$,
   * $$\mathrm{E}S^2 = \sigma^2$$.
-  
+
 **Theorem 5.2.7**:
 
   $$M_{\bar{X}}(t) = [M_X(t/n)]^n$$
@@ -46,7 +46,7 @@ $$M_{\bar{X}}(t) = [(\frac{1}{1 - \beta(t/n)})^\alpha]^n = (\frac{1}{1-(\beta/n)
 
 which we recognize as the mgf of a $$gamma(n\alpha, \beta/n)$$, the distribution of $$\bar{X}$$.
 
-**Theorem 5.2.9** If $$X$$ and $$Y$$ are independent continuous random variables with pdfs $$f_X(x)$$ and $$f_Y(y)$$, then the pdf of $$Z = X + Y$$ is 
+**Theorem 5.2.9** If $$X$$ and $$Y$$ are independent continuous random variables with pdfs $$f_X(x)$$ and $$f_Y(y)$$, then the pdf of $$Z = X + Y$$ is
 
 $$
 f_Z(z) = \int_{-\infty}^{\infty} f_X(w) f_Y(z-w) dw
@@ -79,7 +79,7 @@ $$
 ### 5.3.1 Properties of the Sample Mean and Variance
 
 **Theorem 5.3.1**: Let $$X_1, \dots, X_n$$ be a random sample from a $$n(\mu, \sigma^2)$$ distribution, and let $$\bar{X}$$ and $$S^2$$. Then
-  
+
   * $$\bar{X}$$ and $$S^2$$ are independent random variables,
   * $$\bar{X}$$ has a $$n(\mu, \sigma^2/n)$$ distribution,
   * $$(n-1)S^2/\sigma^2$$ has a chi squared distribution with $$n - 1$$ degrees of freedom.
@@ -88,7 +88,7 @@ $$
 
   * If $$Z$$ is a $$n(0,1)$$ random variable, then $$Z^2 \thicksim \chi_1^2$$.
   * If $$X_1, \dots, X_n$$ are independent and $$X_i \thicksim \chi_{p_i}^2$$, then $$X_1 + \dots + X_n \thicksim \chi_{p_1 + \dots + p_n}^2$$.  
-  
+
 ## 5.4 Order Statistics
 
 **Theorem 5.4.3**:
@@ -123,9 +123,9 @@ or,
   $$\lim_{ n \rightarrow \infty } P(|X_n - X| < \epsilon) = 1$$
 
 **Theorem 5.5.2 (Weak Law of Large Numbers)**:
-  
-  $$\lim_{ n \rightarrow \infty } P(|\bar{X}_n - \mu| < \epsilon) = 1$$ 
-  
+
+  $$\lim_{ n \rightarrow \infty } P(|\bar{X}_n - \mu| < \epsilon) = 1$$
+
 ### 5.5.2 Almost Sure Convergence
 
 **Definition 5.5.6**:
@@ -133,9 +133,9 @@ or,
   $$P(\lim_{ n \rightarrow \infty } |X_n - X| < \epsilon) = 1$$
 
 **Theorem 5.5.9 (Strong Law of Large Numbers)**:
-  
+
   $$P(\lim_{ n \rightarrow \infty } |\bar{X}_n - \mu| < \epsilon) = 1$$
-  
+
 ### 5.5.3 Convergence in Distribution
 
 **Definition 5.5.10**:
@@ -274,7 +274,7 @@ $$
 \mathrm{Var}_\theta W(X) \ge \frac{(\frac{d}{d\theta} \mathrm{E}_{\theta}W(X))^2}{n \mathrm{E}_\theta ((\frac{\partial}{\partial \theta} \log{f(X|\theta)})^2)}
 $$
 
-**Lemma 7.3.11** If ```\(f(x|\theta)\)``` satisfies 
+**Lemma 7.3.11** If ```\(f(x|\theta)\)``` satisfies
 
 $$
 \frac{d}{d\theta} \mathrm{E}_\theta (\frac{\partial}{\partial \theta} \log{f(X|\theta)}) = \int \frac{\partial}{\partial \theta} [(\frac{\partial}{\partial \theta} \log{f(x|\theta)})] dx
@@ -300,7 +300,7 @@ $$
 
 ### 7.3.4 Loss Function Optimality
 
-# 8 Hyppothesis Testing
+# 8 Hypothesis Testing
 
 ## 8.1 Introduction
 
@@ -312,12 +312,20 @@ $$
 
   * For which sample values the decision is made to accept $$H_0$$ as true.
   * For which sample values $$H_0$$ is rejected and $$H_1$$ is accepted as true.
-  
-The subset of the sample space for which $$H_0$$ will be rejected is called the *rejection region* or *critical region*. The complement of the rejection region is called the *accptance region*.
+
+The subset of the sample space for which $$H_0$$ will be rejected is called the *rejection region* or *critical region*. The complement of the rejection region is called the *acceptance region*.
 
 ## 8.2 Methods of Finding Tests
 
 ### 8.2.1 Likelihood Ratio Tests
+
+**Definition 8.2.1** The likelihood ratio test statistic for testing $$H_0 : \theta \in \Theta_0$$ versus $$H_1 : \theta \in \Theta_0^c$$ is
+$$
+\lambda(x) = \frac{sup L(\theta | x)}{sup L(\theta | x)}
+$$
+
+A likelihood ratio test (LRT) is any test that has a rejection region of the form $$\{x: \lambda (x) \le c \}$$, where $$c$$ is any number satisfying $$0 \le c \le 1$$.
+
 
 ### 8.2.2 Bayesian Tests
 
@@ -327,6 +335,12 @@ The subset of the sample space for which $$H_0$$ will be rejected is called the 
 
 ### 8.3.1 Error Probabilities and the Power Function
 
+
+|               | Accept $$H_0$$ | Reject $$H_1$$ |
+|:-------------:|:--------------:|:--------------:|
+| Truth $$H_0$$ | Correct        | Type I Error   |
+| Truth $$H_1$$ | Type II Error  | Correct        |
+
 ### 8.3.2 Most Powerful Tests
 
 ### 8.3.3 Sizes of Union-Intersection and Intersection-Union Tests
@@ -334,4 +348,3 @@ The subset of the sample space for which $$H_0$$ will be rejected is called the 
 ### 8.3.4 p-Values
 
 ### 8.3.5 Loss Function Optimality
-
