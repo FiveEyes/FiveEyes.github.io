@@ -327,6 +327,10 @@ The subset of the sample space for which $$H_0$$ will be rejected is called the 
 
 ### 8.3.1 Error Probabilities and the Power Function
 
+Type I Error and Type II Error
+
+**Definition 8.3.1** The power function of a hypothesis test with rejection region $$R$$ is the functiuon of $$\theta$$ defined by $$\beta(\theta) = P_\theta(X \in R)$$.
+
 ### 8.3.2 Most Powerful Tests
 
 ### 8.3.3 Sizes of Union-Intersection and Intersection-Union Tests
