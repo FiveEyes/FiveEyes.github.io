@@ -335,19 +335,21 @@ A likelihood ratio test (LRT) is any test that has a rejection region of the for
 
 ### 8.3.1 Error Probabilities and the Power Function
 
-<<<<<<< HEAD
-Type I Error and Type II Error
-
-**Definition 8.3.1** The power function of a hypothesis test with rejection region $$R$$ is the functiuon of $$\theta$$ defined by $$\beta(\theta) = P_\theta(X \in R)$$.
-=======
+Type I Error and Type II 
 
 |               | Accept $$H_0$$ | Reject $$H_1$$ |
 |:-------------:|:--------------:|:--------------:|
 | Truth $$H_0$$ | Correct        | Type I Error   |
 | Truth $$H_1$$ | Type II Error  | Correct        |
->>>>>>> ae37844ea3308e0aac0271c9ff977292a87ac236
+
+**Definition 8.3.1** The power function of a hypothesis test with rejection region $$R$$ is the functiuon of $$\theta$$ defined by $$\beta(\theta) = P_\theta(X \in R)$$.
+
+
 
 ### 8.3.2 Most Powerful Tests
+
+
+
 
 ### 8.3.3 Sizes of Union-Intersection and Intersection-Union Tests
 
