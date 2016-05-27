@@ -25,6 +25,10 @@ permalink: /links/
 
 [**Pro Git**](http://git-scm.com/book/en/v2)
 
+## Go
+
+[**A Tour of Go**](https://tour.golang.org/welcome/1)
+
 ## Haskell
 
 [**Learn You a Haskell**](http://learnyouahaskell.com/chapters)
@@ -57,6 +61,10 @@ permalink: /links/
 [**Documentation**](http://www.mathworks.com/help/matlab/index.html)
 
 [**Quick Reference**](http://www.cs.cmu.edu/~tom/10601_fall2012/recitations/matlab_quickref.pdf)
+
+## Rust
+
+[**Documentation**](https://www.rust-lang.org/documentation.html)
 
 ## Scala
 
