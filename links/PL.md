@@ -12,6 +12,8 @@ permalink: /links/pl/
 
 [Arrows: A General Interface to Computation](https://www.haskell.org/arrows/index.html)
 
+[Arrows and computation](https://karczmarczuk.users.greyc.fr/TEACH/Stage/ArrComp.pdf)
+
 ## Name binding
 [Bound](https://www.fpcomplete.com/user/edwardk/bound)
 
