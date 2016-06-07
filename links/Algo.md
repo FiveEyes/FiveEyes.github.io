@@ -45,3 +45,5 @@ permalink: /links/algo/
 [Tetris 3D](http://main.edu.pl/en/archive/oi/13/tet)
 
 [Confidential](http://acm.timus.ru/problem.aspx?space=1&num=1416): the second minimum spanning tree
+
+[Using your Head is Permitted](http://www.brand.site.co.il/riddles/)
