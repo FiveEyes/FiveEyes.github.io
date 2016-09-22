@@ -35,5 +35,3 @@ permalink: /contents/
 [**Problem Set**]({% post_url 2013-10-01-Problem-Set %})
 
 [**Reading List**]({% post_url 2013-09-29-Reading-List %})
-
-[**To-Do List**]({% post_url 2013-09-28-To-Do-List %})
