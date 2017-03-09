@@ -15,11 +15,11 @@ categories: Algo
 
 # 1 An introduction to approximation algorithms
 
-**Definition 1.1:** An $$\alpha$$-approximation algorithm is ...
+**Definition 1.1:** An $\alpha$-approximation algorithm is ...
 
 **Definition 1.2:** A polynomial-time approximation scheme (PTAS) is ...
 
-**Theorem 1.3:** For any MAX SNP-hard problem, there does not exist a polynomial-time approximation scheme, unless $$P = NP$$.
+**Theorem 1.3:** For any MAX SNP-hard problem, there does not exist a polynomial-time approximation scheme, unless $P = NP$.
 
 An example: the maximum clique problem
 
@@ -33,7 +33,7 @@ Assume that all due dates are negative, which implies that the optimal value is 
 
 A greedy 2-approximation algorithm.
 
-There is no $$\alpha$$-approximation algorithm for the k-center problem for $$\alpha < 2$$ unless $$P = NP$$.
+There is no $\alpha$-approximation algorithm for the k-center problem for $\alpha < 2$ unless $P = NP$.
 
 ## 2.3 Scheduling jobs on identical parallel machines
 
@@ -51,9 +51,9 @@ the Christofides' algorithm is a 3/2-approximation algorithm.
 
 ## 2.6 Finding minimum-degree spanning trees
 
-The locally optimal tree: no move that can reduce the degree of any node having degree between $$\Delta(T) - l$$ and $$\Delta(T)$$.
+The locally optimal tree: no move that can reduce the degree of any node having degree between $\Delta(T) - l$ and $\Delta(T)$.
 
-**Theorem 2.19:** Let T be a locally optimal tree. Then $$\Delta(T) \le 2OPT + l$$, where $$l = \lceil \log_2{n} \rceil$$.
+**Theorem 2.19:** Let T be a locally optimal tree. Then $\Delta(T) \le 2OPT + l$, where $l = \lceil \log_2{n} \rceil$.
 
 **Theorem 2.20:** The algorithm finds a locally optimal tree in polynomial time.
 
