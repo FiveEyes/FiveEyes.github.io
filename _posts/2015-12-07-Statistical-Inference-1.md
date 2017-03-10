@@ -5,7 +5,7 @@ date: 2015-12-07 17:28:00
 categories: Math
 ---
 
-#Statistical Inference 1~4
+# Statistical Inference 1~4
 
 # 1 Probability Theory
 
