@@ -9,7 +9,8 @@ categories: Zzz
 
 How many time do we need to toss to estimate the fairness of a coin?
 
-[Estimation of A Biased Coin](https://www.youtube.com/watch?v=2_S9ytglwM4)
+[Checking whether a coin is fair](https://en.wikipedia.org/wiki/Checking_whether_a_coin_is_fair)
+<!--- [Estimation of A Biased Coin](https://www.youtube.com/watch?v=2_S9ytglwM4) --->
 
 ---
 
