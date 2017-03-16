@@ -102,7 +102,7 @@ There are multiple ways of defining a simpler representation. Three of the most 
 
 ## 5.9 Stochastic Gradient Descent
 
-The insignht of SGD is tha the gradient is an expectation. The expectation may be approximately estimated using a small set of samples. Specifically, on each step of the algorithm, we can sample a minibatch of examples $B = \{ x^1, \dots, x^{m'} \}$ drawn uniformly from the training set. The minibatch size $m'$ is typeically chosen to be a relatively small number of examples, rangning from one to a few hundred.
+The insignht of SGD is tha the gradient is an expectation. The expectation may be approximately estimated using a small set of samples. Specifically, on each step of the algorithm, we can sample a minibatch of examples $B = \\{ x^1, \dots, x^{m'} \\}$ drawn uniformly from the training set. The minibatch size $m'$ is typeically chosen to be a relatively small number of examples, rangning from one to a few hundred.
 
 ## 5.10 Building a Machine Learning Algorithm
 
@@ -116,7 +116,9 @@ A fairly simple recipe: combine a specification of a dataset, a cost function, a
 
 ### 5.11.3 Manifold Learning
 
+The first observation in favor of the manifold hypothesis is that the probability distribution over images, text strings and sounds that occur in real life is highly concentrated.
 
+The second argument in favor of the manifold hypothesis is that we can also imagine such neighborhoods and transformations, at least informally.
 
 
 
