@@ -118,6 +118,7 @@ Conjugate gradients is a method to efficiently avoid the calculation of the inve
 ### 8.7.3 Polyak Averaging
 
 When applying Polyak averaging to non-convex problems, it is typical to use an exponentially decaying running average:
+
 $$
 \hat{\theta}^{(t)} = \alpha \hat{\theta}^{(t-1)} + (1 - \alpha) \theta^{(t)}.
 $$
