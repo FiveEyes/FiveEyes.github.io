@@ -47,7 +47,7 @@ $$
 
 ## 最优化问题
 
-先对目标函数做一些转换,这个转换把最优化问题从$p(Z|X)$转换到$p(Z,X)$上.
+先对目标函数做一些转换,这个转换把最优化问题从```$p(Z|X)$```转换到$p(Z,X)$上.
 
 $$
 \begin{eqnarray}
@@ -120,7 +120,7 @@ $$
 $$
 \begin{eqnarray}
 L(q) &=& \int q_j \ln p_j dz_j - \sum_i \int q_i \ln q_i dz_i \\
-&=& \int q_j \ln p_j dz_j - \int q_j \ln q_j dz_j + \sum_{i \neq j} \int q_i \ln q_i dz_i \\
+&=& \int q_j \ln p_j dz_j - \int q_j \ln q_j dz_j - \sum_{i \neq j} \int q_i \ln q_i dz_i \\
 &=& \int q_j \ln p_j dz_j - \int q_j \ln q_j dz_j + const \\
 &=& \int q_j (\ln p_j - \ln q_j) dz_j + const \\
 &=& \int q_j \ln \frac{p_j}{q_j} dz_j + const \\
