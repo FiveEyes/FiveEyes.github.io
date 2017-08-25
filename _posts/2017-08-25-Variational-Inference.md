@@ -1,11 +1,4 @@
----
-layout: post
-title: "变分推断"
-date: 2017-08-25 02:01:00
-categories: Learning
----
-
-# 变分推断
+[http://blog.huajh7.com/2013/03/06/variational-bayes/](http://blog.huajh7.com/2013/03/06/variational-bayes/)
 
 PRML Chapter 10
 
@@ -14,17 +7,19 @@ MLAPP Chapter 21
 ## 背景知识
 
 **熵**
+
 $$
 H[p] = - \int p(x) \ln{p(x)} dx
 $$
 
 **相对熵, KL散度**
+
 $$
 KL(q || p) = - \int q(x) \ln{\frac{q(x)}{p(x)}} dx
 $$
 
 ## 问题
-已知数据模型和数据集 $X = \{ x_1, \dots, x_n \}$, 模型的参数 $Z = \{ z_1, \dots, z_m \}$ 未知, 我们希望使用后验分布$p(Z|X)$.
+已知数据模型和数据集 $ X = \{ x_1, \dots, x_n \} $, 模型的参数 $Z = \{ z_1, \dots, z_m \} $ 未知, 我们希望使用后验分布$p(Z|X)$.
   * 一是$p(Z|X)$可能非常难求,而且不好做后续的处理. 
   * 二是$p(Z,X)$可能会很好求.
 
