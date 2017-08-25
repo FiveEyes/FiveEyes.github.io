@@ -5,6 +5,13 @@ date: 2017-08-25 02:01:00
 categories: Learning
 ---
 
+
+# 变分推断
+
+## 资料
+
+[http://blog.huajh7.com/2013/03/06/variational-bayes/](http://blog.huajh7.com/2013/03/06/variational-bayes/)
+
 PRML Chapter 10
 
 MLAPP Chapter 21
@@ -24,8 +31,8 @@ KL(q || p) = - \int q(x) \ln{\frac{q(x)}{p(x)}} dx
 $$
 
 ## 问题
-已知数据模型和数据集 $ X = \\{ x_1, \dots, x_n \\} $, 模型的参数 $Z = \\{ z_1, \dots, z_m \\} $ 未知, 我们希望使用后验分布$p(Z|X)$.
-  * 一是 $p(Z|X)$ 可能非常难求,而且不好做后续的处理. 
+已知数据模型和数据集 $ X = \{ x_1, \dots, x_n \} $, 模型的参数 $Z = \{ z_1, \dots, z_m \} $ 未知, 我们希望使用后验分布$p(Z|X)$.
+  * 一是 p(Z|X) 可能非常难求,而且不好做后续的处理. 
   * 二是$p(Z,X)$可能会很好求.
 
 ## 解决方案
@@ -87,8 +94,7 @@ $$
 \begin{eqnarray}
 L(q) &=& \int \prod_{j=1}^{M} q_j ( \ln p(Z,X) - \sum_{k=1}^{M} \ln q_k) dZ \\
 &=& \int q_j \{ \int \prod_{i \neq j} q_i ( \ln p(Z,X) - \sum_{k=1}^{M} \ln q_k ) dz_i \} dz_j\\
-&=& \int q_j \{ \int \prod_{i \neq j} q_i \ln p(Z,X) dz_i \} dz_j\\
-&& - \int \prod_i q_i \sum_k \ln q_k dz_i \\
+&=& \int q_j \{ \int \prod_{i \neq j} q_i \ln p(Z,X) dz_i \} dz_j - \int \prod_i q_i \sum_k \ln q_k dz_i \\
 \end{eqnarray}
 $$
 
@@ -101,7 +107,7 @@ $$
 \end{eqnarray}
 $$
 
-这里的const主要为了把$\int p_j dz_j$凑成1,是normalization,不需要显式考虑.
+这里的const主要为了把$p_j(z_j)$的和凑成1,normalization,不需要显式考虑.
 
 其次注意到 $\int q_i dz_i = 1$, 可以得到
 
@@ -122,7 +128,7 @@ L(q) &=& \int q_j \ln p_j dz_j - \sum_i \int q_i \ln q_i dz_i \\
 \end{eqnarray}
 $$
 
-分解分布之后,$\sum_{i \neq j} \int q_i \ln q_i dz_i$这一项相对于z_j是const.
+分解分布之后,$\sum_{i \neq j} \int q_i \ln q_i dz_i$这一项相对于$z_j$是const.
 
 ## 最大化$L(q)$
 我们成功得到 $L(q) = -KL(q_j || p_j) + const$, 那么最大化$L(q)$就等于最小化$KL(q_j || p_j)$. 我们直接让$q_j = p_j$使得$KL(q_j || p_j)$取到最小值$0$.
@@ -130,6 +136,33 @@ $$
 $$
 \ln q_j(z_j) = \mathrm{E}_{i \neq j} [\ln p(Z, X)] + const
 $$
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
