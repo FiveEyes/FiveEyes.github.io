@@ -47,4 +47,27 @@ categories: Learning
 
 #### 12.4.3.4 Noise-Contrastive Estimation and Ranking Loss
 
+### 12.4.4 Combining Neural Language Models with $n$-grams
+
+### 12.4.5 Neural Machine Translation
+
+#### 12.4.5.1 Using an attention Mechanism and Aligning Pieces of Data
+
+### 12.4.6 Historical Perspective
+
+## 12.5 Other Applications 
+
+### 12.5.1 Recommender Systems
+
+#### 12.5.1.1 Exploration versus Exploitation
+
+### 12.5.2 Knowledge Representation, Reasoning and Question Answering
+
+#### 12.5.2.1 Knowledge, Relations and Question Answering
+
+
+
+
+
+
 
