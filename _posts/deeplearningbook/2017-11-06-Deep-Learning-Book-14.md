@@ -25,7 +25,7 @@ categories: Learning
 
 ### 14.5.1 Estimating the Score
 
-####m14.5.1.1 Historical Perspective
+#### 14.5.1.1 Historical Perspective
 
 ## 14.6 Learning Manifolds with Autoencoders
 
