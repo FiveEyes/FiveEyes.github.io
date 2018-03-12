@@ -27,7 +27,11 @@ model-based or model-free.
 
 Markovian decision processes(MDPs)
 
+Bellman equations
+
 dynamic programming
+
+Monte Carlo methods
 
 trial-and-error
 
@@ -40,7 +44,6 @@ temporal-difference
 actor-critic architecture
 
 Q-learning
-
 
 
 
