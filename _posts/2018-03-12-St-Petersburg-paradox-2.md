@@ -58,20 +58,23 @@ $$
 
 $$ 
 \begin{eqnarray*} 
-E_{now}(0) &=& n \ 
-E_{now}(k) &=& E_{now}(k-1) + 1 \ 
-E_{win}(0) &=& w \ 
-E_{win}(k) &=& E_{now}(k-1)/2 + E_{win}(k-1) + 1/2 \ 
-\end{eqnarray*} 
-$$
-解得:
-$$ 
-\begin{eqnarray*} E_{now}(k) &=& k + n \ 
-E_{win}(k) &=& k(k + 1 + 2n) / 4 + w \ 
+E_{now}(0) &=& n \\
+E_{now}(k) &=& E_{now}(k-1) + 1 \\ 
+E_{win}(0) &=& w \\
+E_{win}(k) &=& E_{now}(k-1)/2 + E_{win}(k-1) + 1/2 \\
 \end{eqnarray*} 
 $$
 
-这个扩展之后,我们不禁可以加入一个强制,而且可以加入任意多位置的强制
+解得:
+
+$$ 
+\begin{eqnarray*} E_{now}(k) &=& k + n \\
+E_{win}(k) &=& k(k + 1 + 2n) / 4 + w \\
+\end{eqnarray*} 
+$$
+
+这个扩展之后,不禁方便我们加入一个强制,而且可以加入任意多位置的强制
+
 {% highlight python %} 
 def solve(now, win, k):
     return k + now, win + k * (k + 1 + 2 * now) / 4
