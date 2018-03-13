@@ -42,7 +42,7 @@ $$
 
 既然不能计算median,那么另一个方案是计算几何平均,对获益取log,然后算数平均,然后再exp回来.但是递推依然不支持,所以还没有验证.
 
-还有一个是算方差,然后套Chebyshev's Inequality, $P(|X-E(X)| \ge b) \le \frac{Var(X)}{b^2}$. 但我怀疑这个界十分松散,根本不管用,毕竟Var(X)轻松彪上十几位数字.
+还有一个是算方差,然后套Chebyshev's Inequality, ```\(P(|X-E(X)| \ge b) \le \frac{Var(X)}{b^2}\)```. 但我怀疑这个界十分松散,根本不管用,毕竟Var(X)轻松彪上十几位数字.
 
 纯理论上的方法既然不管用,那就来点工程暴力学了. 下面一个简单的思路是,通过某种方式把极大的获利在统计时去掉. 
 
@@ -103,6 +103,18 @@ def mustWinSeq(n, seq):
     Enow, Ewin = solve(Enow, Ewin, n - cur)
     return Enow, Ewin
 
+def mustLoseSeq(n, seq):
+    Enow = 1.0
+    Ewin = 0.0
+    cur = 0
+    for i in seq:
+        if i - 1 > cur:
+            Enow, Ewin = solve(Enow, Ewin, i - 1 - cur)
+        Enow, Ewin = lose(Enow, Ewin)
+        cur = i
+    Enow, Ewin = solve(Enow, Ewin, n - cur)
+    return Enow, Ewin
+
 def measureImprove(n, seq):
     retNow, retWin = solveN(n)
     retNow, retWin = lose(retNow, retWin)
@@ -111,14 +123,21 @@ def measureImprove(n, seq):
     Enow, Ewin = lose(Enow, Ewin)
     print("solveN:", retWin)
     print("mustWinSeq:", Ewin)
+
+    EnowL, EwinL = mustLoseSeq(n, seq)
+    EnowL, EwinL = lose(EnowL, EwinL)
+    print("mustLoseSeq:", EwinL)
+    
     p = 0.5**len(seq)
     improve = retWin - (retWin - p*Ewin) / (1-p)
     retWin -= improve
     return retWin, improve, 1-p
+
     
 measureImprove(1000,[500])
 # solveN: 251752.0
 # mustWinSeq: 376750.5
+# mustLoseSeq: 126753.5
 # (126753.5, 124998.5, 0.5)
 {% endhighlight %}
 
