@@ -1,0 +1,25 @@
+---
+layout: default
+title: Categories
+permalink: /categories/
+---
+
+<div class="home">
+  <ul class="post-list"> 
+    {% assign cats = site.categories | sort %}
+    {% for cat in cats %}
+      <h2 class="category-title"> {{ cat[0] | capitalize }} <h2>
+      {% for post in cat[1] %}
+        <li>
+          <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+          <h2>
+            <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+          </h2>
+        </li>
+      {% endfor %}
+    {% endfor %}
+  </ul>
+
+  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+
+</div>
