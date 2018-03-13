@@ -16,22 +16,22 @@ categories: Math
 ## Solution
 $$ 
 \begin{eqnarray*} 
-E_{now}(1) &=& 2 \ 
-E_{now}(N) &=& E_{now}(N-1) + 1 \ 
-E_{win}(1) &=& 1 \ 
-E_{win}(N) &=& E_{now}(N-1)/2 + E_{win}(N-1) + 1/2 \ 
+E_{now}(1) &=& 2 \\
+E_{now}(N) &=& E_{now}(N-1) + 1 \\ 
+E_{win}(1) &=& 1 \\
+E_{win}(N) &=& E_{now}(N-1)/2 + E_{win}(N-1) + 1/2 \\
 \end{eqnarray*} 
 $$
 解得:
 $$ 
-\begin{eqnarray*} E_{now}(N) &=& n + 1 \ 
-E_{win}(N) &=& (n - 1)(n + 4) / 4 + 1 \ 
+\begin{eqnarray*} E_{now}(N) &=& n + 1 \\
+E_{win}(N) &=& (n - 1)(n + 4) / 4 + 1 \\
 \end{eqnarray*} 
 $$
 
 ## Updates
 
-上一篇post已经解出了投n次硬币之后获益的期望,假设每开一局需要消耗c,那么我们要解$\argmin_x E_win(x) > c(x+1)/2$,获得最少的投掷次数已使获利期望为正.
+上一篇post已经解出了投n次硬币之后获益的期望,假设每开一局需要消耗c,那么我们要解$\arg_x \min E_win(x) > c(x+1)/2$,获得最少的投掷次数已使获利期望为正.
 
 可惜之后写了个模拟程序,发现大多数情况下,投掷x次获益为负.这是因为整个获益的分布方差太大导致的.理论上来讲,这时候只需要求一下中位数就好了,这样50%的概率获利.
 
@@ -110,7 +110,7 @@ def measureImprove(n, seq):
     retWin -= improve
     return retWin, improve, 1-p
     
-# measureImprove(1000,[500])
+measureImprove(1000,[500])
 # solveN: 251752.0
 # mustWinSeq: 376750.5
 # (126753.5, 124998.5, 0.5)
