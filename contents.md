@@ -12,7 +12,7 @@ permalink: /contents/
 
 ### 数学丛书
   * [数学分析原理]({% post_url 2015-01-07-Principles-Mathematical-Analysis %})
-  * [复分析基础及工程应用]({% post_url 2016-01-04-Fundamentals-of-Complex-Analysis %})
+  * [复分析基础及工程应用]({% post_url 2016-01-04-Fundamentals-of-Complex-Analysis %})
 
 ### Statistical Inference
   * [Statistical Inference 1~4]({% post_url 2015-12-07-Statistical-Inference-1 %})
