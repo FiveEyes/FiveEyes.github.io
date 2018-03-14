@@ -34,6 +34,7 @@ permalink: /contents/
   * [**Chapter 13**]({% post_url 2017-11-03-Deep-Learning-Book-13 %})
   * [**Chapter 14**]({% post_url 2017-11-06-Deep-Learning-Book-14 %})
 
+| :---: | :---: | :---: |
 |[**Chapter 15**]({% post_url 2017-11-09-Deep-Learning-Book-15 %}) | [**Chapter 16**]({% post_url 2017-11-19-Deep-Learning-Book-16 %}) | [**Chapter 17**]({% post_url 2017-12-02-Deep-Learning-Book-17 %}) |
 | [**Chapter 18**]({% post_url 2017-12-10-Deep-Learning-Book-18 %}) | [**Chapter 19**]({% post_url 2017-12-27-Deep-Learning-Book-19 %}) | [**Chapter 20**]({% post_url 2018-01-11-Deep-Learning-Book-20 %}) |
 
