@@ -8,19 +8,19 @@ permalink: /contents/
 
 ## Almost Finished
 
-[**Statistical Inference 1~4**]({% post_url 2015-12-07-Statistical-Inference-1 %})
-
-[**Statistical Inference 5~8**]({% post_url 2016-01-11-Statistical-Inference-2 %})
-
-[**数学分析原理**]({% post_url 2015-01-07-Principles-Mathematical-Analysis %})
-
 ## Unfinished
 
-[**信息论基础 1~8**]({% post_url 2015-09-12-Element-of-Information-Theory-1 %})
+### 数学丛书
+  * [**数学分析原理**]({% post_url 2015-01-07-Principles-Mathematical-Analysis %})
+  * [**复分析基础及工程应用**]({% post_url 2016-01-04-Fundamentals-of-Complex-Analysis %})
 
-[**信息论基础 9~16**]({% post_url 2016-01-08-Element-of-Information-Theory-2 %})
+### Statistical Inference
+  * [Statistical Inference 1~4]({% post_url 2015-12-07-Statistical-Inference-1 %})
+  * [Statistical Inference 5~8]({% post_url 2016-01-11-Statistical-Inference-2 %})
 
-[**复分析基础及工程应用**]({% post_url 2016-01-04-Fundamentals-of-Complex-Analysis %})
+### 信息论基础
+  * [信息论基础 1~8]({% post_url 2015-09-12-Element-of-Information-Theory-1 %})
+  * [信息论基础 9~16]({% post_url 2016-01-08-Element-of-Information-Theory-2 %})
 
 ### Deep Learning Book
   * [**Chapter 5**]({% post_url 2017-03-15-Deep-Learning-Book-5 %})
@@ -33,10 +33,12 @@ permalink: /contents/
   * [**Chapter 12**]({% post_url 2017-11-02-Deep-Learning-Book-12 %})
   * [**Chapter 13**]({% post_url 2017-11-03-Deep-Learning-Book-13 %})
   * [**Chapter 14**]({% post_url 2017-11-06-Deep-Learning-Book-14 %})
-
-| :---: | :---: | :---: |
-|[**Chapter 15**]({% post_url 2017-11-09-Deep-Learning-Book-15 %}) | [**Chapter 16**]({% post_url 2017-11-19-Deep-Learning-Book-16 %}) | [**Chapter 17**]({% post_url 2017-12-02-Deep-Learning-Book-17 %}) |
-| [**Chapter 18**]({% post_url 2017-12-10-Deep-Learning-Book-18 %}) | [**Chapter 19**]({% post_url 2017-12-27-Deep-Learning-Book-19 %}) | [**Chapter 20**]({% post_url 2018-01-11-Deep-Learning-Book-20 %}) |
+  * [**Chapter 15**]({% post_url 2017-11-09-Deep-Learning-Book-15 %})
+  * [**Chapter 16**]({% post_url 2017-11-19-Deep-Learning-Book-16 %})
+  * [**Chapter 17**]({% post_url 2017-12-02-Deep-Learning-Book-17 %})
+  * [**Chapter 18**]({% post_url 2017-12-10-Deep-Learning-Book-18 %})
+  * [**Chapter 19**]({% post_url 2017-12-27-Deep-Learning-Book-19 %}) 
+  * [**Chapter 20**]({% post_url 2018-01-11-Deep-Learning-Book-20 %})
 
 
 # Articles
