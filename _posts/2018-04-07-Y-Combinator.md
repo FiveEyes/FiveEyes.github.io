@@ -68,24 +68,21 @@ x = f x
 ```
 fact = Y fact1
 ```
-{% highlight lisp %}
-; fix = (fact1 fix)
-(define fact2 (fact1 (fact0 fact0)))
-(fact2 3)
-{% endhighlight %}
 
 ## 实现Y Combintor
-Y Combintor如何实现,从解题的角度来讲,如果我们可以实现了fact0,那么fact = fact0 fact0. 
+Y Combintor如何实现,从解题的角度来讲,如果我们可以实现了```fact0```,那么```fact = fact0 fact0```. 
 
 我们观察一下fact0的特点.
-  * 首先fact0是一个函数到函数的映射.
-  * 其次至始至终,他永远只用到了fact0 -> fact这一对映射.
+  * 首先, fact0是一个函数到函数的映射.
+  * 其次, 至始至终, 他永远只用到了fact0 -> fact这一对映射.
 
-换句话讲,我们可以实现一个假的fact0,只需要让他满足fact0 -> fact这个映射就可以了.现在我们称这个函数叫helper,我们的目标是实现fact = helper helper.
+换句话讲,我们可以实现一个假的fact0,只需要让他满足fact0 -> fact这个映射就可以了.现在我们称这个函数叫```helper```,我们的目标是实现```fact = helper helper```.
 
 接下来的工作就简单了,
-helper的参数是helper, 他需要返回fact, 而刚好fact = helper helper. 然后我们得到了```helper self = self self```. 这个是错的, 因为这个相当于f x = f x.
-这时候我们想到了还没用到的fact1, 而刚好fact = fact1 (helper helper). 这次就对了. 其实是我用玄学凑出来的.
+helper的参数是helper, 他需要返回fact, 而刚好```fact = helper helper```. 然后我们得到了```helper self = self self```. 这个是错的, 因为这个相当于```f x = f x```.
+
+这时候我们发现题目里还有一个叫```fact1```的没有用到, 而刚好```fact = fact1 (helper helper)```. 这次终于对了,其实是我用玄学凑出来的,2333.
+
 所以,最终答案是:
 ```
 helper self = fact1 (self self)
@@ -96,16 +93,27 @@ helper self = fact1 (self self)
 ```
 fact = helper helper
 ```
+
+最终代码:
 {% highlight lisp %}
 
 ; Reminder: Here requires lazy evalution.
-(define (U f) (f f))
+;(define (U f) (f f))
+;(define (Y f)
+;  (U (lambda (helper) (f (U helper)))))
+
+(define (fact1 self)
+  (lambda (x)
+    (if (= x 1)
+        1
+        (* x (self (- x 1))))))
+
 (define (Y f)
-  (U (lambda (helper) (f (U helper)))))
+  (define (helper self) (f (self self)))
+  (helper helper))
 
-(define fact4 (Y fact1))
-(fact4 3)
-
+(define fact (Y fact1))
+(fact 3)
 {% endhighlight %}
 
 
