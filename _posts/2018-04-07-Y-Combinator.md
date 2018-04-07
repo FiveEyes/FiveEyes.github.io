@@ -64,13 +64,13 @@ fact = fact1 fact
 ```
 x = f x
 ```
-也就是说fact其实是fact1的不动点,接下来的问题是如何从fact1转换成fact.那么完成这个任务的函数就叫做Y Combintor.
+也就是说fact其实是fact1的不动点,接下来的问题是如何从fact1转换成fact.那么完成这个任务的函数就叫做Y Combinator.
 ```
 fact = Y fact1
 ```
 
-## 实现Y Combintor
-Y Combintor如何实现,从解题的角度来讲,如果我们可以实现了```fact0```,那么```fact = fact0 fact0```. 
+## 实现Y Combinator
+Y Combinator如何实现,从解题的角度来讲,如果我们可以实现了```fact0```,那么```fact = fact0 fact0```. 
 
 我们观察一下fact0的特点.
   * 首先, fact0是一个函数到函数的映射.
@@ -96,7 +96,7 @@ fact = helper helper
 
 最终代码:
 {% highlight lisp %}
-
+#lang lazy
 ; Reminder: Here requires lazy evalution.
 ;(define (U f) (f f))
 ;(define (Y f)
