@@ -122,7 +122,7 @@ fact = helper helper
 
 图灵机$M$和输入$x$. $M(x)$有可能终止,也有可能永远运行. 对于一对<M,x>是否可以终止,是不可判定的(undecidable). 换句话讲不存在图灵机$H$,对输入$<M,x>$,可以判定$M(x)$是否halt.
 
-证明的核心想法很简单
+证明的核心想法很简单,构造一个自相矛盾的函数$f()$
 {% highlight C %} 
 void f() {
   if(f() run forever) return;
@@ -153,6 +153,6 @@ Helper(M) {
 F = Helper(Helper)
 ```
 可以看到$<Helper, Helper>$是不可判定的.
-如果$Helper(Helper)$ halts, 则说明$G(<helper,helper>)$ halts, 然后说明$Helper(helper)$ runs forever, 矛盾.
+如果$Helper(Helper)$ halts, 则说明$G(<Helper,Helper>)$ halts, 然后说明$Helper(Helper)$ runs forever, 矛盾.
 
 这里的证明的重点是用来讲解Y Combinator与停机问题的关系. 我们还可以将G和Helper合并在一起,获得更简洁的证明.
