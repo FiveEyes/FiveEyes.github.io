@@ -10,6 +10,7 @@ categories: Learning
 ## Fractal architrecture
 
 [https://arxiv.org/abs/1605.07648](https://arxiv.org/abs/1605.07648)
+
 $$
 f_1(z) = conv(z) \\
 f_{C+1}(z) = [(f_C \circ f_C)(z)] \oplus [conv(z)]
