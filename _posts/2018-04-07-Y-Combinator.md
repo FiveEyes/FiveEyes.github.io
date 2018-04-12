@@ -120,7 +120,7 @@ fact = helper helper
 
 明白了如何实现Y Combinator,稍微讲一下它和停机问题的关系. 因为哥德尔不完备定理和停机问题是等价的,所以就不区别讲.
 
-图灵机$M$和输入$x$. $M(x)$有可能终止,也有可能永远运行. 对于一对<M,x>是否可以终止,是不可判定的(undecidable). 换句话讲不存在图灵机$H$,对输入$<M,x>$,可以判定$M(x)$是否halt.
+图灵机$M$和输入$x$. $M(x)$有可能终止,也有可能永远运行. 对于一对$(M,x)$是否可以终止,是不可判定的(undecidable). 换句话讲不存在图灵机$H$,对输入$(M,x)$,可以判定$M(x)$是否halt.
 
 证明的核心想法很简单,构造一个自相矛盾的函数$f()$
 {% highlight C %} 
@@ -133,26 +133,28 @@ void f() {
 
 证明的思路是采用反证法,我们假设存在$H$,然后使用$H$构造出这个函数$f()$,产生矛盾.
 
-我们首先定义一个图灵机$G(<M, x>)$,这个函数相当于前文的fact1.
+假设存在图灵机$H$, if $M(x)$ halt, then $H(M,x)$ accepts, else $H(M,x)$ rejects.
+
+我们首先定义一个图灵机$G(M, x)$,这个函数相当于前文的fact1. 这里需要注意的是G的类型是$G : (M,x) \rightarrow ()$, 而非 $M \rightarrow x \rightarrow F$, 这里$(M,x)$代表的是一个图灵机和他的输入,所以他的类型是我们最终想要的$F$.
 ```
-G(<M,x>) {
-  if M(x) halts {
+G(M,x) {
+  if H(M,x) accepts {
     run forever;
   }
 }
 ```
 
-接着定义一个$Helper$,直接拷贝过来
+接着定义一个$Helper$,直接拷贝过来. 他的类型是$Helper : Helper \rightarrow F$, 同理$G(Helper,Helper)$的类型就是$F$.
 ```
 Helper(M) {
-  G(<M,M>)
+  G(M,M)
 }
 ```
 最终得到我们的目标F
 ```
 F = Helper(Helper)
 ```
-可以看到$<Helper, Helper>$是不可判定的.
-如果$Helper(Helper)$ halts, 则说明$G(<Helper,Helper>)$ halts, 然后说明$Helper(Helper)$ runs forever, 矛盾.
+可以看到$(Helper, Helper)$是不可判定的.
+如果$Helper(Helper)$ halts, 则说明$G(Helper,Helper)$ halts, 然后说明$Helper(Helper)$ runs forever, 矛盾.
 
 这里的证明的重点是用来讲解Y Combinator与停机问题的关系. 我们还可以将G和Helper合并在一起,获得更简洁的证明.
