@@ -135,7 +135,7 @@ void f() {
 
 假设存在图灵机$H$, if $M(x)$ halt, then $H(M,x)$ accepts, else $H(M,x)$ rejects.
 
-我们首先定义一个图灵机$G(M, x)$,这个函数相当于前文的fact1. 这里需要注意的是G的类型是$G : (M,x) \rightarrow ()$, 而非 $M \rightarrow x \rightarrow F$, 这里$(M,x)$代表的是一个图灵机和他的输入,所以他的类型是我们最终想要的$F$.
+我们首先定义一个图灵机$G(M, x)$,这个函数相当于前文的fact1. 这里需要注意的是G的类型是$G : (M,x) \rightarrow F$, 而非 $M \rightarrow x \rightarrow F$, 这里$(M,x)$代表的是一个图灵机和他的输入,所以他的类型是我们最终想要的$F$.
 ```
 G(M,x) {
   if H(M,x) accepts {
