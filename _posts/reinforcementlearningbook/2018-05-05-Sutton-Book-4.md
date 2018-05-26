@@ -21,6 +21,8 @@ Example 4.2: Jack's Car Rental
 
 Example 4.3: Gambler's Problem
 
+[code]({{ site.url }}/assets/code/GamblersProblem.ipynb)
+
 ## 4.5 Asynchronous Dynamic Programming
 
 ## 4.6 Generalized Policy Iteration
