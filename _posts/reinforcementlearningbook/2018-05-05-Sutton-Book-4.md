@@ -21,7 +21,9 @@ Example 4.2: Jack's Car Rental
 
 Example 4.3: Gambler's Problem
 
-[code]({{ site.url }}/assets/code/GamblersProblem.ipynb)
+[code](https://github.com/FiveEyes/FiveEyes.github.io/blob/master/assets/code/GamblersProblem.ipynb)
+
+[download]({{ site.url }}/assets/code/GamblersProblem.ipynb)
 
 ## 4.5 Asynchronous Dynamic Programming
 
