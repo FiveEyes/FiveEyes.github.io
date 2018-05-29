@@ -22,7 +22,7 @@ trade-off between immediate and delayed reward
 
 ## 3.5 Policies and Value Functions
 
-policy: \($\pi(a|s)$\) is the probability that $A_t = a$ if $S_t = s$.
+policy: ```$\pi(a|s)$``` is the probability that $A_t = a$ if $S_t = s$.
 
 value function for policy $\pi$: $v_{\pi}(s)$
 
