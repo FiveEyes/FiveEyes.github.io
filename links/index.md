@@ -25,6 +25,7 @@ permalink: /links/
 ## Julia
 
 [**Julia**](https://julialang.org/)
+
 [**Documents**](https://docs.julialang.org/en/stable/)
 
 ## Git
