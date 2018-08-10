@@ -8,6 +8,7 @@ permalink: /links/
   * [**Algorithm**](algo/)
   * [**Machine Learning**](ml/)
   * [**Programming Language**](pl/)
+  * [**Resources**](res/)
 
 ---
 
