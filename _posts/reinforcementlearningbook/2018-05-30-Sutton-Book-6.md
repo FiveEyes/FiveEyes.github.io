@@ -40,6 +40,7 @@ $$
 $$
 Q(S_t, A_t) \leftarrow Q(S_t, A_t) + \alpha [R_{t+1} + \gamma \max_a Q(S_{t+1}, A_{t+1}) - Q(S_t, A_t)]
 $$
+
 **Example 6.6: Cliff Walking**
 
 ## 6.6 Expected Sarsa
