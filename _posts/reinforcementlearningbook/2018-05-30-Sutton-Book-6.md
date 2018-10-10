@@ -37,9 +37,17 @@ $$
 
 **Q-learning (off-policy TD control) for estimating $\pi \approx \pi*$**
 
+$$
+Q(S_t, A_t) \leftarrow Q(S_t, A_t) + \alpha [R_{t+1} + \gamma \max_a Q(S_{t+1}, A_{t+1}) - Q(S_t, A_t)]
+$$
 **Example 6.6: Cliff Walking**
 
 ## 6.6 Expected Sarsa
+
+$$
+Q(S_t, A_t) \leftarrow Q(S_t, A_t) + \alpha [R_{t+1} + \gamma \mathbb{E}[Q(S_{t+1}, A_{t+1}) | S_{t+1}] - Q(S_t, A_t)]
+$$
+
 
 ## 6.7 Maximization Bias and Double Learning
 
