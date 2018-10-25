@@ -81,4 +81,9 @@ decision-time planning: to select an action for the current state
 4. Backup
 
 My implementation of MCTS + ResNet for Gomoku: [GomokuZero](https://github.com/FiveEyes/GomokuZero)
+
 # 8.12 Summary of the Chapter
+
+# 8.13 Summary of Part I: Dimensions
+
+
