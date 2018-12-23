@@ -41,7 +41,7 @@ MCTS算法不同于其他RL算法的一个地方在于,他只专注于当前给�
 
 ## CNN的结构
 
-这里的CNN结构非常简单,第一层3x3的Conv,接下来10+层Residual,最后是双头Conv+Dense,一个用softmax预测policy(落子分布),一个用tanh预测value(当前局面估值).
+这里的CNN结构非常简单,第一层3x3的Conv,接下来10+层Residual,最后是双头Conv+Dense,一个用softmax预测policy(落子分布),一个用tanh预测value(当前局面估值). 没有任何黑科技,用Keras就可以轻松实现.
 
 ## 训练
 
