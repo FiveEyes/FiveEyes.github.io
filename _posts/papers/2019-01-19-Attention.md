@@ -8,21 +8,26 @@ categories: Learning
 # Attention Models
 
 ## Papers
+
 Neural Machine Translation [https://arxiv.org/abs/1409.0473](https://arxiv.org/abs/1409.0473)
+
 Effective Approaches to Attention-based Neural Machine Translation [https://arxiv.org/abs/1508.04025](https://arxiv.org/abs/1508.04025)
+
 Convolutional Sequence to Sequence Learning [https://arxiv.org/abs/1705.03122](https://arxiv.org/abs/1705.03122)
+
 Attention Is All You Need [https://arxiv.org/abs/1706.03762](https://arxiv.org/abs/1706.03762)
 
 ## Neural Machine Translation
+
 总结下要点...首先,研究的问题是Seq2Seq. $X = \{ x_1, \dots, x_n \}, Y = \{ y_1, \dots, y_m \}$. 
-1. Attention机制在生成每个$y_i$的时候,对于每个$y_i$都会有自己独自的一个上下文向量(context vector) $c_i$, $p(y_i | X) = g(y_{i-1}, s_i, c_i)$. 
-2. $c_i$是通过计算attention,然后直接将RNN中间状态按attention的比例累加得到的, $c_i = \sum_j \alpha_{ij} h_j$. 
-3. $\alpha_{ij} = \frac{\exp(e_{ij})}{\sum_k \exp(e_{ik})}, e_{ij} = score(s_{i-1}, h_j)$. 最后的$score$是一个神经网络.
+  1. Attention机制在生成每个$y_i$的时候,对于每个$y_i$都会有自己独自的一个上下文向量(context vector) $c_i$, ```$p(y_i | X) = g(y_{i-1}, s_i, c_i)$```. 
+  2. $c_i$是通过计算attention,然后直接将RNN中间状态按attention的比例累加得到的, $c_i = \sum_j \alpha_{ij} h_j$. 
+  3. $\alpha_{ij} = \frac{\exp(e_{ij})}{\sum_k \exp(e_{ik})}, e_{ij} = score(s_{i-1}, h_j)$. 最后的$score$是一个神经网络.
 
 ## Effective Approaches to Attention-based Neural Machine Translation
 这篇就是对上篇的小改进,讲了两个,global attention和local attention.
 global attention就是模型上的魔改...
-1. $p(y_t | X) = softmax(W_s \hat{h}_t)$, 这里$y_t$是来自一个被attention修正过的hidden state.
+1. ```$p(y_t | X) = softmax(W_s \hat{h}_t)$```, 这里$y_t$是来自一个被attention修正过的hidden state.
 2. $\hat{h}_t = tanh(W_c[c_t;h_t])$, 这里的$h_t$是来自RNN的原始hidden state, $c_t$是上文context vector,但是求法不同.
 3. $\alpha_{ij} = \frac{\exp(e_{ij})}{\sum_k \exp(e_{ik})}, e_{ij} = score(h_i, h_j)$, 这里是$h_i$,不再是$h_{i-1}$.
 4. score函数,作者实验了三种:
