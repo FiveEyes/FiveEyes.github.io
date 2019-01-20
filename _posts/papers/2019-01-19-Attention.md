@@ -19,7 +19,7 @@ Attention Is All You Need [https://arxiv.org/abs/1706.03762](https://arxiv.org/a
 
 ## Neural Machine Translation
 
-总结下要点...首先,研究的问题是Seq2Seq. $X = \{ x_1, \dots, x_n \}, Y = \{ y_1, \dots, y_m \}$. 
+总结下要点...首先,研究的问题是Seq2Seq. ```$X = \{ x_1, \dots, x_n \}, Y = \{ y_1, \dots, y_m \}$```. 
   1. Attention机制在生成每个$y_i$的时候,对于每个$y_i$都会有自己独自的一个上下文向量(context vector) $c_i$, ```$p(y_i | X) = g(y_{i-1}, s_i, c_i)$```. 
   2. $c_i$是通过计算attention,然后直接将RNN中间状态按attention的比例累加得到的, $c_i = \sum_j \alpha_{ij} h_j$. 
   3. $\alpha_{ij} = \frac{\exp(e_{ij})}{\sum_k \exp(e_{ik})}, e_{ij} = score(s_{i-1}, h_j)$. 最后的$score$是一个神经网络.
