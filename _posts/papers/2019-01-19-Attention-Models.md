@@ -25,11 +25,13 @@ Attention Is All You Need [https://arxiv.org/abs/1706.03762](https://arxiv.org/a
   3. $\alpha_{ij} = \frac{\exp(e_{ij})}{\sum_k \exp(e_{ik})}, e_{ij} = score(s_{i-1}, h_j)$. 最后的$score$是一个神经网络.
 
 ## Effective Approaches to Attention-based Neural Machine Translation
-这篇就是对上篇的小改进,讲了两个,global attention和local attention.
+
+这篇就是对上篇的小改进, 讲了两个, global attention和local attention. 第一个区别是不再区分两种不同的hidden state, s和h, 因为他把X和Y整合成一个字符串$X<eos>Y$. 走X的时候没有输出, 遇到$<eos>$开始输出预测的$y_1, \dots, y_m$.
+
 global attention就是模型上的魔改...
 1. ```$p(y_t | X) = softmax(W_s \hat{h}_t)$```, 这里$y_t$是来自一个被attention修正过的hidden state.
 2. $\hat{h}_t = tanh(W_c[c_t;h_t])$, 这里的$h_t$是来自RNN的原始hidden state, $c_t$是上文context vector,但是求法不同.
-3. $\alpha_{ij} = \frac{\exp(e_{ij})}{\sum_k \exp(e_{ik})}, e_{ij} = score(h_i, h_j)$, 这里是$h_i$,不再是$h_{i-1}$.
+3. $\alpha_{ij} = \frac{\exp(e_{ij})}{\sum_k \exp(e_{ik})}, e_{ij} = score(h_i, h_j)$.
 4. score函数,作者实验了三种:
   * $h_t^T h_s$
   * $h_t^T W_a h_s$
