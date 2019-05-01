@@ -15,24 +15,22 @@ categories: Math
 
 **Definition 1.1.2** An event is any collection of possible outcomes of an experiment, that is, any subset of S(including S itself).
 
-**Definition 1.1.5** Two events $$A$$ and $$B$$ are disjoint if $$A \cap B = \emptyset$$. The events $$A_1, A_2, \dots$$ are pairwise disjoint if $$A_i \cap B_j = \emptyset$$ for all $$i \neq j$$.
+**Definition 1.1.5** Two events $A$ and $B$ are disjoint if $A \cap B = \emptyset$. The events $A_1, A_2, \dots$ are pairwise disjoint if $A_i \cap B_j = \emptyset$ for all $i \neq j$.
 
-**Definition 1.1.6** If $$A_1, A_2, \dots$$ are pairwise disjoint and $$\cup_{i=1}^
-{\infty}A_i = S$$, then the collection $$A_1, A_2, \dots$$ forms a partition of $$S$$.
+**Definition 1.1.6** If $A_1, A_2, \dots$ are pairwise disjoint and $\cup_{i=1}^
+{\infty}A_i = S$, then the collection $A_1, A_2, \dots$ forms a partition of $S$.
 
 ## 1.2 Basics of Probability Theory
 
-**Definition 1.2.1** A collection of subset of $$S$$ is called a sigma algebra (or Borel field), denoted by B, if it satisfies the following three properties:
+**Definition 1.2.1** A collection of subset of $S$ is called a sigma algebra (or Borel field), denoted by B, if it satisfies the following three properties:
+  * $\emptyset \in B$.
+  * If $A \in B$, then $A^c \in B$.
+  * If $A_1, A_2, \dots \in B$, then $\cup_{i=1}^{\infty}A_i \in B$.
 
-  * $$\emptyset \in B$$.
-  * If $$A \in B$$, then $$A^c \in B$$.
-  * If $$A_1, A_2, \dots \in B$$, then $$\cup_{i=1}^{\infty}A_i \in B$$.
-
-**Definition 1.2.4** Given a sample space $$S$$ and an associated sigma algebra $$B$$, a probability function $$P$$ with domain $$B$$ that satisfies
-
-  * $$P(A) \ge 0$$ for all $$A \in B$$.
-  * $$P(S) = 1$$.
-  * If $$A_1, A_2, \dots \in B$$ are pairwise disjoint, then $$P(\cup_{i=1}^{\infty}A_i)= \sum_{i=1}^{\infty}P(A_i)$$.
+**Definition 1.2.4** Given a sample space $S$ and an associated sigma algebra $B$, a probability function $P$ with domain $B$ that satisfies
+  * $P(A) \ge 0$ for all $A \in B$.
+  * $P(S) = 1$.
+  * If $A_1, A_2, \dots \in B$ are pairwise disjoint, then $P(\cup_{i=1}^{\infty}A_i)= \sum_{i=1}^{\infty}P(A_i)$.
 
 ## 1.3 Conditional Probability and Independence
 
@@ -48,7 +46,7 @@ categories: Math
 
 ## 2.1 Distribution of Functions of a Random Variable
 
-**Theorem 2.1.4** Let $$X$$ have pdf $$f_X(x)$$ and let $$Y = g(X)$$, where $$g$$ is a monotone function. Let $$X$$ and $$Y$$ be defined by (2.1.7). Suppose that $$f_X(x)$$ is continuous on $$X$$ and that $$g^{-1}(y)$$ has a continuous derivative on $$Y$$. Then the pdf of $$Y$$ is given by
+**Theorem 2.1.4** Let $X$ have pdf $f_X(x)$ and let $Y = g(X)$, where $g$ is a monotone function. Let $X$ and $Y$ be defined by (2.1.7). Suppose that $f_X(x)$ is continuous on $X$ and that $g^{-1}(y)$ has a continuous derivative on $Y$. Then the pdf of $Y$ is given by
 
 $$
 f_Y(y) = f_X(g^{-1}(y))|\frac{d}{dy}g^{-1}(y)| \quad y \in Y
@@ -59,7 +57,7 @@ $$
 
 ## 2.3 Moments and Moment Generating Functions
 
-**Definition 2.3.6** Let $$X$$ be a random variable with cdf $$F_X$$. The moment generating function (mgf) of $$X$$ (or $$F_X$$), denoted by $$M_X(t)$$, is 
+**Definition 2.3.6** Let $X$ be a random variable with cdf $F_X$. The moment generating function (mgf) of $X$ (or $F_X$), denoted by $M_X(t)$, is
 
 $$
 M_X(t) = \mathrm{E}e^{tX}.
@@ -67,13 +65,13 @@ $$
 
 ## 2.4 Differentiating Under an Integral Sign
 
-**Theorem 2.4.1 (Leibnitz's Rule)** If $$f(x,\theta), a(\theta), b(\theta)$$ are differentiable with respect to $$\theta$$, then
+**Theorem 2.4.1 (Leibnitz's Rule)** If $f(x,\theta), a(\theta), b(\theta)$ are differentiable with respect to $\theta$, then
 $$
 \frac{d}{d\theta}\int_{a(\theta)}^{b(\theta)}f(x,\theta)dx=f(b(\theta),\theta)\frac{d}{d\theta}b(\theta)
  - f(a(\theta),\theta)\frac{d}{d\theta}a(\theta)+\int_{a(\theta)}^{b(\theta)}\frac{d}{d\theta}f(x,\theta)dx
 $$
 
-Notice that if $$a(\theta)$$ and $$b(\theta)$$ are constant, we have a special case of Leibnitz's Rule:
+Notice that if $a(\theta)$ and $b(\theta)$ are constant, we have a special case of Leibnitz's Rule:
 
 $$
 \frac{d}{d\theta}\int_{a}^{b}f(x,\theta)dx=\int_{a}^{b}\frac{d}{d\theta}f(x,\theta)dx
@@ -165,8 +163,9 @@ $$
 
 **Gamma Distribution**
 
-$$\Gamma(\alpha) = \int_0^{\infty} t^{\alpha-1}e^{-t}dt$$.
-
+$$
+\Gamma(\alpha) = \int_0^{\infty} t^{\alpha-1}e^{-t}dt.
+$$
 $$
 \begin{eqnarray}
 f(x|\alpha, \beta) &=& \frac{1}{\Gamma(\alpha)\beta^\alpha}x^{\alpha-1}e^{-x/\beta}, \quad 0 < x < \infty,\alpha > 0, \beta > 0\\
@@ -188,9 +187,13 @@ $$
 
 **Beta Distribution**
 
-$$B(\alpha, \beta) = \int_0^1 x^{\alpha-1}(1-x)^{\beta-1}dx$$.
+$$
+B(\alpha, \beta) = \int_0^1 x^{\alpha-1}(1-x)^{\beta-1}dx
+$$
 
-$$B(\alpha, \beta)= \frac{\Gamma(\alpha)\Gamma(\beta)}{\Gamma(a+b)}$$.
+$$
+B(\alpha, \beta)= \frac{\Gamma(\alpha)\Gamma(\beta)}{\Gamma(a+b)}
+$$
 
 $$
 \begin{eqnarray}
@@ -253,7 +256,7 @@ $$
 
 ### 3.6.1 Probability Inequalities
 
-**Theorem 3.6.1 (Chebychev's Inequalilty)** Let $$X$$ be a random variable and let $$g(x)$$ be a nonnegative function. Then, for any $$r > 0$$,
+**Theorem 3.6.1 (Chebychev's Inequalilty)** Let $X$ be a random variable and let $g(x)$ be a nonnegative function. Then, for any $r > 0$,
 
 $$
 P(g(X) \ge r) \le \frac{\mathrm{E}g(X)}{r}
@@ -292,31 +295,33 @@ $$
 
 ## 4.5 Covariance and Correlation
 
-$$\mathrm{E}X = \mu_X, \mathrm{E}Y = \mu_Y, \mathrm{Var}X = \sigma^2_X, \mathrm{Var}Y = \sigma^2_Y$$.
-
-covariance: $$\mathrm{Cov}(X,Y) = \mathrm{E}((X - \mu_X)(Y - \mu_Y))$$
-
-correlation: $$\rho_{XY} = \mathrm{Cov}(X,Y)/(\sigma_X \sigma_Y)$$
-
-**Theorem 4.5.3** For any random variables $$X$$ and $$Y$$,
-
 $$
-  \mathrm{Cov}(X,Y) = \mathrm{E}XY - \mu_X \mu_Y.
+\mathrm{E}X = \mu_X, \mathrm{E}Y = \mu_Y, \mathrm{Var}X = \sigma^2_X, \mathrm{Var}Y = \sigma^2_Y.
 $$
 
-**Theorem 4.5.5** If $$X$$ and $$Y$$ are independent random variables, then $$\mathrm{Cov}(X,Y) = 0$$ and $$\rho_{XY} = 0$$.
+covariance: $\mathrm{Cov}(X,Y) = \mathrm{E}((X - \mu_X)(Y - \mu_Y))$
 
+correlation: $\rho_{XY} = \mathrm{Cov}(X,Y)/(\sigma_X \sigma_Y)$
 
-**Theorem 4.5.6** If $$X$$ and $$Y$$ are any two random variables and $$a$$ and $$b$$ are any two constants, then
+**Theorem 4.5.3** For any random variables $X$ and $Y$,
 
 $$
-  \mathrm{Var}(aX+bY)=a^2\mathrm{Var}X+b^2\mathrm{Var}Y+2ab\mathrm{Cov}(X,Y)
-$$.
+\mathrm{Cov}(X,Y) = \mathrm{E}XY - \mu_X \mu_Y.
+$$
 
-**Theorem 4.5.7** For any random variables $$X$$ and $$Y$$,
+**Theorem 4.5.5** If $X$ and $Y$ are independent random variables, then $\mathrm{Cov}(X,Y) = 0$ and $\rho_{XY} = 0$.
 
-  * $$-1 \le \rho_{XY} \le 1$$.
-  * $$\rho_{XY}^2 = 1$$ if and only if there exist numbers $$a \neq 0$$ and $$b$$ such that $$P(Y = aX + b) = 1$$. If $$\rho_{XY}=1$$, then $$a > 0$$, and if $$\rho_{XY} = -1$$, then $$a < 0$$.
+
+**Theorem 4.5.6** If $X$ and $Y$ are any two random variables and $a$ and $b$ are any two constants, then
+
+$$
+\mathrm{Var}(aX+bY)=a^2\mathrm{Var}X+b^2\mathrm{Var}Y+2ab\mathrm{Cov}(X,Y).
+$$
+
+**Theorem 4.5.7** For any random variables $X$ and $Y$,
+
+  * $-1 \le \rho_{XY} \le 1$.
+  * $\rho_{XY}^2 = 1$ if and only if there exist numbers $a \neq 0$ and $b$ such that $P(Y = aX + b) = 1$. If $\rho_{XY}=1$, then $a > 0$, and if $\rho_{XY} = -1$, then $a < 0$.
 
 
 ## 4.6 Multivariate Distributions
@@ -331,27 +336,27 @@ $$.
 **Lemma 4.7.1** Let a and b be any positive numbers, and let p and q be any positive numbers (necessarily greater than 1) satisfying
 
 $$
-  1/p + 1/q = 1.
+1/p + 1/q = 1.
 $$
 
 Then,
 
 $$
-  (1/p)a^p + (1/q)b^q \ge ab
+(1/p)a^p + (1/q)b^q \ge ab
 $$
 
-with equality if and only $$a^p = b^q$$.
+with equality if and only $a^p = b^q$.
 
 **Theorem 4.7.2 (Holder's Inequality)** Let X and Y be any two random variables, and let p and q satisfy. Then
 
 $$
-  |\mathrm{E}XY| \le \mathrm{E}|XY| \le (\mathrm{E}|X|^p)^{1/p} (\mathrm{E}|Y|^q)^{1/q}.
+|\mathrm{E}XY| \le \mathrm{E}|XY| \le (\mathrm{E}|X|^p)^{1/p} (\mathrm{E}|Y|^q)^{1/q}.
 $$
 
-**Theorem 4.7.5 (Minkowski's Inequality)** Let X and Y be any two random variables. Then for $$1 \le p < \infty$$, 
+**Theorem 4.7.5 (Minkowski's Inequality)** Let X and Y be any two random variables. Then for $1 \le p < \infty$,
 
 $$
-  [E|X+Y|^p]^{1/p} \le [E|X|^p]^{1/p} + [E|Y|^p]^{1/p}.
+[E|X+Y|^p]^{1/p} \le [E|X|^p]^{1/p} + [E|Y|^p]^{1/p}.
 $$
 
 ### 4.7.2 Functional Inequalities
@@ -359,19 +364,19 @@ $$
 **Theorem 4.7.7 (Jensen's Inequality)** For any random variable X, if g(x) is a convex function, then
 
 $$
-  \mathrm{E}g(X) \ge g(\mathrm{E}X).
+\mathrm{E}g(X) \ge g(\mathrm{E}X).
 $$
 
-**Theorem 4.7.9 (Covariance Inequality)** Let $$X$$ be any random variable and $$g(x)$$ and $$h(x)$$ any functions such that $$\mathrm{E}g(X)$$, $$\mathrm{E}h(X)$$, and $$\mathrm{E}(g(X)h(X))$$ exist.
+**Theorem 4.7.9 (Covariance Inequality)** Let $X$ be any random variable and $g(x)$ and $h(x)$ any functions such that $\mathrm{E}g(X)$, $\mathrm{E}h(X)$, and $\mathrm{E}(g(X)h(X))$ exist.
 
-  * If $$g(x)$$ is a nondecreasing function and $$h(x)$$ is a nonincreasing function, then
-    
+  * If $g(x)$ is a nondecreasing function and $h(x)$ is a nonincreasing function, then
+   
     $$
     \mathrm{E}(g(X)h(X)) \le (\mathrm{E}g(X))(\mathrm{E}h(X)).
     $$
-    
-  * If $$g(x)$$ and $$h(x)$$ are either both nondecreasing or both nonincreasing, then
-    
+   
+  * If $g(x)$ and $h(x)$ are either both nondecreasing or both nonincreasing, then
+   
     $$
     \mathrm{E}(g(X)h(X)) \ge (\mathrm{E}g(X))(\mathrm{E}h(X)).
     $$
@@ -383,6 +388,7 @@ $$
 ### 4.9.2 More on the Arithmetic-Geometric-Harmonic Mean Inequalilty
 
 ### 4.9.3 The Borel Paradox
+
 
 
 
