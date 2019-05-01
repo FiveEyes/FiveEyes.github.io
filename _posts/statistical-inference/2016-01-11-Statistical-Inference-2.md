@@ -278,9 +278,9 @@ $$
 
 ### 7.3.2 Best Unbiased Estimators
 
-**Definition 7.3.7** An estimator $W^*$ is a best unbiased estimator of $\tau(\theta)$ if it satisfies $E_\theta W^* = \tau(\theta)$ for all $\theta$ and, for any other estimator $W$ with $E_\theta W = \tau(\theta)$, we have $\mathrm{Var}_\theta W^* \le \mathrm{Var}_\theta W$ for all $\theta$. $W^*$ is also called a uniform minimum variance unbiased estimator (UMVUE) of $\tau(\theta)$.
+**Definition 7.3.7** An estimator ```$W^*$``` is a best unbiased estimator of $\tau(\theta)$ if it satisfies ```$E_\theta W^* = \tau(\theta)$``` for all $\theta$ and, for any other estimator $W$ with $E_\theta W = \tau(\theta)$, we have ```$\mathrm{Var}_\theta W^* \le \mathrm{Var}_\theta W$``` for all $\theta$. ```$W^*$``` is also called a uniform minimum variance unbiased estimator (UMVUE) of $\tau(\theta)$.
 
-**Theorem 7.3.9 (Cramer-Rao Inequality)**: Let $X_1, \dots, X_n$ be a sample with pdf ```\(f(x | \theta)\)```, and let $W(X) = W(X_1, \dots, X_n)$ be any estimator satisfying
+**Theorem 7.3.9 (Cramer-Rao Inequality)**: Let $X_1, \dots, X_n$ be a sample with pdf ```$f(x | \theta)$```, and let $W(X) = W(X_1, \dots, X_n)$ be any estimator satisfying
 
 $$
 \frac{d}{d\theta} E_{\theta}W(X) = \int_{\chi} \frac{\partial}{\partial \theta} [W(x) f(x|\theta)] dx
@@ -320,7 +320,7 @@ $$
 
 ### 7.3.3 Sufficiency and Unbiasedness
 
-**Theorem 7.3.17 (Rao-Blackwell)** Let W be any unbiased estimator of $\tau(\theta)$, and let T be a sufficient statistic for $\theta$. Define ```\(\phi(T) = \mathrm{E}(W|T)\)```. Then $\mathrm{E}_\theta \phi(T) = \tau(\theta)$ and $\mathrm{Var}_\theta \phi(T) \le \mathrm{Var}_\theta W$ for all $\theta$; that is, $\phi(T)$ is a uniformly better estimator of $\tau(\theta)$.
+**Theorem 7.3.17 (Rao-Blackwell)** Let W be any unbiased estimator of $\tau(\theta)$, and let T be a sufficient statistic for $\theta$. Define ```\(\phi(T) = \mathrm{E}(W|T)\)```. Then ```$\mathrm{E}_\theta \phi(T) = \tau(\theta)$``` and ```$\mathrm{Var}_\theta \phi(T) \le \mathrm{Var}_\theta W$``` for all $\theta$; that is, $\phi(T)$ is a uniformly better estimator of $\tau(\theta)$.
 
 **Theorem 7.3.19** If W is a best unbiased estimator of $\tau(\theta)$, then W is unique.
 
