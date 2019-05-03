@@ -12,7 +12,9 @@ Doing practise to explain the ideas behind the solutions. Only problems I feel i
 
 # Leetcode
 
-[My favorite problem list](https://leetcode.com/list/xecf1gge)
+## Interesting problem list
+
+[My interesting problem list](https://leetcode.com/list/xecf1gge)
 
 [My solutions](https://github.com/FiveEyes/ProblemSet/tree/master/LeetCode)
 
@@ -67,4 +69,15 @@ Solution: DP.
 dp[i][j] is the minimum cost to merge i to j.
   * dp[i][j] =  min(dp[i][k] + dp[k+1][j])
   * if (j - i + 1) % (K - 1) == 1 or K == 2: dp[i][j] += sum(stones[i:j+1])
+  
+## Recommend problems
+
+Good problems to practise.
+
+[Recommend problem list](https://leetcode.com/list/xoqd52n1)
+
+
+**410. Split Array Largest Sum**
+
+DP soltion is O(n^2). Binary search can reach O(nlogn).
 
