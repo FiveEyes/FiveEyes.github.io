@@ -11,7 +11,10 @@ permalink: /contents/
 Implementation of MCTS+ResNet in AlphaGo Zero for Gomoku. Keras/Pytorch.
 
 [Github](https://github.com/FiveEyes/GomokuZero)
-[Python branch](https://github.com/FiveEyes/GomokuZero/tree/pytorch)
+
+[Pytorch branch](https://github.com/FiveEyes/GomokuZero/tree/pytorch)
+
+
 
 ### AFSM
 
@@ -19,11 +22,14 @@ Arrowized functional state machines. DSL in Haskell.
 
 [Github](https://github.com/PseudoPower/AFSM)
 
+
+
 ### Golisp
 
 A tiny Lisp interpreter in Go. Unfinished. The interpreter is simple and slow. I feel that VM may be the right way to implement a tiny programming language.
 
 [Github](https://github.com/FiveEyes/golisp)
+
 
 
 ## Notes
