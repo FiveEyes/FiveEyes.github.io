@@ -4,11 +4,29 @@ title: Contents
 permalink: /contents/
 ---
 
-# Notes
+## Projects
 
-## Almost Finished
+### GomokuZero
 
-## Unfinished
+Implementation of MCTS+ResNet in AlphaGo Zero for Gomoku. Keras/Pytorch.
+
+[Github](https://github.com/FiveEyes/GomokuZero)
+[Python branch](https://github.com/FiveEyes/GomokuZero/tree/pytorch)
+
+### AFSM
+
+Arrowized functional state machines. DSL in Haskell.
+
+[Github](https://github.com/PseudoPower/AFSM)
+
+### Golisp
+
+A tiny Lisp interpreter in Go. Unfinished. The interpreter is simple and slow. I feel that VM may be the right way to implement a tiny programming language.
+
+[Github](https://github.com/FiveEyes/golisp)
+
+
+## Notes
 
 ### 数学丛书
   * [数学分析原理]({% post_url 2015-01-07-Principles-Mathematical-Analysis %})
@@ -17,6 +35,7 @@ permalink: /contents/
 ### Statistical Inference
   * [Statistical Inference 1~4]({% post_url 2015-12-07-Statistical-Inference-1 %})
   * [Statistical Inference 5~8]({% post_url 2016-01-11-Statistical-Inference-2 %})
+  * [Statistical Inference 9~12]({% post_url 2019-05-03-Statistical-Inference-3 %})
 
 ### 信息论基础
   * [信息论基础 1~8]({% post_url 2015-09-12-Element-of-Information-Theory-1 %})
@@ -50,11 +69,3 @@ permalink: /contents/
 [**圣彼得堡悖论 II**]({% post_url 2018-03-12-St-Petersburg-paradox-2 %})
 
 [**变分推断**]({% post_url 2017-08-25-Variational-Inference %})
-
-
-
-# Lists
-
-[**Problem Set**]({% post_url 2013-10-01-Problem-Set %})
-
-[**Reading List**]({% post_url 2013-09-29-Reading-List %})
