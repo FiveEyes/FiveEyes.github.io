@@ -2,7 +2,7 @@
 layout: post
 title: "Interesting interview algorithm problems"
 date: 2019-05-03 15:00:00
-categories: interview
+categories: Interview
 ---
 
 # Interview algorithm problems
