@@ -12,7 +12,7 @@ Doing practise to explain the ideas behind the solutions. Only problems I feel i
 
 # Leetcode
 
-## Interesting problem list
+## Interesting problems
 
 [My interesting problem list](https://leetcode.com/list/xecf1gge)
 
@@ -72,9 +72,9 @@ dp[i][j] is the minimum cost to merge i to j.
   
 ## Recommend problems
 
-Good problems to practise.
+Good problems to practise. Classic problems, problems with multiple solutions, and so on.
 
-[Recommend problem list](https://leetcode.com/list/xoqd52n1)
+[My recommend problem list](https://leetcode.com/list/xoqd52n1)
 
 
 **410. Split Array Largest Sum**
