@@ -48,24 +48,6 @@ A tiny Lisp interpreter in Go. Unfinished. The interpreter is simple and slow. I
   * [信息论基础 9~16]({% post_url 2016-01-08-Element-of-Information-Theory-2 %})
 
 ### Deep Learning Book
-  * [Chapter 5]({% post_url 2017-03-15-Deep-Learning-Book-5 %})
-  * [Chapter 6]({% post_url 2017-03-16-Deep-Learning-Book-6 %})
-  * [Chapter 7]({% post_url 2017-06-17-Deep-Learning-Book-7 %})
-  * [Chapter 8]({% post_url 2017-07-04-Deep-Learning-Book-8 %})
-  * [Chapter 9]({% post_url 2017-08-09-Deep-Learning-Book-9 %})
-  * [Chapter 10]({% post_url 2017-09-16-Deep-Learning-Book-10 %})
-  * [Chapter 11]({% post_url 2017-10-19-Deep-Learning-Book-11 %})
-  * [Chapter 12]({% post_url 2017-11-02-Deep-Learning-Book-12 %})
-  * [Chapter 13]({% post_url 2017-11-03-Deep-Learning-Book-13 %})
-  * [Chapter 14]({% post_url 2017-11-06-Deep-Learning-Book-14 %})
-  * [Chapter 15]({% post_url 2017-11-09-Deep-Learning-Book-15 %})
-  * [Chapter 16]({% post_url 2017-11-19-Deep-Learning-Book-16 %})
-  * [Chapter 17]({% post_url 2017-12-02-Deep-Learning-Book-17 %})
-  * [Chapter 18]({% post_url 2017-12-10-Deep-Learning-Book-18 %})
-  * [Chapter 19]({% post_url 2017-12-27-Deep-Learning-Book-19 %}) 
-  * [Chapter 20]({% post_url 2018-01-11-Deep-Learning-Book-20 %})
-
-### Deep Learning Book
 
 | [Chapter 5]({% post_url 2017-03-15-Deep-Learning-Book-5 %}) | [Chapter 6]({% post_url 2017-03-16-Deep-Learning-Book-6 %}) | [Chapter 7]({% post_url 2017-06-17-Deep-Learning-Book-7 %}) |
 | [Chapter 8]({% post_url 2017-07-04-Deep-Learning-Book-8 %}) | [Chapter 9]({% post_url 2017-08-09-Deep-Learning-Book-9 %}) |[Chapter 10]({% post_url 2017-09-16-Deep-Learning-Book-10 %}) |
@@ -74,21 +56,13 @@ A tiny Lisp interpreter in Go. Unfinished. The interpreter is simple and slow. I
 | [Chapter 17]({% post_url 2017-12-02-Deep-Learning-Book-17 %}) | [Chapter 18]({% post_url 2017-12-10-Deep-Learning-Book-18 %}) | [Chapter 19]({% post_url 2017-12-27-Deep-Learning-Book-19 %}) |
 | [Chapter 20]({% post_url 2018-01-11-Deep-Learning-Book-20 %}) | | |
 
-  
 ## Reinforcement Learning
-  * [Chapter 1]({% post_url 2018-03-10-Sutton-Book-1 %})
-  * [Chapter 2]({% post_url 2018-03-12-Sutton-Book-2 %})
-  * [Chapter 3]({% post_url 2018-03-14-Sutton-Book-3 %})
-  * [Chapter 4]({% post_url 2018-05-05-Sutton-Book-4 %})
-  * [Chapter 5]({% post_url 2018-05-25-Sutton-Book-5 %})
-  * [Chapter 6]({% post_url 2018-05-30-Sutton-Book-6 %})
-  * [Chapter 7]({% post_url 2018-06-05-Sutton-Book-7 %})
-  * [Chapter 8]({% post_url 2018-06-20-Sutton-Book-8 %})
-  * [Chapter 9]({% post_url 2018-10-25-Sutton-Book-9 %})
-  * [Chapter 10]({% post_url 2019-01-31-Sutton-Book-10 %})
-  * [Chapter 11]({% post_url 2019-03-22-Sutton-Book-11 %})
-  * [Chapter 12]({% post_url 2019-05-05-Sutton-Book-12 %})
-  * [Models]({% post_url 2019-05-08-Sutton-Book-models %})
+
+| [Chapter 1]({% post_url 2018-03-10-Sutton-Book-1 %}) | [Chapter 2]({% post_url 2018-03-12-Sutton-Book-2 %}) | [Chapter 3]({% post_url 2018-03-14-Sutton-Book-3 %}) |
+| [Chapter 4]({% post_url 2018-05-05-Sutton-Book-4 %}) | [Chapter 5]({% post_url 2018-05-25-Sutton-Book-5 %}) | [Chapter 6]({% post_url 2018-05-30-Sutton-Book-6 %}) |
+| [Chapter 7]({% post_url 2018-06-05-Sutton-Book-7 %}) | [Chapter 8]({% post_url 2018-06-20-Sutton-Book-8 %}) | [Chapter 9]({% post_url 2018-10-25-Sutton-Book-9 %}) |
+| [Chapter 10]({% post_url 2019-01-31-Sutton-Book-10 %}) | [Chapter 11]({% post_url 2019-03-22-Sutton-Book-11 %}) | [Chapter 12]({% post_url 2019-05-05-Sutton-Book-12 %}) | 
+| [Models]({% post_url 2019-05-08-Sutton-Book-models %}) | | |
 
 
 # Articles
