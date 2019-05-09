@@ -48,6 +48,7 @@ A tiny Lisp interpreter in Go. Unfinished. The interpreter is simple and slow. I
   * [信息论基础 9~16]({% post_url 2016-01-08-Element-of-Information-Theory-2 %})
 
 ## Deep Learning Book
+
 | Notes | | |
 | --- | --- | --- |
 | [Chapter 5]({% post_url 2017-03-15-Deep-Learning-Book-5 %}) | [Chapter 6]({% post_url 2017-03-16-Deep-Learning-Book-6 %}) | [Chapter 7]({% post_url 2017-06-17-Deep-Learning-Book-7 %}) |
@@ -58,6 +59,7 @@ A tiny Lisp interpreter in Go. Unfinished. The interpreter is simple and slow. I
 | [Chapter 20]({% post_url 2018-01-11-Deep-Learning-Book-20 %}) | | |
 
 ## Reinforcement Learning
+
 | Notes | | |
 | --- | --- | --- |
 | [Chapter 1]({% post_url 2018-03-10-Sutton-Book-1 %}) | [Chapter 2]({% post_url 2018-03-12-Sutton-Book-2 %}) | [Chapter 3]({% post_url 2018-03-14-Sutton-Book-3 %}) |
