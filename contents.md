@@ -4,9 +4,9 @@ title: Contents
 permalink: /contents/
 ---
 
-## Projects
+# Projects
 
-### GomokuZero
+## GomokuZero
 
 Implementation of MCTS+ResNet in AlphaGo Zero for Gomoku. Keras/Pytorch.
 
@@ -16,7 +16,7 @@ Implementation of MCTS+ResNet in AlphaGo Zero for Gomoku. Keras/Pytorch.
 
 
 
-### AFSM
+## AFSM
 
 Arrowized functional state machines. DSL in Haskell.
 
@@ -24,7 +24,7 @@ Arrowized functional state machines. DSL in Haskell.
 
 
 
-### Golisp
+## Golisp
 
 A tiny Lisp interpreter in Go. Unfinished. The interpreter is simple and slow. I feel that VM may be the right way to implement a tiny programming language.
 
@@ -32,22 +32,22 @@ A tiny Lisp interpreter in Go. Unfinished. The interpreter is simple and slow. I
 
 
 
-## Notes
+# Notes
 
-### 数学丛书
+## 数学丛书
   * [数学分析原理]({% post_url 2015-01-07-Principles-Mathematical-Analysis %})
   * [复分析基础及工程应用]({% post_url 2016-01-04-Fundamentals-of-Complex-Analysis %})
 
-### Statistical Inference
+## Statistical Inference
   * [Statistical Inference 1~4]({% post_url 2015-12-07-Statistical-Inference-1 %})
   * [Statistical Inference 5~8]({% post_url 2016-01-11-Statistical-Inference-2 %})
   * [Statistical Inference 9~12]({% post_url 2019-05-03-Statistical-Inference-3 %})
 
-### 信息论基础
+## 信息论基础
   * [信息论基础 1~8]({% post_url 2015-09-12-Element-of-Information-Theory-1 %})
   * [信息论基础 9~16]({% post_url 2016-01-08-Element-of-Information-Theory-2 %})
 
-### Deep Learning Book
+## Deep Learning Book
 
 | [Chapter 5]({% post_url 2017-03-15-Deep-Learning-Book-5 %}) | [Chapter 6]({% post_url 2017-03-16-Deep-Learning-Book-6 %}) | [Chapter 7]({% post_url 2017-06-17-Deep-Learning-Book-7 %}) |
 | [Chapter 8]({% post_url 2017-07-04-Deep-Learning-Book-8 %}) | [Chapter 9]({% post_url 2017-08-09-Deep-Learning-Book-9 %}) |[Chapter 10]({% post_url 2017-09-16-Deep-Learning-Book-10 %}) |
