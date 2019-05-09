@@ -54,3 +54,50 @@ or
 $$
 Q_2 (S_t, A_t) \leftarrow Q_2 (S_t, A_t) + \alpha [ R_{t+1} + \gamma Q_1(S_{t+1}, \arg \max_a Q_2(S_{t+1}, a))- Q_2(S_t, A_t)]
 $$
+
+
+# Chapter 7
+
+## n-step TD
+
+$$
+G_{t:t+n} = R_{t+1} + \gamma R_{t+2} + \dots + \gamma^{n-1} R_{t+n} + \gamma^n V_{t+n-1}(S_{t+n})
+$$
+
+$$
+V_{t+n}(S_t) = V_{t+n-1}(S_t) + \alpha[G_{t:t+n} - V_{t+n-1}(S_t)]
+$$
+
+
+## n-step Sarsa
+
+$$
+G_{t:t+n} = R_{t+1} + \gamma R_{t+2} + \dots + \gamma^{n-1} R_{t+n} + \gamma^n Q_{t+n-1}(S_{t+n}, A_{t+n})
+$$
+
+$$
+Q_{t+n}(S_t, A_t) = Q_{t+n-1}(S_t, A_t) + \alpha [G_{t:t+n} - Q_{t+n-1}(S_t, A_t)]
+$$
+
+
+## n-step Off-policy Learning by Importance Sampling
+
+$$
+\rho_{t:h} = \prod_{k=t}^{h} \frac{\pi(A_k | S_k)}{b(A_k | S_k)}
+$$
+
+$$
+V_{t+n}(S_t) = V_{t+n-1}(S_t) + \alpha \rho_{t:t+n-1} [G_{t:t+n} - V_{t+n-1}(S_t)]
+$$
+
+
+## n-step Tree Backup Algorithm
+
+$$
+G_{t:t+n} = R_{t+1} + \gamma [\sum_{a \neq A_{t+1}} \pi(a|S_{t+1}) Q_t(S_{t+1}, a) + \pi(A_{t+1} | S_{t+1}) G_{t+1:t+n} ]
+$$
+
+$$
+Q_{t+n}(S_t, A_t) = Q_{t+n-1}(S_t, A_t) + \alpha [G_{t:t+n} - Q_{t+n-1}(S_t, A_t)]
+$$
+
