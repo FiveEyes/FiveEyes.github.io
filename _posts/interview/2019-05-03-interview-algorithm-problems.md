@@ -81,3 +81,7 @@ Good problems to practise. Classic problems, problems with multiple solutions, a
 
 DP soltion is O(n^2). Binary search can reach O(nlogn).
 
+**1044. Longest Duplicate Substring**
+
+Example for Suffix Array.
+
