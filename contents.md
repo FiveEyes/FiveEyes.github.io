@@ -71,7 +71,8 @@ A tiny Lisp interpreter in Go. Unfinished. The interpreter is simple and slow. I
 | [Chapter 4]({% post_url 2018-05-05-Sutton-Book-4 %}) | [Chapter 5]({% post_url 2018-05-25-Sutton-Book-5 %}) | [Chapter 6]({% post_url 2018-05-30-Sutton-Book-6 %}) |
 | [Chapter 7]({% post_url 2018-06-05-Sutton-Book-7 %}) | [Chapter 8]({% post_url 2018-06-20-Sutton-Book-8 %}) | [Chapter 9]({% post_url 2018-10-25-Sutton-Book-9 %}) |
 | [Chapter 10]({% post_url 2019-01-31-Sutton-Book-10 %}) | [Chapter 11]({% post_url 2019-03-22-Sutton-Book-11 %}) | [Chapter 12]({% post_url 2019-05-05-Sutton-Book-12 %}) | 
-| [Models]({% post_url 2019-05-08-Sutton-Book-models %}) | | |
+| [Chapter 13]({% post_url 2019-05-08-Sutton-Book-13 %}) | [Chapter 14]({% post_url 2019-05-09-Sutton-Book-14 %}) | [Chapter 15]({% post_url 2019-05-12-Sutton-Book-15 %}) | 
+| [Chapter 16]({% post_url 2019-05-15-Sutton-Book-16 %}) | [Chapter 17]({% post_url 2019-05-18-Sutton-Book-17 %}) | [Models]({% post_url 2019-05-08-Sutton-Book-models %}) |
 
 
 # Articles
