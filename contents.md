@@ -60,7 +60,7 @@ A tiny Lisp interpreter in Go. Unfinished. The interpreter is simple and slow. I
 | [Chapter 17]({% post_url 2017-12-02-Deep-Learning-Book-17 %}) | [Chapter 18]({% post_url 2017-12-10-Deep-Learning-Book-18 %}) | [Chapter 19]({% post_url 2017-12-27-Deep-Learning-Book-19 %}) |
 | [Chapter 20]({% post_url 2018-01-11-Deep-Learning-Book-20 %}) | | |
 
-</details>
+<b></details></b>
 
 
 
