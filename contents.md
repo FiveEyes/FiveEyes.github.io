@@ -49,8 +49,10 @@ A tiny Lisp interpreter in Go. Unfinished. The interpreter is simple and slow. I
 
 ## Deep Learning Book
 
-<b><details><summary>Notes</summary></b>
-
+<details>
+```
+ <summary>Notes</summary>
+```
 | | | |
 | --- | --- | --- |
 | [Chapter 5]({% post_url 2017-03-15-Deep-Learning-Book-5 %}) | [Chapter 6]({% post_url 2017-03-16-Deep-Learning-Book-6 %}) | [Chapter 7]({% post_url 2017-06-17-Deep-Learning-Book-7 %}) |
@@ -60,7 +62,7 @@ A tiny Lisp interpreter in Go. Unfinished. The interpreter is simple and slow. I
 | [Chapter 17]({% post_url 2017-12-02-Deep-Learning-Book-17 %}) | [Chapter 18]({% post_url 2017-12-10-Deep-Learning-Book-18 %}) | [Chapter 19]({% post_url 2017-12-27-Deep-Learning-Book-19 %}) |
 | [Chapter 20]({% post_url 2018-01-11-Deep-Learning-Book-20 %}) | | |
 
-<b></details></b>
+</details>
 
 
 
