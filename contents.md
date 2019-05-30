@@ -50,9 +50,9 @@ A tiny Lisp interpreter in Go. Unfinished. The interpreter is simple and slow. I
 ## Deep Learning Book
 
 <details>
-```
- <summary>Notes</summary>
-```
+
+<summary>Notes</summary>
+
 | | | |
 | --- | --- | --- |
 | [Chapter 5]({% post_url 2017-03-15-Deep-Learning-Book-5 %}) | [Chapter 6]({% post_url 2017-03-16-Deep-Learning-Book-6 %}) | [Chapter 7]({% post_url 2017-06-17-Deep-Learning-Book-7 %}) |
