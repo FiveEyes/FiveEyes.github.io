@@ -63,6 +63,12 @@ $$
 M_X(t) = \mathrm{E}e^{tX}.
 $$
 
+**Theorem 2.3.7 If $X$ has mgf $M_X(t)$, then
+
+$$
+E X^n = M_X^{(n)}(0).
+$$
+
 ## 2.4 Differentiating Under an Integral Sign
 
 **Theorem 2.4.1 (Leibnitz's Rule)** If $f(x,\theta), a(\theta), b(\theta)$ are differentiable with respect to $\theta$, then
