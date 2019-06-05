@@ -7,17 +7,16 @@ categories: Interview
 
 # Interview algorithm problems
 
-Doing practise to explain the ideas behind the solutions. Only problems I feel interesting.
-
+Doing practise to explain the ideas behind the solutions.
 
 # Leetcode
+  * [Interesting problem list](https://leetcode.com/list/xecf1gge)
+  * [Recommended problem list](https://leetcode.com/list/xoqd52n1)
+  * [Solutions](https://github.com/FiveEyes/ProblemSet/tree/master/LeetCode)
 
 ## Interesting problems
 
-[My interesting problem list](https://leetcode.com/list/xecf1gge)
-
-[My solutions](https://github.com/FiveEyes/ProblemSet/tree/master/LeetCode)
-
+Some interesting problems.
 
 **11. Container With Most Water**
 
@@ -83,12 +82,9 @@ dp[i][j] is the minimum cost to merge i to j.
   * dp[i][j] =  min(dp[i][k] + dp[k+1][j])
   * if (j - i + 1) % (K - 1) == 1 or K == 2: dp[i][j] += sum(stones[i:j+1])
   
-## Recommend problems
+## Recommended problems
 
 Good problems to practise. Classic problems, problems with multiple solutions, and so on.
-
-[My recommend problem list](https://leetcode.com/list/xoqd52n1)
-
 
 **410. Split Array Largest Sum**
 
