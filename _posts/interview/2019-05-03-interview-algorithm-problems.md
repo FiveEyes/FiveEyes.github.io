@@ -49,6 +49,13 @@ Solution: Binary search
 Very interesting binary search, it's the same to find the k smallest element in two sorted lists.
 
 
+**673. Number of Longest Increasing Subsequence**
+
+Solution: DP, Segment tree, Binary search
+
+I joked my friend that this problem can be solved by binary search. And after a while, I found that it's can be done by binary search...
+
+
 **843. Guess the Word**
 
 An interactive problem
