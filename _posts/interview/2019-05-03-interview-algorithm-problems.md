@@ -55,6 +55,12 @@ Solution: DP, Segment tree, Binary search
 
 I joked my friend that this problem can be solved by binary search. And after a while, I found that it's can be done by binary search...
 
+DP is a clear way to solve this problem, but the running time is O(n^2).
+
+By using segment tree, it give us the ability to modify element and query the sum of subarray in O(log n) time. Then, it improves the overall running time to O(n log n).
+
+But for this specific problem, with more observations, we can solve it by extending the LIS algorithm. The running time will become O(n log n) for LIS and O(n) for extension. I just write a simplest version, which do both parts in O(n log n) time. It solved the problem in 8ms for C++.
+
 
 **843. Guess the Word**
 
