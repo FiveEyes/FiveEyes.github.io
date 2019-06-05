@@ -8,8 +8,8 @@ categories: Interview
 # Designing Data-Intensive Applications
   - [x] Reliable, Scalable, and Maintainable Applications
   - [x] Data Models and Query Languages
-  - [ ] Storage and Retrieval
-  - [ ] Encoding and Evolution
+  - [x] Storage and Retrieval
+  - [x] Encoding and Evolution
   - [ ] Replication
   - [ ] Partitioning
   - [ ] Transactions
