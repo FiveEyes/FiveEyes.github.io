@@ -7,7 +7,7 @@ categories: Math
 
 # Statistical Inference 9~12
 
-After years,finally, I have time to be an audience of the last course of this course series.
+After years, finally, I have time to be an audience of the last course of this course series.
 
 # 9 Interval Estimation
 
