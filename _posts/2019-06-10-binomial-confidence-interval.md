@@ -5,7 +5,7 @@ date: 2019-06-10 19:30:00
 categories: Statistics, Learning
 ---
 
-# Binomial confidence interval
+# Binomial confidence interval with shortest length
 
 ## Problem description
 
