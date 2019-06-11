@@ -21,7 +21,7 @@ The main issue is that it is a discrete distribution. Generally, things in discr
 
 The idea is transfering the orignal problem to an optimazation problem. Given $n$ and $c$, we want to minimze the length of CI, $\min \max(R(x) - L(x))$.
 
-The high level idea is binary searching $t = \max(R(x) - L(x)$. And for each $x \in \\{ 0, \dots, n \\}$, we set $R(x) = L(x) + t$. Now, the problem is to decide if $L(x)$ exists for a given $t$.
+The high level idea is binary searching $t = \max(R(x) - L(x))$. And for each $x \in \\{ 0, \dots, n \\}$, we set $R(x) = L(x) + t$. Now, the problem is to decide if $L(x)$ exists for a given $t$.
 
 Suppose $L(x)$ is known for all $x < k$, we want to compute $L(k+1)$. The optimal $L(k+1)$ is the first $p'$ such that ```$P(p' \in [L(x), R(x)] | p') = c$```, and for all $p > p'$, ```$P(p' \in [L(x), R(x)] | p') < c$```. Clearly, it's can be done by binary search.
 
