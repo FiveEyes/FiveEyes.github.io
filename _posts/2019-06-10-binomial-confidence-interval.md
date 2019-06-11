@@ -27,7 +27,7 @@ Suppose $L(x)$ is known for all $x < k$, we want to compute $L(k+1)$. The optima
 
 ## Code
 
-[Jupyter Notebook][https://github.com/FiveEyes/ml-notebook/blob/master/statistical_inference/binomial_confidence_interval.ipynb]
+[Jupyter Notebook](https://github.com/FiveEyes/ml-notebook/blob/master/statistical_inference/binomial_confidence_interval.ipynb)
 
 Example: 
 
