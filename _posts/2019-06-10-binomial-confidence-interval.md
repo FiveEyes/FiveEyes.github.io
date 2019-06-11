@@ -11,7 +11,7 @@ categories: Statistics, Learning
 
 The problem is pretty simple. Suppose we have a coin, and toss it $n$ times, and observe $x$ number of heads. Now, we want to estimate the possibility $p$ of head. The best estimator is $\frac{x}{n}$. But we are also interested in providing a confidence interval(CI) $[L(x), R(x)]$ of $p$.
 
-Let the confidence level be $c$. And what the confidence interval does is that for every $p \in [0, 1]$, $P(p \in [L(x), R(x)] | p) \ge c$.
+Let the confidence level be $c$. And what the confidence interval does is that for every $p \in [0, 1]$, ```$P(p \in [L(x), R(x)] | p) \ge c$```.
 
 ## Solution
 
