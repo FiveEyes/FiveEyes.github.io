@@ -23,7 +23,7 @@ The idea is transfering the orignal problem to an optimazation problem. Given $n
 
 The high level idea is binary searching $t = \max(R(x) - L(x)$. And for each $x \in \\{ 0, \dots, n \\}$, we set $R(x) = L(x) + t$. Now, the problem is to decide if $L(x)$ exists for a given $t$.
 
-Suppose $L(x)$ is known for all $x < k$, we want to compute $L(k+1)$. The optimal $L(k+1)$ is the first $p'$ such that $P(p' \in [L(x), R(x)] | p') = c$, and for all $p > p'$, $P(p' \in [L(x), R(x)] | p') < c$. Clearly, it's can be done by binary search.
+Suppose $L(x)$ is known for all $x < k$, we want to compute $L(k+1)$. The optimal $L(k+1)$ is the first $p'$ such that ```$P(p' \in [L(x), R(x)] | p') = c$```, and for all $p > p'$, ```$P(p' \in [L(x), R(x)] | p') < c$```. Clearly, it's can be done by binary search.
 
 ## Code
 
