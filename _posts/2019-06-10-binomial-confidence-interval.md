@@ -9,21 +9,21 @@ categories: Statistics, Learning
 
 ## Problem description
 
-The problem is pretty simple. Suppose we have a coin, and toss it $n$ times, and observe $x$ number of heads. Now, we want to estimate the possibility $p$ of head. The best estimator is $\frac{x}{n}$. But we are also interested in providing a confidence interval(CI) $[L(x), R(x)]$ of $p$.
+The problem is pretty simple. Suppose we have a coin, toss it $n$ times, and observe $x$ number of heads. Now, we want to estimate the possibility $p$ of head. The best estimator is $\frac{x}{n}$. But we are also interested in providing a confidence interval(CI) of $p$, $[L(x), R(x)]$.
 
-Let the confidence level be $c$. And what the confidence interval does is that for every $p \in [0, 1]$, ```$P(p \in [L(x), R(x)] | p) \ge c$```.
+Suppose that the confidence level is $c$. And a CI of confidence level $c$ is that ```$\forall p \in [0, 1], P(p \in [L(x), R(x)] | p) \ge c$```.
 
 ## Solution
 
 Unfortunately, there is no exact solution for this problem. [https://en.wikipedia.org/wiki/Binomial_proportion_confidence_interval](https://en.wikipedia.org/wiki/Binomial_proportion_confidence_interval)
 
-The main issue is that it is a discrete distribution. Generally, things in discrete field are harder than things in continuous. But if we give an appropriate target for this problem, we can use computer to compute the optimal solution via bruce force.
+The main issue is that binomial distribution is a discrete distribution. Generally, probnlems in discrete field are more difficult than the similiar problems with continuous setting. For this problem, if we give an appropriate target for this problem, we can use computer to coimput an optimal solution.
 
-The idea is transfering the orignal problem to an optimazation problem. Given $n$ and $c$, we want to minimze the length of CI, $\min \max(R(x) - L(x))$.
+The first step is transfering the orignal problem to an optimazation problem. Given $n$ and $c$, we want to minimze the maximum length of CI, $\min \max(R(x) - L(x))$, which satisfies ```$\forall p \in [0, 1], P(p \in [L(x), R(x)] | p) \ge c$```.
 
-The high level idea is binary searching $t = \max(R(x) - L(x))$. And for each $x \in \\{ 0, \dots, n \\}$, we set $R(x) = L(x) + t$. Now, the problem is to decide if $L(x)$ exists for a given $t$.
+To solve this optimal problem, the high level idea is binary searching $t = \max(R(x) - L(x))$. And we also can assume that $\forall x \in \\{ 0, \dots, n \\}, R(x) - L(x) = t$. Now, the sub-problem is to decide if $L(x)$ exists for a given $t$.
 
-Suppose $L(x)$ is known for all $x \le k$, we want to compute $L(k+1)$. The optimal $L(k+1)$ is the first $p'$ such that ```$P(p' \in [L(x), R(x)] | p') = c$```, and for all $p > p'$, ```$P(p \in [L(x), R(x)] | p) < c$```. Clearly, it's can be done by binary search.
+Suppose $L(x)$ is known for all $x \le k$, we want to compute $L(k+1)$. The optimal $L(k+1)$ is the first $p'$ such that ```$P(p' \in [L(x), R(x)] | p') = c$```, and for all $p > p'$, ```$P(p \in [L(x), R(x)] | p) < c$```. Clearly, it can be done by binary search.
 
 ## Code
 
