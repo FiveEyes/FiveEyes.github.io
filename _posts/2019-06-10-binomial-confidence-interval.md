@@ -2,7 +2,7 @@
 layout: post
 title: "Binomial confidence interval"
 date: 2019-06-10 19:30:00
-categories: Statistics, Learning
+categories: Statistics Algo
 ---
 
 # Binomial confidence interval with shortest length
