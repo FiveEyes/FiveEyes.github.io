@@ -10,6 +10,8 @@ permalink: /contents/
 
 Implementation of MCTS+ResNet in AlphaGo Zero for Gomoku. Keras/Pytorch.
 
+[Notes on AlphaGo(Zero) in Chinese]({% post_url 2018-12-23-AlphaGo-Notes %})
+
 [Github](https://github.com/FiveEyes/GomokuZero)
 
 [Pytorch branch](https://github.com/FiveEyes/GomokuZero/tree/pytorch)
@@ -31,6 +33,22 @@ A tiny Lisp interpreter in Go. Unfinished. The interpreter is simple and slow. I
 [Github](https://github.com/FiveEyes/golisp)
 
 
+# Articles
+
+## English
+  * [Copernican Principle]({% post_url 2016-02-01-Copernican-Principle %})
+  * [Binomial confidence interval with shortest length]({% post_url 2019-06-10-binomial-confidence-interval %})
+  * [Notes on zkSNARKs in Nutshell]({% post_url 2019-06-21-zksnarks %})
+  * [Interview algorithm problems(continuous update)]({% post_url 2019-05-03-interview-algorithm-problems %})
+  
+## Chinese
+  * [圣彼得堡悖论]({% post_url 2015-02-04-St-Petersburg-paradox %})
+  * [圣彼得堡悖论 II]({% post_url 2018-03-12-St-Petersburg-paradox-2 %})
+  * [变分推断]({% post_url 2017-08-25-Variational-Inference %})
+  * [Y Combinator]({% post_url 2018-04-07-Y-Combinator %})
+  * [Y Combinator II]({% post_url 2019-03-21-Y-Combinator-2 %})
+  * [Attention Models]({% post_url 2019-01-19-Attention-Models %})
+
 
 # Notes
 
@@ -48,7 +66,6 @@ A tiny Lisp interpreter in Go. Unfinished. The interpreter is simple and slow. I
   * [信息论基础 9~16]({% post_url 2016-01-08-Element-of-Information-Theory-2 %})
 
 ## Deep Learning Book
-
 
 | Notes | | |
 | --- | --- | --- |
@@ -75,12 +92,4 @@ A tiny Lisp interpreter in Go. Unfinished. The interpreter is simple and slow. I
 | [Chapter 16]({% post_url 2019-05-15-Sutton-Book-16 %}) | [Chapter 17]({% post_url 2019-05-18-Sutton-Book-17 %}) | [Models]({% post_url 2019-05-08-Sutton-Book-models %}) |
 
 
-# Articles
 
-[**Copernican Principle**]({% post_url 2016-02-01-Copernican-Principle %})
-
-[**圣彼得堡悖论**]({% post_url 2015-02-04-St-Petersburg-paradox %})
-
-[**圣彼得堡悖论 II**]({% post_url 2018-03-12-St-Petersburg-paradox-2 %})
-
-[**变分推断**]({% post_url 2017-08-25-Variational-Inference %})
