@@ -86,6 +86,14 @@ dp[i][j] is the minimum cost to merge i to j.
 
 Good problems to practise. Classic problems, problems with multiple solutions, and so on.
 
+**218. The Skyline Problem**
+
+Many ways to solve this problem.
+
+Segment Tree, Balanced Tree, and so on.
+
+My favoriate solution is sorting + union-find set.
+
 **410. Split Array Largest Sum**
 
 DP soltion is O(n^2). Binary search can reach O(nlogn).
