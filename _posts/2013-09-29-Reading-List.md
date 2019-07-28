@@ -7,25 +7,6 @@ categories: Zzz
 
 
 # 在读
-
-**NLP with Python**
-
-[https://www.nltk.org/book/](https://www.nltk.org/book/)
-
-Contents
-  * [x] Preface
-  * [x] Language Processing and Python
-  * [x] Accessing Text Corpora and Lexical Resources
-  * [x] Processing Raw Text
-  * [x] Writing Structured Programs
-  * [x] Categorizing and Tagging Words (minor fixes still required)
-  * [ ] Learning to Classify Text
-  * [ ] Extracting Information from Text
-  * [ ] Analyzing Sentence Structure
-  * [ ] Building Feature Based Grammars
-  * [ ] Analyzing the Meaning of Sentences (minor fixes still required)
-  * [ ] Managing Linguistic Data (minor fixes still required)
-  * [ ] Afterword: Facing the Language Challenge
   
 **Designing Data-Intensive Applications**
   - [x] Reliable, Scalable, and Maintainable Applications
@@ -88,9 +69,6 @@ System Design Basics
   - [ ] Consistent Hashing
   - [ ] Long-Polling vs WebSockets vs Server-Sent Events
 
-# 读过
-
-
 # 想读
 
 ## Books
@@ -113,3 +91,25 @@ System Design Basics
 ## Pages
 
 [Finger Tree](https://hackage.haskell.org/package/fingertree-0.1.1.0/docs/Data-FingerTree.html)
+
+
+# 读过
+
+**NLP with Python**
+
+[https://www.nltk.org/book/](https://www.nltk.org/book/)
+
+Contents
+  * [x] Preface
+  * [x] Language Processing and Python
+  * [x] Accessing Text Corpora and Lexical Resources
+  * [x] Processing Raw Text
+  * [x] Writing Structured Programs
+  * [x] Categorizing and Tagging Words (minor fixes still required)
+  * [x] Learning to Classify Text
+  * [x] Extracting Information from Text
+  * [x] Analyzing Sentence Structure
+  * [x] Building Feature Based Grammars
+  * [x] Analyzing the Meaning of Sentences (minor fixes still required)
+  * [x] Managing Linguistic Data (minor fixes still required)
+  * [x] Afterword: Facing the Language Challenge
