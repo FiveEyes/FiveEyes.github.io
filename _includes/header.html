@@ -1,3 +1,5 @@
+{%- capture nl -%}
+{%- endcapture -%}
 <header class="site-header">
   <div class="wrapper">
     <a class="site-title" href="{{ site.baseurl }}/">{{ site.title }}</a>
@@ -13,6 +15,7 @@
         {%- for my_page in site.pages -%}
           {%- assign lvl = my_page.url | split: "/" | size -%}
           {%- if lvl < 3 and my_page.title -%}
+          {{ nl }}
           <a class="page-link" href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}</a>
           {%- endif -%}
         {%- endfor -%}
