@@ -1,12 +1,12 @@
 ---
 layout: post
-title: "Hands-On Machine Learning with Scikit-Learn &TensorFlow"
+title: "Hands-On Machine Learning with Scikit-Learn & TensorFlow"
 date: 2019-06-04 23:50:00
 categories: Tech
 tags: [secret, readed]
 ---
 
-# Hands-On Machine Learning with Scikit-Learn &TensorFlow
+# Hands-On Machine Learning with Scikit-Learn & TensorFlow
   - [x] 1 The Machine Learning Landscape
   - [x] 2 End-to-End Machine Learning Project
   - [x] 3 Classification
