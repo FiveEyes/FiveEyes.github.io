@@ -1,0 +1,35 @@
+---
+layout: default
+title: Books
+permalink: /books/
+---
+
+{%- capture nl -%}
+{%- endcapture -%}
+
+{%- assign posts = site.posts | sort: 'title' -%}
+
+<div class="home">
+  <ul class="post-list">
+    <h2> Reading <h2>
+    {%- for post in posts -%}
+      {%- if post.tags contains "reading" -%}
+        {{ nl }}
+        <li>
+          <h2><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h2>
+        </li>
+      {%- endif -%}
+    {%- endfor -%}
+    {{ nl }}
+    <h2> Readed <h2>
+    {%- for post in posts -%}
+      {%- if post.tags contains "readed" -%}
+        {{ nl }}
+        <li>
+          <h2><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h2>
+        </li>
+      {%- endif -%}
+    {%- endfor -%}
+  </ul>
+  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+</div>
