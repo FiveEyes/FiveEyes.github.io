@@ -11,7 +11,7 @@ permalink: /books/
 
 <div class="home">
   <ul class="post-list">
-    <h2> Reading <h2>
+    <h1> Reading <h1>
     {%- for post in posts -%}
       {%- if post.tags contains "reading" -%}
         {{ nl }}
@@ -21,7 +21,7 @@ permalink: /books/
       {%- endif -%}
     {%- endfor -%}
     {{ nl }}
-    <h2> Readed <h2>
+    <h1> Readed <h1>
     {%- for post in posts -%}
       {%- if post.tags contains "readed" -%}
         {{ nl }}
