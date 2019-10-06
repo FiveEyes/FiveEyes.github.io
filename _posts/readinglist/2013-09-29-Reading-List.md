@@ -21,6 +21,8 @@ tags: secret
 
 [CS271: RANDOMNESS & COMPUTATION](http://www.cs.berkeley.edu/~sinclair/cs271/f11.html)
 
+[MIT 6.824: Distributed Systems](https://pdos.csail.mit.edu/6.824/)
+
 ## Papers
 
 [Self-adjusting top trees](http://www.cs.princeton.edu/~rwerneck/papers/TW05-self-adjusting-top-tree.pdf)
