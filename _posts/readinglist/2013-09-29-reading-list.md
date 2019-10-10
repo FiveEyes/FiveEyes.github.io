@@ -6,14 +6,24 @@ categories: Zzz
 tags: secret
 ---
 
-# 想读
+# 好想读...
 
-## Books
+知识就是力量!
 
-[Geometric Approximation Algorithms
-](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.110.9927&rep=rep1&type=pdf)
+科技是第一生产力!
 
-## Courses
+## 没图看不下去的书
+
+### 电子书(下载了还看啥
+
+[Geometric Approximation Algorithms](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.110.9927&rep=rep1&type=pdf)
+
+### 实体书(花钱了还看啥
+
+[最优化导论](https://book.douban.com/subject/26732914/)
+
+
+## 网课(不如刷剧
 
 [CS 598: Algorithms for Big Data](https://courses.engr.illinois.edu/cs598csc/fa2014/)
 
@@ -23,11 +33,12 @@ tags: secret
 
 [MIT 6.824: Distributed Systems](https://pdos.csail.mit.edu/6.824/)
 
-## Papers
+
+## 看不懂的论文
 
 [Self-adjusting top trees](http://www.cs.princeton.edu/~rwerneck/papers/TW05-self-adjusting-top-tree.pdf)
 
-## Pages
+
+## 欢乐民科小网文
 
 [Finger Tree](https://hackage.haskell.org/package/fingertree-0.1.1.0/docs/Data-FingerTree.html)
-
