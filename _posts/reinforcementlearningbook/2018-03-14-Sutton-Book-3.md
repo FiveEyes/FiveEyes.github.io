@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Reinforcement Learning: Chapter 3"
+title: "Reinforcement Learning 3: Finite Markov Decision Processes"
 date: 2018-03-14 02:42:00
 categories: Learning
 ---
