@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Reinforcement Learning: Chapter 1"
+title: "Reinforcement Learning 1: Introduction"
 date: 2018-03-10 02:14:00
 categories: Learning
 ---
