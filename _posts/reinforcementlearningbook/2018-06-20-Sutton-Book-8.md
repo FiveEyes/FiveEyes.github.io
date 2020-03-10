@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Reinforcement Learning: Chapter 8"
+title: "Reinforcement Learning 8: Planning and Learning with Tabular Methods"
 date: 2018-06-20 22:22:00
 categories: Learning
 ---
