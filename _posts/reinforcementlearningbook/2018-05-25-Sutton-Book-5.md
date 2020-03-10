@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Reinforcement Learning: Chapter 5"
+title: "Reinforcement Learning 5: Monte Carlo Methods"
 date: 2018-05-25 23:43:00
 categories: Learning
 ---
