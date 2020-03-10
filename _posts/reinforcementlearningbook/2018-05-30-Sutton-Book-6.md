@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Reinforcement Learning: Chapter 6"
+title: "Reinforcement Learning 6: Temporal-Difference Learning"
 date: 2018-05-30 18:10:00
 categories: Learning
 ---
