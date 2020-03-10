@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Reinforcement Learning: Chapter 4"
+title: "Reinforcement Learning 4: Dynamic Programming"
 date: 2018-05-05 00:39:00
 categories: Learning
 ---
