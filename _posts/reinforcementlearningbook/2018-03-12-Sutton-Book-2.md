@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Reinforcement Learning: Chapter 2"
+title: "Reinforcement Learning 2: Multi-armed Bandits"
 date: 2018-03-12 15:25:00
 categories: Learning
 ---
