@@ -47,7 +47,7 @@ $$
 对$\theta$求积分
 
 $$
-\int \int p(x,y) dx dy = \int \int rf(r,\theta) dr d\theta
+\int \int p(z_1,z_2) dz_1 dz_2 = \int \int rf(r,\theta) dr d\theta
 $$
 
 得到$r$的概率密度函数
