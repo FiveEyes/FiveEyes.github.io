@@ -52,7 +52,7 @@ $$
 最后得到
 
 $$
-A(x',x) = \min(1,\frac{A(x',x)}{A(x,x')} = \frac{P(x')}{P(x)} \frac{g(x \mid x')}{g(x' \mid x)})
+A(x',x) = \min(1, \frac{P(x')}{P(x)} \frac{g(x \mid x')}{g(x' \mid x)})
 $$
 
 算法:
