@@ -26,7 +26,7 @@ Metropolis把pdf的support set想象成随机过程中的状态集,$P(x)$就是�
 ```
 Initialize $x_0$
 For $i = 1, \dots, n$
-  $x_i \sim P(x_{i}  \mid  x_{i-1})$
+  $x_i \sim P(x_{i} \mid x_{i-1})$
 ```
 
 构造$P(x' \mid x)$只需要满足以下条件的:
