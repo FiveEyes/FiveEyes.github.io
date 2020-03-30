@@ -21,30 +21,30 @@ Metropolis algorithm是使用Markov Chain Monte Carlo(MCMC)想法来取样.取�
 
 Metropolis把pdf的support set想象成随机过程中的状态集,$P(x)$就是每个状态被访问的概率,那么状态转移概率为$P(x_{i+1} \mid x_i)$.
 
-如果我们已经知道了$P(x_{i+1}|x_i)$,那么可以很容易的使用使用MCMC来取样$P(x)$.
+如果我们已经知道了$P(x_{i+1} \mid x_i)$,那么可以很容易的使用使用MCMC来取样$P(x)$.
 
 ```
 Initialize $x_0$
 For $i = 1, \dots, n$
-  $x_i \sim P(x_{i} | x_{i-1})$
+  $x_i \sim P(x_{i}  \mid  x_{i-1})$
 ```
 
-构造$P(x'|x)$只需要满足以下条件的:
+构造$P(x' \mid x)$只需要满足以下条件的:
 
 $$
-\frac{P(x'|x)}{P(x|x')} = \frac{P(x')}{P(x)}
+\frac{P(x' \mid x)}{P(x \mid x')} = \frac{P(x')}{P(x)}
 $$
 
-假设我们可从分布$g(x'|x)$中取样,那么我们添加转移成功率$A(x', x)$来修正$g(x'|x)$.
+假设我们可从分布$g(x' \mid x)$中取样,那么我们添加转移成功率$A(x', x)$来修正$g(x' \mid x)$.
 
 $$
-P(x'|x) = g(x'|x) A(x',x)
+P(x' \mid x) = g(x' \mid x) A(x',x)
 $$
 
 那么，
 
 $$
-\frac{A(x',x)}{A(x,x')} = \frac{P(x')}{P(x)} \frac{g(x|x')}{g(x'|x)}
+\frac{A(x',x)}{A(x,x')} = \frac{P(x')}{P(x)} \frac{g(x \mid x')}{g(x' \mid x)}
 $$
 
 现在我们构造$A(x',x)$, Metropolis的方式是,让大的那个等于1, $\max(A(x',x),A(x,x'))= 1$.
@@ -52,7 +52,7 @@ $$
 最后得到
 
 $$
-A(x',x) = \min(1,\frac{A(x',x)}{A(x,x')} = \frac{P(x')}{P(x)} \frac{g(x|x')}{g(x'|x)})
+A(x',x) = \min(1,\frac{A(x',x)}{A(x,x')} = \frac{P(x')}{P(x)} \frac{g(x \mid x')}{g(x' \mid x)})
 $$
 
 算法:
@@ -60,16 +60,17 @@ $$
 ```
 Initialize $x_0$
 For $i = 1, \dots, n$
-  $x_i \sim g(x_i|x_{i-1})$
-  $p_i = \min(1,\frac{P(x')}{P(x)} \frac{g(x|x')}{g(x'|x)})$
+  $x_i \sim g(x_i \mid x_{i-1})$
+  $p_i = \min(1,\frac{P(x')}{P(x)} \frac{g(x \mid x')}{g(x' \mid x)})$
   $u_i \sim Uniform(0,1)$
   If $u_i > p_i$
     $x_i = x_{i-1}$
 ```
 
-如果我们取g(x'|x)为以x为均值的正态分布, 即$g(x'|x) = Normal(x,1)$, 那么$g(x'|x) = g(x|x')$, 得到
+如果我们取$g(x' \mid x)$为以x为均值的正态分布, 即$g(x' \mid x) = Normal(x,1)$, 那么$g(x' \mid x) = g(x \mid x')$, 得到
 
 $$
 x_i \sim Normal(x,1) \\
 p_i = \min(1,\frac{P(x')}{P(x)})
 $$
+ \mid 
