@@ -1,11 +1,13 @@
 ---
 layout: post
-title: "Metropolis–Hastings algorithm"
+title: "Metropolis-Hastings Algorithm"
 date: 2020-03-30 02:48:00
 categories: Math, Statistics
 ---
 
-# Metropolis–Hastings Algorithm
+# Metropolis-Hastings Algorithm
+
+[https://en.wikipedia.org/wiki/Metropolis%E2%80%93Hastings_algorithm](https://en.wikipedia.org/wiki/Metropolis%E2%80%93Hastings_algorithm)
 
 已知一个连续pdf, $P(x)$, 如何从中取样?
 
