@@ -28,16 +28,19 @@ are independent $normal(0,1)$ random variabls.
 ## Proof
 
 首先,
+
 $$
 p(z_1,z_2) = \frac{1}{2\pi} e^{\frac{-(z_1^2 + z_2^2)}{2}}
 $$
 
 代入$r,\theta$得到
+
 $$
 f(r,\theta) = \frac{1}{2\pi} e^{\frac{-r^2}{2}}
 $$
 
 这里可以看到$f(r,\theta)$的取值只和$r$有关,所以对于相同的$r=R$,$\theta$的取值的概率相同,所以可知
+
 $$
 \theta = 2 \pi x_2.
 $$
@@ -73,3 +76,29 @@ $$
 $$
 r = \sqrt{-2\log(x_1)}
 $$
+
+## Polar form
+
+原始的方法需要计算$sin(\theta)$和$cos(\theta)$, Polar form的改进可以直接取样出$sin(\theta)$,$cos(\theta)$.
+
+方法: 在单位圆里均匀取样一个点$(x,y)$, 可得
+
+$$
+s = x^2 + y^2, sin(\theta) = y/\sqrt{s}, cos(\theta) = x/\sqrt{s}
+$$
+
+很容易验证,$r$符合均匀分布,最终我们得到
+
+$$
+r = \sqrt{-2 \log{s}} \\ z_1 = r y/\sqrt{s} \\ \quad z_2 = r x/\sqrt{s}
+$$
+
+如何在单位圆内均匀取样? Rejection sampling
+
+```
+do
+  $x,y \sim U(0,1)$
+while $x^2 + y^2 > 1$
+```
+
+
