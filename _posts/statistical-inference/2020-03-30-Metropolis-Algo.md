@@ -73,4 +73,3 @@ $$
 x_i \sim Normal(x,1) \\
 p_i = \min(1,\frac{P(x')}{P(x)})
 $$
- \mid 
