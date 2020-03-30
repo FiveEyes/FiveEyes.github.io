@@ -45,7 +45,7 @@ $$
 \theta = 2 \pi x_2.
 $$
 
-接下来我们求出$r$的pdf,$p(r)$和cdf,$F(r)$,然后用$F^{-1}(1-x_1)$来得到$r$.
+接下来我们求出$r$的pdf和cdf,即$p(r)$和$F(r)$,然后用$F^{-1}(1-x_1)$来得到$r$.
 
 对$\theta$求积分
 
@@ -59,7 +59,7 @@ $$
 p(r) = r e^{\frac{-r^2}{2}}
 $$
 
-然后得到$r$的累积分布函数
+然后可知$r$的累积分布函数
 
 $$
 F(r) = 1 - e^{\frac{-r^2}{2}}
@@ -79,7 +79,7 @@ $$
 
 ## Polar form
 
-原始的方法需要计算$sin(\theta)$和$cos(\theta)$, Polar form的改进可以直接取样出$sin(\theta)$,$cos(\theta)$.
+原始的方法需要计算$sin(\theta)$和$cos(\theta)$, Polar form的改进可以直接取样出$sin(\theta)$和$cos(\theta)$.
 
 方法: 在单位圆里均匀取样一个点$(x,y)$, 可得
 
@@ -87,7 +87,7 @@ $$
 s = x^2 + y^2, sin(\theta) = y/\sqrt{s}, cos(\theta) = x/\sqrt{s}
 $$
 
-很容易验证,$r$符合均匀分布,最终我们得到
+很容易验证,$s$符合均匀分布,最终我们得到
 
 $$
 r = \sqrt{-2 \log{s}} \\ z_1 = r y/\sqrt{s} \\ \quad z_2 = r x/\sqrt{s}
