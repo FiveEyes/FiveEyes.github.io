@@ -19,7 +19,7 @@ Metropolis algorithm是使用Markov Chain Monte Carlo(MCMC)想法来取样.取�
   - 需要一个burn-in的预热过程.
   - 连续样本直接是相互依赖的,仅保证最终sample set是符合目标分布的.
 
-Metropolis把pdf的support set想象成随机过程中的状态集,$P(x)$就是每个状态被访问的概率,那么状态转移概率为$P(x_{i+1}|x_i)$.
+Metropolis把pdf的support set想象成随机过程中的状态集,$P(x)$就是每个状态被访问的概率,那么状态转移概率为$P(x_{i+1} \mid x_i)$.
 
 如果我们已经知道了$P(x_{i+1}|x_i)$,那么可以很容易的使用使用MCMC来取样$P(x)$.
 
