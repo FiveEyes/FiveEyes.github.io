@@ -7,7 +7,7 @@ categories: Math, Statistics
 
 # Metropolis-Hastings Algorithm
 
-[https://en.wikipedia.org/wiki/Metropolis%E2%80%93Hastings_algorithm](https://en.wikipedia.org/wiki/Metropolis%E2%80%93Hastings_algorithm)
+[https://en.wikipedia.org/wiki/Metropolis–Hastings_algorithm](https://en.wikipedia.org/wiki/Metropolis–Hastings_algorithm)
 
 已知一个连续pdf, $P(x)$, 如何从中取样?
 
