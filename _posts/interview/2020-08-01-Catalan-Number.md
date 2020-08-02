@@ -25,7 +25,7 @@ categories: Interview
 
 设有n个push和m个pop, 其中n > m, d = n - m.
 
-对于任意一种非法的序列S,他一定在某个位置出现了pop比push多一个情况,假设这个位置是k.我们可知:
+对于任意一种非法的序列S,他一定在某个位置第一次出现了pop比push多一个情况,假设这个位置是k.我们可知:
   - S[0:k]中, pop比push多一个,
   - S[k:n+m]中, push比pop多d+1个.
 
