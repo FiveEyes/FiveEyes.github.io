@@ -62,6 +62,6 @@ $$x_0 = 0 \\ x_n = 0 \\ x_i = p x_{i+1} + (1-p) x_{i-1} + 1, 0 < i < n$$
 
 $$x_{i+1} = (p-1) / p * x_{i-1} + 1 / p * x_i - 1 / p$$
 
-$$ A = \begin{bmatrix} 0 & 1 & 0 \\ (p-1)/p & 1/p & -1/p \\ 0 0 1\end{bmatrix} \\ A^n \begin{bmatrix} x_0 \\ x_1 \\ 1 \end{bmatrix} = \begin{bmatrix} x_n \\ x_{n+1} \\ 1 \end{bmatrix}$$
+$$ A = \begin{bmatrix} 0 & 1 & 0 \\ (p-1)/p & 1/p & -1/p \\ 0 & 0 & 1\end{bmatrix} \\ A^n \begin{bmatrix} x_0 \\ x_1 \\ 1 \end{bmatrix} = \begin{bmatrix} x_n \\ x_{n+1} \\ 1 \end{bmatrix}$$
 
 
