@@ -30,7 +30,7 @@ categories: Interview
 
 假设A现在持有i元,把每局游戏有p的概率转移到i+1, (1-p)的概率转移到i-1. 0元时胜率是0, n=X+Y元时胜率是1.
 
-$$x_0 = 0 \\ x_n = 1 \\ x_i = p x_{i+1} + (1-p) x_{i-1}, 0 < i < n$$
+$$x_0 = 0 \\ x_n = 1 \\ x_i = p \times x_{i+1} + (1-p) \times x_{i-1}, 0 < i < n$$
 
 解方程就得到答案了.
 
@@ -58,9 +58,9 @@ $$ A = \begin{bmatrix} 0 & 1 \\ (p-1)/p & 1/p\end{bmatrix} \\ A^n \begin{bmatrix
 
 我们还可以做一个扩展,来求最终结束时的期望局数.
 
-$$x_0 = 0 \\ x_n = 0 \\ x_i = p x_{i+1} + (1-p) x_{i-1} + 1, 0 < i < n$$
+$$x_0 = 0 \\ x_n = 0 \\ x_i = p \times x_{i+1} + (1-p) \times x_{i-1} + 1, 0 < i < n$$
 
-$$x_{i+1} = (p-1) / p * x_{i-1} + 1 / p * x_i - 1 / p$$
+$$x_{i+1} = (p-1) / p \times x_{i-1} + 1 / p \times x_i - 1 / p$$
 
 $$ A = \begin{bmatrix} 0 & 1 & 0 \\ (p-1)/p & 1/p & -1/p \\ 0 & 0 & 1\end{bmatrix} \\ A^n \begin{bmatrix} x_0 \\ x_1 \\ 1 \end{bmatrix} = \begin{bmatrix} x_n \\ x_{n+1} \\ 1 \end{bmatrix}$$
 
