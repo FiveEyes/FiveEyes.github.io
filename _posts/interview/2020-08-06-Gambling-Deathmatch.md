@@ -12,7 +12,7 @@ categories: Interview
   - 也可以随机初始化,然后反复迭代趋近平衡态.
   - 最后还可以蒙特卡罗模拟,也就是知名的MCMC.
 
-## St. Petersburg Lottery
+## **投币** X 死斗
 
 先放一道自己不会做的题目祭天: [St. Petersburg Lottery](https://projecteuler.net/problem=499)
 
@@ -20,7 +20,7 @@ categories: Interview
 
 顺便一提,Project Euler上面题目难度从1-100,这道题目好像是难度100...
 
-## 投币 X 死斗
+## 投币 X **死斗**
 
 ### 题目描述
 
