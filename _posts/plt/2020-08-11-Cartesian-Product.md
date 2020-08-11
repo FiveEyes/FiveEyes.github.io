@@ -82,10 +82,11 @@ nums
   .forEach(tuple -> test_f(tuple[0], tuple[1], tuple[2]));
 ```
 
-笛卡尔积某种程度上等价于flatMap,同时考虑到Java所有类型都可以擦除变为Object,可以使用flatMap防止缩进过深的现象.
-至于效率嘛...就仁者见仁智者见智了,因为这段代码非常依赖于Stream的具体实现. 
-对于不同的实现优化,一个很简单的问题都很难回答: 这段代码在执行最后一步forEach时,究竟在内存中维护了多少Tuple(num, url, time)实例?
-  - 最简单的实现方式,执行完两次flatMap之后,会产生一个Size为27的Tuple List,然后在forEach每一个tuple.
+笛卡尔积某种程度上等价于flatMap,可以使用flatMap防止缩进过深的现象.因为Java所有类型都可以擦除变为Object,也算是可以支持任意数量+任意类型的set.
+
+至于效率嘛...就仁者见仁智者见智了. 原因在于,这段代码非常依赖于Stream的具体实现. 
+对于不同的实现优化,一个很简单的问题都很难回答: 这段代码执行最后一步forEach时,究竟在内存中维护了多少Tuple(num, url, time)实例?
+  - 最简单的实现方式,执行完两次flatMap之后,会产生一个size为27的Tuple List,然后在forEach每一个tuple.
   - 稍微复杂的实现方式,使用惰性计算,对每次forEach现场回溯生成Tuple,始终只维护一个Tuple实例
 
 很明显,第一种实现方式是不可接受的,因为如果有32个boolean维度,那么将产生一个size为2^32的List.
