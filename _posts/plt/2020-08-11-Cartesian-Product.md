@@ -11,11 +11,11 @@ categories: Language
 
 ## 笛卡尔积是什么
 
-需要实现笛卡尔积的场景常见于测试配置选项.比如我有一个函数,f(int numOfRequest, string serviceUrl, double timeout);
+需要实现笛卡尔积的场景常见于枚举配置选项.比如我有一个函数,f(int numOfRequest, string serviceUrl, double timeout);
 
 numOfRequest可以是{10, 20, 30}, serviceUrl可以是{"xx", "yy", "zz"}, timeout可以是{0.7, 0.8, 0.9}
 
-如果我要测试所有的选项,那么一共有27种可能性. 这27种可能性的学术名称就叫笛卡尔积
+如果我要测试所有的选项,那么一共有27种可能性. 这27种组合的数学名称就叫笛卡尔积.
 
 $$
 D_1 = \{ a_1, a_2, \dots \}, D_2 = \{ b_1, \dots \}, \dots, D_n = \{ c_1, \dots \} \\
@@ -73,7 +73,7 @@ C++ Solution: 有个很邪恶的解决方法,就是用宏展开来压缩代码.
 
 ### Java 8提供的Stream接口
 
-Java 8增加了Collection对Stream的支持,从某种意义上来讲,可以类比成python generator,但两者的底层哲学出发点是完全不同的.
+Java 8增加了Collection对Stream的支持,从某种意义上来讲,可以类比成python generator,但两者背后的出发点是完全不同的.
 
 ```
 nums
@@ -87,7 +87,7 @@ nums
   - 最简单的实现方式,执行完两次flatMap之后,会产生一个Size为27的Tuple List,然后在forEach每一个tuple.
   - 稍微复杂的实现方式,使用惰性计算,对每次forEach现场回溯生成Tuple,始终只维护一个Tuple实例
 
-很明显,第一种实现方式是不可接受的,因为如果有32个boolean维度,那么将产生一个大小为2^32的list.
+很明显,第一种实现方式是不可接受的,因为如果有32个boolean维度,那么将产生一个size为2^32的List.
 
 ## 结合Item 47的实现
 
@@ -139,11 +139,5 @@ struct ProdSet {
 玩游戏去了,不写了,lol.
 
 具体实现链接: [https://github.com/FiveEyes/FiveEyes.github.io/blob/master/assets/code/cpp/prod.cpp](https://github.com/FiveEyes/FiveEyes.github.io/blob/master/assets/code/cpp/prod.cpp)
-
-
-
-
-
-
 
 
