@@ -18,8 +18,8 @@ numOfRequest可以是{10, 20, 30}, serviceUrl可以是{"xx", "yy", "zz"}, timeou
 如果我要测试所有的选项,那么一共有27种可能性. 这27种可能性的学术名称就叫笛卡尔积
 
 $$
-D_1 = {a_1, a_2, \dots}, D_2 = {b_1, \dots}, \dots, D_n = {c_1, \dots} \\
-D_1 \times D_2 \times \dots \times D_n = {(a, b, \dots, c) \mid a \in D_1, b \in D_2, \dots, c \in D_n}
+D_1 = \{ a_1, a_2, \dots \}, D_2 = \{ b_1, \dots \}, \dots, D_n = \{ c_1, \dots \} \\
+D_1 \times D_2 \times \dots \times D_n = \{ (a, b, \dots, c) \mid a \in D_1, b \in D_2, \dots, c \in D_n \}
 $$
 
 如果有n个集合,那么最终的笛卡尔积的大小是n个集合大小的乘积.
@@ -124,9 +124,17 @@ for i in range(powerSet.size()):
   - 最后没有嵌套多层for-loop.
 
 这个powerset的框架突然让我灵光一现,结合C++17的新特性,我们可以使用template实现一个类型安全的笛卡尔积集合,ProdSet.
-  - 支持任意数量,任意类型的vector<T1>, ..., vector<Tn> 作为构造函数参数.
+  - 支持任意数量,任意类型的vector T1, ..., vector Tn 作为构造函数参数.
   - get(int index)支持使用index获取相对应的笛卡尔积元素,返回类型为Tuple<T1, ..., Tn>.
   - get(int index)现场生成对应的返回值.
+  
+```
+struct ProdSet {
+    ProdSet(vector<T1> D1, ..., vector<T1> Dn);
+    int size();
+    Tuple<T1, ..., Tn> get(int i);
+};
+```
 
 玩游戏去了,不写了,lol.
 
