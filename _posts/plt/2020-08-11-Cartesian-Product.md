@@ -123,7 +123,7 @@ for i in range(powerSet.size()):
   - 其次也保证了效率,
   - 最后没有嵌套多层for-loop.
 
-这个powerset的框架突然让我灵光一现,结合C++17的新特性,我们可以使用template实现一个类型安全的笛卡尔积集合,ProdSet.
+结合C++17的新特性,和这个powerset的API接口,我们可以使用template实现一个类型安全的笛卡尔积集合,ProdSet.
   - 支持任意数量,任意类型的vector T1, ..., vector Tn 作为构造函数参数.
   - get(int index)支持使用index获取相对应的笛卡尔积元素,返回类型为Tuple<T1, ..., Tn>.
   - get(int index)现场生成对应的返回值.
