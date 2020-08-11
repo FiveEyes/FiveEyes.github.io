@@ -130,7 +130,7 @@ for i in range(powerSet.size()):
   
 ```
 struct ProdSet {
-    ProdSet(vector<T1> D1, ..., vector<T1> Dn);
+    ProdSet(vector<T1> D1, ..., vector<Tn> Dn);
     int size();
     Tuple<T1, ..., Tn> get(int i);
 };
