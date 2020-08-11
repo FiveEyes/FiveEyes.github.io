@@ -1,3 +1,5 @@
+// clang -std=c++17 -lstdc++ prod.cpp -o prod && ./prod
+
 #include <iostream>
 #include <vector>
 #include <functional>
