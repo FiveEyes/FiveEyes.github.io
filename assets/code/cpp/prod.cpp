@@ -110,7 +110,7 @@ struct ProdIter {
 };
 
 template<typename... Ts>
-struct ProdCollection {
+struct ProdSet {
     using InputT = tuple<vector<Ts>...>;
     using OutputT = tuple<Ts...>;
     static constexpr auto N = sizeof...(Ts);
@@ -119,7 +119,7 @@ struct ProdCollection {
     vector<int> cur;
     vector<unsigned int> sz;
     vector<unsigned int> len;
-    ProdCollection(vector<Ts>... vs) {
+    ProdSet(vector<Ts>... vs) {
         input = InputT(vs...);
         vector<int>(N, 0).swap(cur);
         (sz.push_back(vs.size()),...);
@@ -148,16 +148,16 @@ int main() {
     vector<string> strs = {"hello", "world"};
     vector<double> doubles = {4.4, 5.5};
 
-    ProdCollection<int,double,string> collection(ints, doubles, strs);
-    for(int i = 0; i < collection.size(); ++i) {
+    ProdSet<int,double,string> set1(ints, doubles, strs);
+    for(int i = 0; i < set1.size(); ++i) {
         cout << i << ": ";
-        printTuple(*(collection.get(i)));
+        printTuple(*(set1.get(i)));
     }
 
-    ProdCollection collection1(strs, strs);
-    for(int i = 0; i < collection1.size(); ++i) {
+    ProdSet set2(strs, strs);
+    for(int i = 0; i < set2.size(); ++i) {
         cout << i << ": ";
-        printTuple(*(collection1.get(i)));
+        printTuple(*(set2.get(i)));
     }
 
     ProdIter iter(ints, doubles, strs);
