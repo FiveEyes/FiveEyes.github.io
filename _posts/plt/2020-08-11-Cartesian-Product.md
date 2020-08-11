@@ -78,8 +78,8 @@ Java 8增加了Collection对Stream的支持,从某种意义上来讲,可以类�
 ```
 nums
   .flatMap(num -> urls.map(url -> [num, url]))
-  .flatMap(list -> times.map(time -> list.append(time)))
-  .forEach(list -> test_f(list[0], list[1], list[2]));
+  .flatMap(tuple -> times.map(time -> tuple.append(time)))
+  .forEach(tuple -> test_f(tuple[0], tuple[1], tuple[2]));
 ```
 
 笛卡尔积某种程度上等价于flatMap,同时考虑到Java所有类型都可以擦除变为Object,可以使用flatMap防止缩进过深的现象.
