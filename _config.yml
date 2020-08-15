@@ -7,7 +7,7 @@
 
 # Site settings
 title: Han's Notebook
-email: hanzh.xu@gmail.com
+email: hanzhxu@gmail.com
 description: Han's Notebook
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://fiveeys.github.io" # the base hostname & protocol for your site
