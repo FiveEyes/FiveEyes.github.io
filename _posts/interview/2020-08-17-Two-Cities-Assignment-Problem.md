@@ -8,7 +8,7 @@ categories: Interview
 # 小团的车辆调度
 
 从别人手里蹭到的题目,O(N^3)的dp只得了18%分.
-link:[美团点评2021秋招在线笔试（8.15场）](https://www.acwing.com/file_system/file/content/whole/index/content/1163818/)
+Link: [美团点评2021秋招在线笔试（8.15场）](https://www.acwing.com/file_system/file/content/whole/index/content/1163818/)
 
 想到一个O(N^2)的解法,水一篇题解.
 
