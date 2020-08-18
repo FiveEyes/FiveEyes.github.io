@@ -21,7 +21,7 @@ Link: [美团点评2021秋招在线笔试（8.15场）](https://www.acwing.com/f
 
 ## 输入描述
 输入第一行包含三个整数n、a、b，分别表示公司的车辆数量和A、B两地订单所需数量，保证a+b<=n。（1<=n<=2000）
-接下来有n行,每行两个正整数x,有,分别表示该车完成A地任务的利润和B地任务的利润.
+接下来有n行,每行两个正整数x,y,分别表示该车完成A地任务的利润和B地任务的利润.
 
 ## 输出描述
 输出仅包含一个正整数，表示公司最大获利的利润和。
@@ -49,12 +49,12 @@ Link: [美团点评2021秋招在线笔试（8.15场）](https://www.acwing.com/f
   - 把m辆车按(x-y,x)降序排序,然后前a辆去A,后b辆去B.
 
 现在的问题是n>m的情况,但我们依然可以扩展上面这个想法.
-  - 对n辆车按(x-y,x)降序排序, 对于任意一个给定的size=m的子序列(子集).我们知道前a辆车去A,后b辆车去B,是对于当前子集的最有分配方案.
+  - 对n辆车按(x-y,x)降序排序, 对于任意一个给定的size=m的子序列(子集).我们知道前a辆车去A,后b辆车去B,是对于当前子集的最优分配方案.
   - 那么现在新的问题是如何选出最优的子序列.
 
-接下来我们使用DP来求最有子序列的问题,这个DP的复杂度只有O(N^2).
-  - dp[i][j]表示前i项里长度为j的子序列,**并且前a项去A城市**,能获取的最大收益.
-  - dp[i][j] = max(dp[i-1][j], dp[i-1][j-1] + j <= a ? x[i] : y[i])
+接下来我们使用DP来求最优子序列的问题,复杂度O(N^2).
+  - dp[i][j]表示前i项里长度为j的子序列,**并且固定前a项去A城市**,能获取的最大收益.
+  - dp[i][j] = max(dp[i-1][j], dp[i-1][j-1] + (j <= a ? x[i] : y[i]))
   
 Code: [https://github.com/FiveEyes/FiveEyes.github.io/blob/master/assets/code/interview/driver_two_cities_assignment_problem.ipynb](https://github.com/FiveEyes/FiveEyes.github.io/blob/master/assets/code/interview/driver_two_cities_assignment_problem.ipynb)
 
