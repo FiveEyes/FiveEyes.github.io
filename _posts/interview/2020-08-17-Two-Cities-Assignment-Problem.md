@@ -56,13 +56,13 @@ Link: [美团点评2021秋招在线笔试（8.15场）](https://www.acwing.com/f
   - dp[i][j]表示前i项里长度为j的子序列,**并且前a项去A城市**,能获取的最大收益.
   - dp[i][j] = max(dp[i-1][j], dp[i-1][j-1] + j <= a ? x[i] : y[i])
   
-Code: [https://github.com/FiveEyes/FiveEyes.github.io/blob/master/_posts/interview/2020-08-17-Two-Cities-Assignment-Problem.md](https://github.com/FiveEyes/FiveEyes.github.io/blob/master/_posts/interview/2020-08-17-Two-Cities-Assignment-Problem.md)
+Code: [https://github.com/FiveEyes/FiveEyes.github.io/blob/master/assets/code/interview/driver_two_cities_assignment_problem.ipynb](https://github.com/FiveEyes/FiveEyes.github.io/blob/master/assets/code/interview/driver_two_cities_assignment_problem.ipynb)
 
 ## 题外话
 
-其实这个题目的原型是非常经典的Assignment Problem... 
-  - KM算法的样本题，而KM算法的复杂度是O(N^3)的,导致我想了很久如何去针对只有两个城市优化KM.
-  - 最大费最大流, 这个倒是可以优化一下,边数可以优化成O(N).但是费用流的复杂度一般是O(NMF)的,N是节点数,M是边数,F是最大流的大小.最后一样的来源是,费用流每次寻找一条单位流量且费用最大的增广路.
-  - 线性规划,以上两个问题都可以归约成线性规划问题,这个双城的变形也只需要把每个工作限制人数从1扩展到a和b.但也没有想到如何加速...因为单纯形算法复杂度本身就没啥保障...
+这个题目其实是非常经典的Assignment Problem的一个变种... 
+  - KM算法的样本题. 但KM算法的复杂度是O(N^3)的,导致我想了很久如何去针对只有两个城市优化KM.
+  - 最大费最大流. 这个倒是可以优化一下,边数可以优化成O(N).但是费用流的复杂度一般是O(NMF)的,N是节点数,M是边数,F是最大流的大小.最后一样的来源是,费用流每次寻找一条单位流量且费用最大的增广路.
+  - 线性规划. 以上两个问题都可以归约成线性规划问题,这个双城的变形也只需要把每个工作限制人数从1扩展到a和b.但也没有想到如何加速...因为单纯形算法复杂度本身就没啥保障...
 
 
