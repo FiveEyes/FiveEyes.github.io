@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Airbnb经典论文: Real-time Personalization using Embeddings for Search Ranking at Airbnb"
+title: "Airbnb经典论文: Embeddings for Search Ranking at Airbnb"
 date: 2020-09-08 17:15:00
 categories: Learning
 ---
