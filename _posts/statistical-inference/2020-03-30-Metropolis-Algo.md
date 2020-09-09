@@ -2,7 +2,7 @@
 layout: post
 title: "Metropolis-Hastings Algorithm"
 date: 2020-03-30 02:48:00
-categories: Math, Statistics
+categories: Math Statistics
 ---
 
 # Metropolis-Hastings Algorithm
