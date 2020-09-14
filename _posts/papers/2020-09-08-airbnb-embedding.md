@@ -59,8 +59,70 @@ Airbnb的Embedding经典论文. 讲给定用户的点击序列,如果做listing(
 
 ## 4.1 Training Listing Embeddings
 
+Trainning setting:
+  - 800 million click session,
+  - oversample booked session `5x`,
+  - embedding dims `d = 32`, 
+  - context window size `m = 5`,
+  - perform 10 iterations.
+
+每天重新训练全新的model,并不增量式训练过去的model.
+
 ## 4.2 Offline Evaluation of Listing Embedding
+
+把booked sessions拿出来,然后将booked listing和candidates按照embedding的相似度排序,booked listing排名越靠前,embedding越好.
+
+d32 book + neg胜出.
 
 ## 4.3 Similar Listings using Embeddings
 
+Airbnb每个页面底部的一个功能,Similar Listing,做了A/B testing, 比传统方法提高了20%的CTR.
+
 ## 4.4 Real time personalization in Search Ranking using Embeddings
+
+Ranking就是对每一个listing进行估分,然后sort输出.
+
+训练集就是listing的features X和相对应的分值Y. 分值Y有5种{0, 0.01, 0.25, 1, -4}. 设计如下:
+  - 如果booked, y = 1.
+  - 如果联系过, y = 0.25,
+  - 如果点击过, y = 0.01,
+  - 如果被拒绝, y = -0.4,
+  - 如果没点击, y = 0.
+
+Features:
+  - 有一些常规listing features: price per night, number of rooms, rejection rate, etc.
+  - 一些user features: avg booked price, guest rating, etc.
+  - 还有交叉features: distance between query location and listing location, etc.
+  - 还有一些Listing Embedding Features,下文会详细介绍.
+  
+有了(X,Y), 我们把这个问题当作pairwise regression, 训练方法是GBDT, 评分标准是NDCG.
+  
+重点是接下来的Listing Embedding Features. 大体上来讲,就是计算一下listing与user点击过的listing的近似度.
+有8个近似度需要计算:
+  - EmbClickSim
+  - EmbSkipSim
+  - EmbLongClickSim
+  - EmbWishlistSim
+  - EmbInqSim
+  - EmbBookSim
+  - EmbLastLongClickSim
+  - UserTypeListingTypeSim
+  
+前几项是短期行为近似,取样用户最近两周的click行为:
+  - H_c: clicked listing_ids
+  - H_{lc}: long clicked listing_ids
+  - H_s: skipped listing_ids
+  - H_w: wishlisted listing_ids
+  - H_i: inquired listing_ids
+  - H_b: booked listing_ids
+
+相似度计算方法如下:
+$$EmbClickSIm(l, H_c) = \max_{m \in M} cos(v_l, \sum_{l_h \in m, l_h \in H_c} v_{l_h})$$
+
+
+EmbLastLongClickSim是计算listing和最后一个长停留的listing相似度.
+
+UserTypeListingTypeSim是计算UserType和ListingType的相似度.
+
+
+
