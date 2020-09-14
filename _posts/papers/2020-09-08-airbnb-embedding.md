@@ -117,7 +117,8 @@ Features:
   - H_b: booked listing_ids
 
 相似度计算方法如下:
-$$EmbClickSIm(l, H_c) = \max_{m \in M} cos(v_l, \sum_{l_h \in m, l_h \in H_c} v_{l_h})$$
+
+$$EmbClickSIm(l, H_c) = \max_{m \in M} cos(v_l, avg(\sum_{l_h \in m, l_h \in H_c} v_{l_h}))$$
 
 
 EmbLastLongClickSim是计算listing和最后一个长停留的listing相似度.
