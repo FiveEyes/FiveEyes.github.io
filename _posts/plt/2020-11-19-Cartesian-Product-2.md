@@ -13,15 +13,17 @@ categories: Language
   - [笛卡尔积](https://freopen.com/language/2020/08/11/Cartesian-Product.html)
   - [代码实现](https://github.com/FiveEyes/FiveEyes.github.io/blob/master/assets/code/cpp/prod.cpp)
 
-第一篇的重点侧重于讲解,如何使用CPP的新特性,来实现这个不确定参数数量和类型的笛卡尔积迭代器ProdIter和笛卡尔积集合ProdSet.
+第一篇的重点侧重于讲解如何使用CPP的新特性,来实现这个不确定参数数量和类型的笛卡尔积迭代器ProdIter和笛卡尔积集合ProdSet.
 
-而对于Python, ProdIter会很方便实现. 原因在于: 一是动态类型; 二是Generator.
+如果使用Python, ProdIter会很方便实现. 这是因为:
+  - 1, python是动态类型;
+  - 2, python有Generator.
 
 其实第一篇最后的代码,同时解决了这两个问题:
   - 实现了对任意类型和任意数量的参数,实现了类型安全的ProdIter和ProdSet;
   - 实现了一个笛卡尔积迭代器, ProdIter. 使用效果和Generator一致.
   
-但两部分的解决方式杂糅在一起,不容易把看出如何分别解决了这两个问题. 其次,虽然这两个问题都有更好的解决方法,但因为第一篇要同时解决这两个问题,导致选择解决方案上也受到了限制.
+但由于这两个问题的解决方法相辅相成,所以不容易单独分离出这两个问题的解决方案. 并且,对于每个问题都有更好的解决方法,但因为第一篇要同时解决这两个问题,导致选择解决方案上也受到了限制.
 
 所以这一篇仅从Generator到Iterator这个角度切入,来说明对于CPP这样没有Generator的语言,在某些特定场景下,非常需要Generator这一特性,如何将其转化成Iterator.
 
@@ -119,7 +121,7 @@ int main() {
 
 ## 更通用的解决方案
 
-回顾一下刚刚的ProdIter,首先有悖直觉的是生成的组合顺序,前面的数字每次都在变化,后面的数组更稳定,
+回顾一下刚刚的ProdIter,首先是有悖直觉的组合顺序: 前面的数字每次都在变化,后面的数组更稳定,
 ```
 0 0
 1 0
@@ -133,9 +135,9 @@ int main() {
 1 0
 1 1
 ```
-原因在于,第一篇还需要同时兼顾类型问题.在使用template解决类型问题时,第一种顺序更方便实现.
+这是因为第一篇还需要同时兼顾类型问题.在使用template解决类型问题时,第一种顺序更方便实现.
 
-为什么第二种顺序更加自然,我们参考一下使用python的generator实现方式:
+对于第二种更加自然的顺序,我们参考一下使用python的generator实现方式:
 ```
 def prod_iter(s):
     if len(s) == 0:
@@ -149,7 +151,7 @@ for x in prod_iter([2,3]):
     print(x)
 ```
 
-同时借这段代码,来思考一下为什么这个Generator难以转化成Iterator.
+同时通过这段代码,可以明细看出为什么这个Generator难以转化成Iterator.
   - 这是一个递归式的Generator.
   - Iterator没办法递归实现.
 
