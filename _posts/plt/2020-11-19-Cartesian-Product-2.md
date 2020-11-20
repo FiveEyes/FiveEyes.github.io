@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 笛卡尔积 2: 从Generator到Iterator
+title: "笛卡尔积 2: 从Generator到Iterator"
 date: 2020-11-19 22:10:00
 categories: Language
 ---
