@@ -140,10 +140,10 @@ int main() {
 def prod_iter(s):
     if len(s) == 0:
         yield []
-    else :
-        for i in range(s[0]):
+    else:
+        for x in range(s[0]):
             for xs in prod_iter(s[1:]):
-                yield [i] + xs
+                yield [x] + xs
                 
 for x in prod_iter([2,3]):
     print(x)
