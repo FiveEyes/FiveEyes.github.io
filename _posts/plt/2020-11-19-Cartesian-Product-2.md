@@ -85,10 +85,7 @@ struct ProdIter {
     unsigned int N = 0;
     vector<int> cur;
     vector<unsigned int> sz;
-    ProdIter(vector<unsigned int>& _sz) : sz(_sz), N(_sz.size()), cur(N) {
-        reset();
-    }
-    ProdIter(vector<unsigned int> _sz) : sz(_sz), N(_sz.size()), cur(N) {
+    ProdIter(const vector<unsigned int>& _sz) : sz(_sz), N(_sz.size()), cur(N) {
         reset();
     }
     bool next(vector<int>& output) {
@@ -110,9 +107,9 @@ struct ProdIter {
 };
 
 int main() {
-    ProdIter iter(vector<unsigned int>({3,4,5}));
-    vector<int> output({0,0,0});
-    print(output);
+    vector<unsigned int> dimSize({2,3,4});
+    ProdIter iter(dimSize);
+    vector<int> output(dimSize.size());
     while(iter.next(output)) {
         print(output);
     }
