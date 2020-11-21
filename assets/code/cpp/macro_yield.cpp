@@ -34,10 +34,11 @@ template<typename S>
 class Gen : public Source<S> {
 public:
     int state;
-    virtual bool step(S& output, bool& isAlive) = 0;
+    bool isAlive;
+    Gen() : state(0), isAlive(true) {}
+    virtual bool step(S& output) = 0;
     bool operator()(S& output) {
-        bool isAlive;
-        while(!step(output, isAlive));
+        while(!step(output));
         return isAlive;
     }
 };
@@ -105,8 +106,8 @@ public:
     int x;
     shared_ptr<Source<vector<int> > > iter;
     vector<int> xs;
-    OneMoreProdGen(const vector<unsigned int>& _s) : s(_s) { state = 0; }
-    bool step(vector<int>& output, bool& isAlive) {
+    OneMoreProdGen(const vector<unsigned int>& _s) : s(_s) {}
+    bool step(vector<int>& output) {
         DEC_BEG
             DEC_IF(if1), DEC_IF(if2), DEC_IF(if3), DEC_LOOP(loop1), DEC_LOOP(loop2), DEC_YIELD(y1), DEC_YIELD(y2)
         DEC_END
@@ -151,11 +152,11 @@ def hanoi(n, a, b, c):
 */
 class OneMoreHanoiGen : public Gen<string> {
 public:
-int n;
+    int n;
     string a, b, c;
-    shared_ptr<Source<string> > iter;
-    OneMoreHanoiGen(int _n, string _a, string _b, string _c) : n(_n), a(_a), b(_b), c(_c) { state = 0; }
-    bool step(string& output, bool& isAlive) {
+    shared_ptr<Gen<string> > iter;
+    OneMoreHanoiGen(int _n, string _a, string _b, string _c) : n(_n), a(_a), b(_b), c(_c) {}
+    bool step(string& output) {
         DEC_BEG
             DEC_IF(if1), DEC_LOOP(loop1), DEC_LOOP(loop2), DEC_LOOP(loop3), 
             DEC_YIELD(y1), DEC_YIELD(y2), DEC_YIELD(y3), DEC_YIELD(y4)
@@ -180,17 +181,13 @@ int main() {
     cout << "HanoiGen" << endl;
     string s;
     OneMoreHanoiGen hanoiGen(3, "A", "B", "C");
-    while(hanoiGen(s)) {
-        cout << s << endl;
-    }
+    while(hanoiGen(s)) cout << s << endl;
     
     cout << "CartesianProduct" << endl;
     vector<unsigned int> dimSize({2,3,4});
     vector<int> output(dimSize.size());
     OneMoreProdGen prodGen(dimSize);
-    while(prodGen(output)) {
-        print(output);
-    }
+    while(prodGen(output)) print(output);
     
     return 0;
 }
