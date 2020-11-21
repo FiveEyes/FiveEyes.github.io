@@ -161,7 +161,227 @@ for x in prod_iter([2,3]):
 
 其实也是一个古老的方式,我们都知道调用函数的基础是函数栈...那么我们只需要手动模拟函数栈,既可实现.
 
-今天先睡了,打工人还要打工,未完待续!
+如果想使用CPP实现协程,那会很麻烦:
+  - 每个协程都有自己的函数栈.
+  - yield和resume的时候切换函数栈,同时需要切换现场,保存寄存器状态,已经载入寄存器状态.
+  
+C++20貌似已经提供协程,我一度认为C++没办法实现...主要理由是C++的函数栈是hardcoded的,没办法做到切换函数栈,看了一下新特性的简要,切换函数栈可以直接复制替换...
+
+这也让我重新思考了一下这个问题,想了几种思路,最终定稿了一版,正在尝试使用宏来避免手动添加lable和跳转.
+  - 最初的思路是完整的模拟函数栈,参数,返回值,局部变量和程序计数器PC全部都push入函数栈.
+  - 后来发现没必要,我们依然可以尽可能多的利用宿主语言的语法,来尽可能的减少模拟.
+  - 我们对定义一个Generator class,局部变量定义在class里,存在堆上.然后函数调用依然可以基于CPP自身的栈.
+  - 因为每个Generator都有自己的局部变量,所以调用Generator时,相当于切换了栈空间.
+
+这段代码的本质依然是栈模拟,虽然可能看不出来...
+
+这段实现的依然需要我们手动设置代码里的labels,有一点写汇编的感觉,小窍门就是把label设成行号就好了.
+  - 有可能通过宏来实现自动label和jump,正在思考怎么实现...
+
+```
+// clang -std=c++17 -lstdc++ prod.cpp -o prod && ./prod
+
+#include <iostream>
+#include <functional>
+#include <memory>
+#include <string>
+#include <tuple>
+#include <typeinfo>
+#include <utility>
+#include <vector>
+
+using namespace std;
+
+template<typename S>
+class Source;
+
+template<typename S>
+class Source : public std::enable_shared_from_this<Source<S>> {
+public:
+	virtual ~Source() {}
+    virtual bool operator()(S& output) = 0;
+    bool next(S& output) {
+        return (*this)(output);
+    }
+    shared_ptr<Source<S>> getPtr() { return this->shared_from_this(); }
+};
+
+/*
+L: def prod_iter(s):
+0:   if len(s) == 0:
+1:     yield []
+2:   else:
+3:     x = 0
+4:     while true:
+5:       xs = []
+6:       iter = generator.create(prod_iter(s[1:]))
+7:       while true:
+8:         xs, isLive = iter.resume()
+9:         yield [x] + xs
+10         if !isLive:
+11           break
+12       x += 1
+13       if x >= s[0]:
+14         break
+-1   return
+*/
+class ProdGen : public Source<vector<int> > {
+public:
+    int state;
+    vector<unsigned int> s;
+    int x;
+    shared_ptr<Source<vector<int> > > iter;
+    ProdGen(const vector<unsigned int>& _s) : s(_s), state(0) {}
+    bool operator()(vector<int>& output) {
+        while(1) {
+            switch(state) {
+            case 0: {
+                if(s.size() == 0) {
+                    output.clear();
+                    state = -1;
+                    return true;
+                } else {
+                    x = 0;
+                    state = 5;
+                    break;
+                }
+            }
+            case 5: {
+                vector<unsigned int> ss(s.begin() + 1, s.end());
+                iter = make_shared<ProdGen>(ss);
+                state = 7;
+                break;
+            }
+            case 7: {
+                vector<int> xs;
+                bool isLive = iter->next(xs);
+                if(isLive) {
+                    output.clear();
+                    output.push_back(x);
+                    output.insert(output.end(), xs.begin(), xs.end());
+                    state = 7;
+                    return true;
+                } else {
+                    state = 12;
+                    break;
+                }
+            }
+            case 12: {
+                x += 1;
+                if(x >= s[0]) {
+                    state = -1;
+                    break;
+                } else {
+                    state = 5;
+                    break;
+                }
+            }
+            case -1: {
+                return false;
+            }
+            }
+        }
+    }
+};
+
+template<typename T>
+void print(vector<T>& vec) {
+    for(int i = 0; i < vec.size(); ++i) {
+        cout << vec[i] << " ";
+    }
+    cout << endl;
+}
+
+int main() {
+    vector<unsigned int> dimSize({2,3,4});
+    vector<int> output(dimSize.size());Sure
+    ProdGen prodGen(dimSize);
+    while(prodGen(output)) {
+        print(output);
+    }
+    return 0;
+}
+```
+
+再来一个汉诺塔来练习一下
+```
+/*
+def hanoi(n, a, b, c):
+    if n == 1:
+        s = str(a) +  ' --> ' + str(c)
+        yield s
+    else:
+        for s in hanoi(n - 1, a, c, b):
+            yield s
+        for s in hanoi(1    , a, b, c):
+            yield s
+        for s in hanoi(n - 1, b, a, c):
+            yield s
+*/
+#define YIELD_BEGIN while(1) { switch(state) {
+#define YIELD_END }}
+#define YIELD_GOTO(x) {state=(x); break;}
+#define YIELD_LAST() {state=-1; return true;}
+class MacroHanoiGen : public Source<string> {
+public:
+    int state;
+    int n;
+    string a, b, c;
+    shared_ptr<Source<string> > iter;
+    MacroHanoiGen(int _n, string _a, string _b, string _c) : n(_n), a(_a), b(_b), c(_c), state(0) {}
+    bool operator()(string& output) {
+    YIELD_BEGIN
+    case 0: {
+        if(n == 1) {
+            output = a + " --> " + c;
+            YIELD_LAST();
+        } else {
+            iter = make_shared<MacroHanoiGen>(n - 1, a, c, b);
+            YIELD_GOTO(2);
+        }
+    }
+    case 2: {
+        bool isLive = iter->next(output);
+        if(isLive) {
+            return true;
+        } else {
+            iter = make_shared<MacroHanoiGen>(1, a, b, c);
+            YIELD_GOTO(4);
+        }
+    }
+    case 4: {
+        bool isLive = iter->next(output);
+        if(isLive) {
+            return true;
+        } else {
+            iter = make_shared<MacroHanoiGen>(n - 1, b, a, c);
+            YIELD_GOTO(6);
+        }
+    }
+    case 6: {
+        bool isLive = iter->next(output);
+        if(isLive) {
+            return true;
+        } else {
+            YIELD_GOTO(-1);
+        }  
+    }        
+    case -1: {
+        return false;
+    }
+    YIELD_END
+    }
+};
 
 
+int main() {
+    MacroHanoiGen hanoiGen(3, "A", "B", "C");
+    while(hanoiGen(s)) {
+        cout << s << endl;
+    }
+    return 0;
+}
+```
+
+未完待续...
 
