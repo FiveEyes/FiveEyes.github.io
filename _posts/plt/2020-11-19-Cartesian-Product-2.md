@@ -254,8 +254,8 @@ public:
             }
             case 7: {
                 vector<int> xs;
-                bool isLive = iter->next(xs);
-                if(isLive) {
+                bool isAlive = iter->next(xs);
+                if(isAlive) {
                     output.clear();
                     output.push_back(x);
                     output.insert(output.end(), xs.begin(), xs.end());
@@ -341,8 +341,8 @@ public:
         }
     }
     case 2: {
-        bool isLive = iter->next(output);
-        if(isLive) {
+        bool isAlive = iter->next(output);
+        if(isAlive) {
             return true;
         } else {
             iter = make_shared<MacroHanoiGen>(1, a, b, c);
@@ -350,8 +350,8 @@ public:
         }
     }
     case 4: {
-        bool isLive = iter->next(output);
-        if(isLive) {
+        bool isAlive = iter->next(output);
+        if(isAlive) {
             return true;
         } else {
             iter = make_shared<MacroHanoiGen>(n - 1, b, a, c);
@@ -359,8 +359,8 @@ public:
         }
     }
     case 6: {
-        bool isLive = iter->next(output);
-        if(isLive) {
+        bool isAlive = iter->next(output);
+        if(isAlive) {
             return true;
         } else {
             YIELD_GOTO(-1);
