@@ -1,4 +1,4 @@
-// clang -std=c++17 -lstdc++ macro_yield.cpp -o prod && ./prod
+// clang -std=c++17 -lstdc++ prod.cpp -o prod && ./prod
 
 #include <iostream>
 #include <functional>
@@ -10,6 +10,14 @@
 #include <vector>
 
 using namespace std;
+
+template<typename T>
+void print(vector<T>& vec) {
+    for(int i = 0; i < vec.size(); ++i) {
+        cout << vec[i] << " ";
+    }
+    cout << endl;
+}
 
 template<typename S>
 class Source : public std::enable_shared_from_this<Source<S>> {
@@ -26,11 +34,11 @@ template<typename S>
 class Gen : public Source<S> {
 public:
     int state;
-    virtual bool step(S& output, bool& isLive) = 0;
+    virtual bool step(S& output, bool& isAlive) = 0;
     bool operator()(S& output) {
-        bool isLive;
-        while(!step(output, isLive));
-        return isLive;
+        bool isAlive;
+        while(!step(output, isAlive));
+        return isAlive;
     }
 };
 
@@ -39,7 +47,7 @@ switch(state) { \
 case BEG: {}
 
 #define GEN_END \
-default: { isLive = false; return true; } }
+default: { isAlive = false; return true; } }
 
 #define BEG(name) BEG_##name
 #define ELSE(name) ELSE_##name
@@ -60,7 +68,7 @@ case BEG(name): { if(!(c)) { state = END(name); return false; } {s;} state = BEG
 case END(name): { state = END(name); }
 
 #define YIELD(name) \
-case BEG(name): { state = END(name); isLive = true; return true; } \
+case BEG(name): { state = END(name); isAlive = true; return true; } \
 case END(name): {}
 
 #define BREAK(loop) { state = END(loop); return false; }
@@ -82,8 +90,8 @@ L: def prod_iter(s):
 5:       xs = []
 6:       iter = generator.create(prod_iter(s[1:]))
 7:       while true:
-8:         xs, isLive = iter.resume()
-9:         if !isLive:
+8:         xs, isAlive = iter.resume()
+9:         if !isAlive:
 10           break
 11         yield [x] + xs
 12       x += 1
@@ -98,7 +106,7 @@ public:
     shared_ptr<Source<vector<int> > > iter;
     vector<int> xs;
     OneMoreProdGen(const vector<unsigned int>& _s) : s(_s) { state = 0; }
-    bool step(vector<int>& output, bool& isLive) {
+    bool step(vector<int>& output, bool& isAlive) {
         DEC_BEG
             DEC_IF(if1), DEC_IF(if2), DEC_IF(if3), DEC_LOOP(loop1), DEC_LOOP(loop2), DEC_YIELD(y1), DEC_YIELD(y2)
         DEC_END
@@ -108,7 +116,7 @@ public:
             YIELD(y1); 
         }, {
             x = 0;
-            LOOP(loop1, {
+            WHILE(loop1, true, {
                 IF(if3, x >= s[0], BREAK(loop1), {});
                 {
                 vector<unsigned int> ss(s.begin() + 1, s.end());
@@ -147,9 +155,10 @@ int n;
     string a, b, c;
     shared_ptr<Source<string> > iter;
     OneMoreHanoiGen(int _n, string _a, string _b, string _c) : n(_n), a(_a), b(_b), c(_c) { state = 0; }
-    bool step(string& output, bool& isLive) {
+    bool step(string& output, bool& isAlive) {
         DEC_BEG
-            DEC_IF(if1), DEC_LOOP(loop1), DEC_LOOP(loop2), DEC_LOOP(loop3), DEC_YIELD(y1), DEC_YIELD(y2), DEC_YIELD(y3), DEC_YIELD(y4)
+            DEC_IF(if1), DEC_LOOP(loop1), DEC_LOOP(loop2), DEC_LOOP(loop3), 
+            DEC_YIELD(y1), DEC_YIELD(y2), DEC_YIELD(y3), DEC_YIELD(y4)
         DEC_END
         GEN_BEG
         IF(if1, n == 1, {
@@ -167,15 +176,15 @@ int n;
     }
 };
 
-template<typename T>
-void print(vector<T>& vec) {
-    for(int i = 0; i < vec.size(); ++i) {
-        cout << vec[i] << " ";
-    }
-    cout << endl;
-}
-
 int main() {
+    cout << "HanoiGen" << endl;
+    string s;
+    OneMoreHanoiGen hanoiGen(3, "A", "B", "C");
+    while(hanoiGen(s)) {
+        cout << s << endl;
+    }
+    
+    cout << "CartesianProduct" << endl;
     vector<unsigned int> dimSize({2,3,4});
     vector<int> output(dimSize.size());
     OneMoreProdGen prodGen(dimSize);
@@ -183,11 +192,5 @@ int main() {
         print(output);
     }
     
-    cout << "HanoiGen" << endl;
-    string s;
-    OneMoreHanoiGen hanoiGen(4, "A", "B", "C");
-    while(hanoiGen(s)) {
-        cout << s << endl;
-    }
     return 0;
 }
