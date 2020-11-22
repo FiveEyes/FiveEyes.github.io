@@ -2,7 +2,7 @@
 layout: post
 title: "笛卡尔积: 副标题太长见正文"
 date: 2020-08-11 18:00:00
-categories: Language
+categories: Lang
 ---
 
 # 笛卡尔积: 如何使用CPP新特性实现一个通用且类型安全的笛卡尔积迭代器
