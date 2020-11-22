@@ -45,11 +45,11 @@ public:
     }
 };
 
-#define GEN_BEG \
+#define PRG_BEG \
 switch(state) { \
 case BEG: {}
 
-#define GEN_END \
+#define PRG_END \
 default: { isAlive = false; return true; } }
 
 #define BEG(name) BEG_##name
@@ -117,7 +117,7 @@ public:
             DEC_LOOP(loop1), DEC_LOOP(loop2),
             DEC_YIELD(y1), DEC_YIELD(y2)
         DEC_END
-        GEN_BEG
+        PRG_BEG
         IF(if1, s.size()==0, { 
             output.clear();
             YIELD(y1); 
@@ -138,7 +138,7 @@ public:
                 x += 1;
             })
         });
-        GEN_END
+        PRG_END
     }
 };
 
@@ -168,7 +168,7 @@ public:
             DEC_IF(if1), DEC_LOOP(loop1), DEC_LOOP(loop2), DEC_LOOP(loop3), 
             DEC_YIELD(y1), DEC_YIELD(y2), DEC_YIELD(y3), DEC_YIELD(y4)
         DEC_END
-        GEN_BEG
+        PRG_BEG
         IF(if1, n == 1, {
             output = a + " --> " + c;
             YIELD(y1);
@@ -180,7 +180,7 @@ public:
             iter = make_shared<OneMoreHanoiGen>(n - 1, b, a, c);
             WHILE(loop3, iter->next(output), YIELD(y4));
         });
-        GEN_END
+        PRG_END
     }
 };
 
@@ -195,7 +195,7 @@ public:
             DEC_LOOP(loop1), DEC_LOOP(loop2),
             DEC_YIELD(y1)
         DEC_END
-        GEN_BEG
+        PRG_BEG
         i = 2;
         WHILE(loop1, true, {
             j = 0;
@@ -206,7 +206,7 @@ public:
             output = i; 
             YIELD(y1);
         });
-        GEN_END
+        PRG_END
     }
 };
 
@@ -240,7 +240,7 @@ public:
             DEC_LOOP(loop1), DEC_LOOP(loop2), 
             DEC_YIELD(y1), DEC_YIELD(y2)
         DEC_END
-        GEN_BEG
+        PRG_BEG
         t = 0;
         srand(time(0));
         cout << "Guess a number between 0 and 100!" << endl;
@@ -267,7 +267,7 @@ public:
             output = 0;
         });
         cout << "ByeBye!" << endl;
-        GEN_END
+        PRG_END
     }
 };
 
