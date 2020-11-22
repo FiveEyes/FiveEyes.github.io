@@ -7,7 +7,10 @@
 Implementation of Coroutine in Cpp
 
 Compiler:
-// clang -std=c++17 -lstdc++
+// clang version 3.8.1-24+rpi1 (tags/RELEASE_381/final)
+// Target: armv6--linux-gnueabihf
+// Thread model: posix
+// clang -std=c++0x -lstdc++
 
 Usage:
 // class MyGen        : public Gen<Output type of the generator>
