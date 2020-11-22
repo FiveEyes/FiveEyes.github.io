@@ -1,5 +1,7 @@
 // clang -std=c++17 -lstdc++ prod.cpp -o prod && ./prod
 
+#include <cstdlib>
+#include <ctime>
 #include <iostream>
 #include <functional>
 #include <memory>
@@ -208,6 +210,75 @@ public:
     }
 };
 
+template<typename S, typename T>
+class Coroutine : public std::enable_shared_from_this<Coroutine<S,T>> {
+public:
+    int state;
+    bool isAlive;
+    Coroutine() : state(0), isAlive(true) {}
+
+    virtual ~Coroutine() {}
+    virtual bool step(S& input, T& output) = 0;
+
+    bool next(S& input, T& output) {
+        while(!step(input, output));
+        return isAlive;
+    }
+    bool operator()(S& input, T& output) {
+        return next(input, output);
+    }
+    shared_ptr<Coroutine<S,T>> getPtr() { return this->shared_from_this(); }
+};
+
+class GuessNumber : public Coroutine<int, int> {
+public:
+    int t, num;
+    GuessNumber() {}
+    bool step(int& input, int& output) {
+        DEC_BEG
+            DEC_IF(if1), 
+            DEC_LOOP(loop1), DEC_LOOP(loop2), 
+            DEC_YIELD(y1), DEC_YIELD(y2)
+        DEC_END
+        GEN_BEG
+        t = 0;
+        srand(time(0));
+        cout << "Guess a number between 0 and 100!" << endl;
+        WHILE(loop1, true, {
+            cout << "Match " << t << endl;
+            num = rand() % 100;
+            cout << "input a number:";
+            YIELD(y1);
+            WHILE(loop2, input != num, {
+                IF(if1, input < num, {
+                    cout << "Too small!" << endl;
+                    output = -1;
+                }, {
+                    cout << "Too large!" << endl;
+                    output = 1;
+                });
+                cout << "input a number agian:";
+                YIELD(y2);
+            });
+            cout << "Bingo! It's " << num << "!" << endl;
+            cout << "Let's play it again!" << endl;
+            t++;
+            output = 0;
+        });
+        GEN_END
+    }
+};
+
+void testGuessNumber() {
+    GuessNumber guess;
+    int num, output;
+    guess(num, output);
+    while(true) {
+        cin >> num;
+        guess(num, output);
+    }
+}
+
 int main() {
     cout << "HanoiGen" << endl;
     string s;
@@ -228,5 +299,7 @@ int main() {
         cout << p << " ";
     }
     cout << endl;
+    
+    testGuessNumber();
     return 0;
 }
