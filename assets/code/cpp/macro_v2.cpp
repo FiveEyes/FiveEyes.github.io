@@ -17,10 +17,10 @@
 using namespace std;
 
 template<typename T>
-class Gen : public std::enable_shared_from_this<Gen<T>> {
+class Generator : public std::enable_shared_from_this<Generator<T>> {
 public:
     int state;
-    Gen() : state(0) {}
+    Generator() : state(0) {}
     virtual bool next(T& output) = 0;
     bool operator()(T& output) {
         return next(output);
@@ -75,7 +75,7 @@ L: def prod_iter(s):
 14         break
 -1   return
 */
-class BetterProdGen : public Gen<vector<int>> {
+class BetterProdGen : public Generator<vector<int>> {
 public:
     vector<unsigned int> s;
     int x;
@@ -117,11 +117,11 @@ def hanoi(n, a, b, c):
         for s in hanoi(n - 1, b, a, c):
             yield s
 */
-class BetterHanoiGen : public Gen<string> {
+class BetterHanoiGen : public Generator<string> {
 public:
     int n;
     string a, b, c;
-    shared_ptr<Gen<string> > iter;
+    shared_ptr<Generator<string> > iter;
     BetterHanoiGen(int _n, string _a, string _b, string _c):
         n(_n), a(_a), b(_b), c(_c) {}
     bool next(string& output) {
@@ -142,7 +142,7 @@ public:
 };
 
 
-class PrimeGen : public Gen<int> {
+class PrimeGen : public Generator<int> {
 public:
     vector<int> primes;
     int i, j;
@@ -166,7 +166,7 @@ public:
 };
 
 
-class SubsetGen: public Gen<vector<int> > {
+class SubsetGen: public Generator<vector<int> > {
 public:
     int n, i, j;
     SubsetGen(int _n) : n(_n) {}
@@ -185,7 +185,7 @@ public:
     }
 };
 
-class PermutationGen: public Gen<vector<int> > {
+class PermutationGen: public Generator<vector<int> > {
 public:
     int beg, n, i;
     vector<int>& arr;
