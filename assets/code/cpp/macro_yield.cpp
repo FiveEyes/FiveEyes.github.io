@@ -198,6 +198,9 @@ case END(name): {}
 #define DEC_YIELD(name) BEG(name), END(name)
 #define DEC_END };
 
+
+/* Examples */
+
 /*
 L: def prod_iter(s):
 0:   if len(s) == 0:
@@ -335,6 +338,72 @@ public:
     }
 };
 
+class SubsetGen: public Gen<vector<int> > {
+public:
+    int n, i, j;
+    SubsetGen(int _n) : n(_n) {}
+    bool step(vector<int>& output) {
+        DEC_BEG
+            DEC_IF(if1),
+            DEC_LOOP(loop1), DEC_LOOP(loop2),
+            DEC_YIELD(y1)
+        DEC_END
+        PRG_BEG
+        i = 0;
+        WHILE(loop1, i < (1 << n), {
+            output.clear();
+            j = 0;
+            WHILE(loop2, j < n, {
+                IF(if1, (i >> j) & 1, output.push_back(j), {});
+                j++;
+            });
+            YIELD(y1);
+            i++;
+        });
+        PRG_END
+    }
+};
+
+class PermutationGen: public Gen<vector<int> > {
+public:
+    int beg, n, i;
+    vector<int>& arr;
+    shared_ptr<PermutationGen> iter;
+    PermutationGen(int _beg, vector<int>& _arr) : beg(_beg), n(_arr.size()), arr(_arr) {}
+    bool step(vector<int>& output) {
+        DEC_BEG
+            DEC_IF(if1),
+            DEC_LOOP(loop1), DEC_LOOP(loop2), DEC_LOOP(loop3),
+            DEC_YIELD(y1), DEC_YIELD(y2)
+        DEC_END
+        PRG_BEG
+        i = beg;
+        IF(if1, beg >= n - 1, {
+            i = 0;
+            WHILE(loop1, i < n, {
+                output[i] = arr[i];
+                i++;
+            });
+            YIELD(y1);
+            RETURN();
+        }, {});
+        i = beg;
+        WHILE(loop2, i < n, {
+            swap(arr[beg], arr[i]);
+            iter = make_shared<PermutationGen>(beg + 1, arr);
+            WHILE(loop3, (*iter)(output), YIELD(y2));
+            swap(arr[beg], arr[i]);
+            i++;
+        });
+        PRG_END
+    }
+    void swap(int& a, int &b) {
+        int c = a;
+        a = b;
+        b = c;
+    }
+};
+
 class GuessNumber : public Coroutine<int, int> {
 public:
     int t, num;
@@ -378,10 +447,73 @@ public:
 
 template<typename T>
 void print(vector<T>& vec) {
+    cout << "{ ";
     for(int i = 0; i < vec.size(); ++i) {
-        cout << vec[i] << " ";
+        cout << vec[i] << ", ";
+    }
+    cout << "}" << endl;
+}
+
+void testHanoiGen() {
+    cout << "HanoiGen" << endl;
+    string s;
+    OneMoreHanoiGen gen(3, "A", "B", "C");
+    int k = 0;
+    while(gen(s)) {
+        cout << s << endl;
+        k++;
+    }
+    cout << "HanoiGen is solved in " << k << " steps." << endl;
+}
+
+void testProdGen() {
+    cout << "CartesianProduct" << endl;
+    vector<unsigned int> dimSize({2,3,4});
+    vector<int> output(dimSize.size());
+    OneMoreProdGen gen(dimSize);
+    int k = 0;
+    while(gen(output)) {
+        print(output);
+        k++;
+    }
+    cout << "Generated " << k << " rows." << endl;
+}
+
+void testPrimeGen() {
+    cout << "Prime numbers" << endl;
+    PrimeGen primeGen;
+    int p;
+    for(int i = 0; i < 30; ++i) {
+        primeGen(p);
+        cout << p << " ";
     }
     cout << endl;
+}
+
+void testSubsetGen() {
+    cout << "testSubsetGen" << endl;
+    int n = 5;
+    vector<int> output(n);
+    SubsetGen gen(n);
+    int k = 0;
+    while(gen(output)) {
+        print(output);
+        k++;
+    }
+    cout << "Generated " << k << " Subsets." << endl;
+}
+
+void testPermutationGen() {
+    cout << "testPermutationGen" << endl;
+    vector<int> arr({1,2,3,4});
+    PermutationGen gen(0, arr);
+    vector<int> output(arr.size());
+    int k = 0;
+    while(gen(output)) {
+        print(output);
+        k++;
+    }
+    cout << "Generated " << k << " Permutations." << endl;
 }
 
 void testGuessNumber() {
@@ -394,26 +526,18 @@ void testGuessNumber() {
 }
 
 int main() {
-    cout << "HanoiGen" << endl;
-    string s;
-    OneMoreHanoiGen hanoiGen(3, "A", "B", "C");
-    while(hanoiGen(s)) cout << s << endl;
+
+    testHanoiGen();
     
-    cout << "CartesianProduct" << endl;
-    vector<unsigned int> dimSize({2,3,4});
-    vector<int> output(dimSize.size());
-    OneMoreProdGen prodGen(dimSize);
-    while(prodGen(output)) print(output);
+    testProdGen();
     
-    cout << "Prime numbers" << endl;
-    PrimeGen primeGen;
-    int p;
-    for(int i = 0; i < 30; ++i) {
-        primeGen(p);
-        cout << p << " ";
-    }
-    cout << endl;
+    testPrimeGen();
+    
+    testSubsetGen();
+    
+    testPermutationGen();
     
     testGuessNumber();
+    
     return 0;
 }
