@@ -30,7 +30,7 @@ public:
     //   output: the output of your generator, set the output before doing yield.
     // Return:
     //    The return value is used by the framework.
-    ///   You don't need to return true or false by yourself, and the MACRO will take care of it.
+    //    You don't need to return true or false by yourself, and the MACRO will take care of it.
     bool step(string& output) {
         // Declare all the control statements at first.
         // IMPORTANT: You can NOT use a control MACRO without declaring its name.
@@ -45,14 +45,14 @@ public:
         DEC_END
         
         // Using the control MACRO to write the code.
-        // PRG_BEG : begin the program.
-        //   IF(name, condition, true_block, false_block);
-        //   WHILE(name, condition loop_block);
-        //   BREAK(loop_name);
-        //   CONTINUE(loop_name);
-        //   YIELD(name);
-        //   RETURN();
-        // PRG_END : end the program.
+        // PRG_BEG                                       -> Begin the program.
+        //   IF(name, condition, true_block, false_block); -> A if statment with name.
+        //   WHILE(name, condition loop_block);            -> A while loop with name.
+        //   BREAK(loop_name);                             -> Jump to the end of the loop named loop_name
+        //   CONTINUE(loop_name);                          -> Jump to the begin of the loop named loop_name
+        //   YIELD(name);                                  -> A yield statement with name.
+        //   RETURN();                                     -> Finish the generator.
+        // PRG_END                                       -> End the program.
         PRG_BEG
         IF(if1, n == 1, {
             output = a + " --> " + c;
@@ -96,14 +96,6 @@ int main() {
 #include <vector>
 
 using namespace std;
-
-template<typename T>
-void print(vector<T>& vec) {
-    for(int i = 0; i < vec.size(); ++i) {
-        cout << vec[i] << " ";
-    }
-    cout << endl;
-}
 
 template<typename S>
 class Source : public std::enable_shared_from_this<Source<S>> {
@@ -358,6 +350,14 @@ public:
         PRG_END
     }
 };
+
+template<typename T>
+void print(vector<T>& vec) {
+    for(int i = 0; i < vec.size(); ++i) {
+        cout << vec[i] << " ";
+    }
+    cout << endl;
+}
 
 void testGuessNumber() {
     GuessNumber guess;
