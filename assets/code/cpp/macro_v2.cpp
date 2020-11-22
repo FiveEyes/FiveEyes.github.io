@@ -91,7 +91,7 @@ public:
         }
         for(x = 0; x < s[0]; ++x) {
             iter = make_shared<BetterProdGen>(
-            vector<unsigned int>(s.begin() + 1, s.end()));
+                vector<unsigned int>(s.begin() + 1, s.end()));
             while(iter->next(xs)) {
                 output.clear();
                 output.push_back(x);
