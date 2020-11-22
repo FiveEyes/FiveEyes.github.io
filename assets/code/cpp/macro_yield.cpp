@@ -1,4 +1,86 @@
-// clang -std=c++17 -lstdc++ prod.cpp -o prod && ./prod
+// Title       : Implementation of Coroutine in Cpp
+// Author      : hanzh.xu@gmail.com
+// Date        : 11-21-2020
+// License     : MIT License
+
+/*
+Implementation of Coroutine in Cpp
+
+Compiler:
+// clang -std=c++17 -lstdc++
+
+Usage:
+// class MyGen        : public Gen<Output type of the generator>
+class OneMoreHanoiGen : public Gen<string> {
+public:
+    // Local variables of the generator.
+    int n;
+    string a, b, c;
+    shared_ptr<Gen<string> > iter;
+    
+    // Constructor of the generator.
+    OneMoreHanoiGen(int _n, string _a, string _b, string _c):
+        n(_n), a(_a), b(_b), c(_c) {}
+    
+    // Replace control statements with the MACRO in your generator.
+    // Args: 
+    //   output: the output of your generator, set the output before doing yield.
+    // Return:
+    //    true  : the generator has next output, is not finished yet.
+    //    false : the generator is done.
+    bool step(string& output) {
+        // Declare all the control statements at first.
+        // IMPORTANT: You can NOT use a control MACRO without declaring its name.
+        // DEC_BEG : begin the declaration.
+        // DEF_IF(if_name) : declare a if statement named if_name.
+        // DEF_LOOP(loop_name) : declare a loop statement named loop_name.
+        // DEC_YIELD(yield_name) : declare a loop statement named yield_name.
+        // DEC_END : end the declaration.
+        DEC_BEG
+            DEC_IF(if1), DEC_LOOP(loop1), DEC_LOOP(loop2), DEC_LOOP(loop3), 
+            DEC_YIELD(y1), DEC_YIELD(y2), DEC_YIELD(y3), DEC_YIELD(y4)
+        DEC_END
+        
+        // Using the control MACRO to write the code.
+        // PRG_BEG : begin the program.
+        //   IF(name, condition, true_block, false_block);
+        //   WHILE(name, condition loop_block);
+        //   BREAK(loop_name);
+        //   CONTINUE(loop_name);
+        //   YIELD(name);
+        //   RETURN();
+        // PRG_END : end the program.
+        PRG_BEG
+        IF(if1, n == 1, {
+            output = a + " --> " + c;
+            YIELD(y1);
+        }, {
+            iter = make_shared<OneMoreHanoiGen>(n - 1, a, c, b);
+            WHILE(loop1, iter->next(output), YIELD(y2));
+            iter = make_shared<OneMoreHanoiGen>(1, a, b, c);
+            WHILE(loop2, iter->next(output), YIELD(y3));
+            iter = make_shared<OneMoreHanoiGen>(n - 1, b, a, c);
+            WHILE(loop3, iter->next(output), YIELD(y4));
+        });
+        PRG_END
+    }
+};
+
+int main() {
+    string output;
+    
+    // Build a HanoiGen with Args (3, "A", "B", "C").
+    OneMoreHanoiGen hanoiGen(3, "A", "B", "C");
+    
+    // Get the next output, until the generator returns false. 
+    // bool isAlive = hanoiGen(output);
+    // if(isAlive) cout << output << endl;
+    while(hanoiGen(output)) cout << output << endl;
+    
+    return 0;
+}
+
+*/
 
 #include <cstdlib>
 #include <ctime>
@@ -45,11 +127,33 @@ public:
     }
 };
 
+template<typename S, typename T>
+class Coroutine : public std::enable_shared_from_this<Coroutine<S,T>> {
+public:
+    int state;
+    bool isAlive;
+    Coroutine() : state(0), isAlive(true) {}
+
+    virtual ~Coroutine() {}
+    virtual bool step(S& input, T& output) = 0;
+
+    bool next(S& input, T& output) {
+        while(!step(input, output));
+        return isAlive;
+    }
+    bool operator()(S& input, T& output) {
+        return next(input, output);
+    }
+    shared_ptr<Coroutine<S,T>> getPtr() { return this->shared_from_this(); }
+};
+
+
 #define PRG_BEG \
 switch(state) { \
-case BEG: {}
+case PBEG: {}
 
 #define PRG_END \
+case PEND: {} \
 default: { isAlive = false; return true; } }
 
 #define BEG(name) BEG_##name
@@ -79,7 +183,9 @@ case END(name): {}
 
 #define GOTO(label) { state = label; return false; }
 
-#define DEC_BEG enum { BEG = 0,
+#define RETURN() { state = PEND; return false; }
+
+#define DEC_BEG enum { PBEG = 0, PEND, 
 #define DEC_IF(name) BEG(name), ELSE(name), END(name)
 #define DEC_LOOP(name) BEG(name), END(name)
 #define DEC_YIELD(name) BEG(name), END(name)
@@ -208,26 +314,6 @@ public:
         });
         PRG_END
     }
-};
-
-template<typename S, typename T>
-class Coroutine : public std::enable_shared_from_this<Coroutine<S,T>> {
-public:
-    int state;
-    bool isAlive;
-    Coroutine() : state(0), isAlive(true) {}
-
-    virtual ~Coroutine() {}
-    virtual bool step(S& input, T& output) = 0;
-
-    bool next(S& input, T& output) {
-        while(!step(input, output));
-        return isAlive;
-    }
-    bool operator()(S& input, T& output) {
-        return next(input, output);
-    }
-    shared_ptr<Coroutine<S,T>> getPtr() { return this->shared_from_this(); }
 };
 
 class GuessNumber : public Coroutine<int, int> {
