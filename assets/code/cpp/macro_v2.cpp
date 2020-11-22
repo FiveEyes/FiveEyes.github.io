@@ -1,4 +1,4 @@
-// Title       : Implementation of Coroutine in Cpp, Version 2
+// Title       : Implementation of Coroutine in Cpp
 // Author      : hanzh.xu@gmail.com
 // Date        : 11-22-2020
 // License     : MIT License
@@ -49,7 +49,7 @@ case 0:;
 case -1:; \
 default: { return false; } }
 
-#define YIELD(name) \
+#define YIELD() \
 do { state=__LINE__; return true; case __LINE__:; } while (0)
 
 #define RETURN() { state = -1; return false; }
