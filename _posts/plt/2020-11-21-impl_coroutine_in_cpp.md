@@ -11,7 +11,7 @@ If you are interested in how to write a python generator or a lua coroutine in C
 
 I am not going to explain how it works, but if you are interested in the implementation, feel free to read the source code...
 
-I wrote some blogs on the story of how I came up with this idea, but all of them are in Chinese. Read them here: [Cartesian Product](https://freopen.com/lang/2020/08/11/Cartesian-Product.html) and [Cartesian Product 2](https://freopen.com/lang/2020/11/19/Cartesian-Product-2.html)
+I wrote some posts on the story of how I came up with this idea, but all of them are in Chinese. Read them here: [Cartesian Product](https://freopen.com/lang/2020/08/11/Cartesian-Product.html) and [Cartesian Product 2](https://freopen.com/lang/2020/11/19/Cartesian-Product-2.html)
 
 This small implememation is very easy to use, so I wrote an usage manual in the souece code to show how to use it. 
 
