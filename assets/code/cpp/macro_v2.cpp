@@ -394,7 +394,7 @@ int main() {
     
     // testGuessNumber();
     
-    // testGuessYourNumber();
+    testGuessYourNumber();
     
     return 0;
 }
