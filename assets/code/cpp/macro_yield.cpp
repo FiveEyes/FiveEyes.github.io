@@ -166,6 +166,7 @@ default: { isAlive = false; return true; } }
 #define BEG(name) BEG_##name
 #define ELSE(name) ELSE_##name
 #define END(name) END_##name
+#define LAB(name) LAB_##name
 
 
 #define IF(name,c,a,b) \
@@ -188,6 +189,8 @@ case END(name): {}
 #define CONTINUE(loop) { state = BEG(loop); return false; }
 #define BREAK(loop) { state = END(loop); return false; }
 
+
+#define SET_LABEL(name) case LAB(name) : {}
 #define GOTO(label) { state = label; return false; }
 
 #define RETURN() { state = PEND; return false; }
@@ -196,6 +199,7 @@ case END(name): {}
 #define DEC_IF(name) BEG(name), ELSE(name), END(name)
 #define DEC_LOOP(name) BEG(name), END(name)
 #define DEC_YIELD(name) BEG(name), END(name)
+#define DEC_LABEL(name) LAB(name)
 #define DEC_END };
 
 
@@ -426,10 +430,10 @@ public:
             WHILE(loop2, input != num, {
                 IF(if2, input == -1, BREAK(loop1), {});
                 IF(if1, input < num, {
-                    cout << "Too small!" << endl;
+                    cout << "Too low!" << endl;
                     output = -1;
                 }, {
-                    cout << "Too large!" << endl;
+                    cout << "Too high!" << endl;
                     output = 1;
                 });
                 cout << "input a number agian:";
@@ -444,6 +448,48 @@ public:
         PRG_END
     }
 };
+
+class GuessYourNumber : public Coroutine<string, int> {
+public:
+    int beg, end, mid;
+    GuessYourNumber() {}
+    bool step(string& input, int& output) {
+        DEC_BEG
+            DEC_LOOP(loop1),
+            DEC_YIELD(y1), DEC_YIELD(y2), DEC_LABEL(bye)
+        DEC_END
+        PRG_BEG
+        cout << "Keep a number between 0 and 100 in your mind!" << endl;
+        cout << "Are you ready?(y/n)" << endl;
+        YIELD(y2);
+        if(input[0] != 'y') {
+            GOTO(LAB(bye));
+        }
+        beg = 0, end = 101;
+        WHILE(loop1, beg < end, {
+            mid = (beg + end) / 2;
+            cout << "Is it " << mid << "?" << endl;
+            cout << "Input 's' if it is smaller than your number." << endl;
+            cout << "Input 'b' if it is bigger than your number." << endl;
+            cout << "Input 'y' if it is your number!" << endl;
+            YIELD(y1);
+            if(input[0] == 's') {
+                beg = mid+1;
+            } else if(input[0] == 'b') {
+                end = mid;
+            } else {
+                cout << "YES! It's " << mid << "!" << endl;
+                RETURN();
+            }
+        });
+        cout << "No possible! The number must be " << mid << "!" << endl;
+        SET_LABEL(bye);
+        cout << "ByeBye!" << endl;
+        PRG_END
+    }
+};
+
+
 
 template<typename T>
 void print(vector<T>& vec) {
@@ -525,6 +571,16 @@ void testGuessNumber() {
     } while(guess(num, output));
 }
 
+void testGuessYourNumber() {
+    GuessYourNumber guess;
+    string input;
+    int output;
+    guess(input, output);
+    do {
+        cin >> input;
+    } while(guess(input, output));
+}
+
 int main() {
 
     testHanoiGen();
@@ -537,7 +593,9 @@ int main() {
     
     testPermutationGen();
     
-    testGuessNumber();
+    // testGuessNumber();
+    
+    testGuessYourNumber();
     
     return 0;
 }
