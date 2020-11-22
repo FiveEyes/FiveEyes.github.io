@@ -236,7 +236,7 @@ public:
     GuessNumber() {}
     bool step(int& input, int& output) {
         DEC_BEG
-            DEC_IF(if1), 
+            DEC_IF(if1), DEC_IF(if2), 
             DEC_LOOP(loop1), DEC_LOOP(loop2), 
             DEC_YIELD(y1), DEC_YIELD(y2)
         DEC_END
@@ -250,6 +250,7 @@ public:
             cout << "input a number:";
             YIELD(y1);
             WHILE(loop2, input != num, {
+                IF(if2, input == -1, BREAK(loop1), {});
                 IF(if1, input < num, {
                     cout << "Too small!" << endl;
                     output = -1;
@@ -265,6 +266,7 @@ public:
             t++;
             output = 0;
         });
+        cout << "ByeBye!" << endl;
         GEN_END
     }
 };
@@ -273,10 +275,9 @@ void testGuessNumber() {
     GuessNumber guess;
     int num, output;
     guess(num, output);
-    while(true) {
+    do {
         cin >> num;
-        guess(num, output);
-    }
+    } while(guess(num, output));
 }
 
 int main() {
