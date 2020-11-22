@@ -1,4 +1,4 @@
-// Title       : Implementation of Coroutine in Cpp
+// Title       : Implementation of Coroutine in Cpp, Version 2.0
 // Author      : hanzh.xu@gmail.com
 // Date        : 11-22-2020
 // License     : MIT License
