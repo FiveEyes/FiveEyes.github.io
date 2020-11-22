@@ -225,26 +225,42 @@ public:
     OneMoreProdGen(const vector<unsigned int>& _s) : s(_s) {}
     bool step(vector<int>& output) {
         DEC_BEG
-            DEC_IF(if1), DEC_IF(if2), DEC_IF(if3),
+            // declare 2 if statements, 2 loops, and 2 yields.
+            // the name of them are if1, if2, loop1, loop2, y1, y2.
+            DEC_IF(if1), DEC_IF(if2),
             DEC_LOOP(loop1), DEC_LOOP(loop2),
             DEC_YIELD(y1), DEC_YIELD(y2)
         DEC_END
         PRG_BEG
+        // the if_statement if1. 
+        // if(s.size() == 0) {...} else {...}
         IF(if1, s.size()==0, { 
             output.clear();
+            // the yield_statement y1. 
+            // output = empty and yield.
             YIELD(y1); 
         }, {
             x = 0;
+            // the while_statement loop1.
+            // while(true) {...}
             WHILE(loop1, true, {
-                IF(if3, x >= s[0], BREAK(loop1), {});
+                // the if_statement if2.
+                // if(x >= s[0]) jump to loop1's end.
+                IF(if2, x >= s[0], BREAK(loop1), {});
                 {
+                // if we define local variables here, sometimes it gets an error.
+                // Luckly, for this one, we can use { } to solve the error.
                 vector<unsigned int> ss(s.begin() + 1, s.end());
                 iter = make_shared<OneMoreProdGen>(ss);
                 }
+                // the while_statement loop2.
+                // while(iter(xs)) {...}
                 WHILE(loop2, iter->next(xs), {
                     output.clear();
                     output.push_back(x);
                     output.insert(output.end(), xs.begin(), xs.end());
+                    // the yield_statement y2.
+                    // output = [x] + xs and yield.
                     YIELD(y2);
                 });
                 x += 1;
