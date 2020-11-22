@@ -94,6 +94,7 @@ template<typename S, typename T>
 class Coroutine : public std::enable_shared_from_this<Coroutine<S,T>> {
 public:
     virtual bool step(S& input, T& output) = 0;
+};
 */
 
 #include <cstdlib>
