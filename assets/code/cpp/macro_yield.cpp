@@ -22,12 +22,15 @@ public:
     OneMoreHanoiGen(int _n, string _a, string _b, string _c):
         n(_n), a(_a), b(_b), c(_c) {}
     
-    // Replace control statements with the MACRO in your generator.
+    // Write your code in the step method.
+    // It is very straight forward. 
+    // You just need to replace all control statements with the MACRO in your generator.
+    // bool step(string& output);
     // Args: 
     //   output: the output of your generator, set the output before doing yield.
     // Return:
-    //    true  : the generator has next output, is not finished yet.
-    //    false : the generator is done.
+    //    The return value is used by the framework.
+    ///   You don't need to return true or false by yourself, and the MACRO will take care of it.
     bool step(string& output) {
         // Declare all the control statements at first.
         // IMPORTANT: You can NOT use a control MACRO without declaring its name.
@@ -79,7 +82,6 @@ int main() {
     
     return 0;
 }
-
 */
 
 #include <cstdlib>
