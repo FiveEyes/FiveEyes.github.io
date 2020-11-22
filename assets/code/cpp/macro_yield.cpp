@@ -332,7 +332,13 @@ public:
         WHILE(loop1, true, {
             j = 0;
             WHILE(loop2, j < primes.size(), {
-               IF(if1, i % primes[j] == 0, {i++; CONTINUE(loop1);}, j++); 
+               IF(if1, i % primes[j] == 0, {
+                   i++; 
+                   // Wow, it is jumping to the beginning of loop1!
+                   CONTINUE(loop1);
+                },{
+                    j++;
+                }); 
             });
             primes.push_back(i); 
             output = i; 
@@ -356,11 +362,19 @@ public:
         i = 0;
         WHILE(loop1, i < (1 << n), {
             output.clear();
+            /*
             j = 0;
             WHILE(loop2, j < n, {
                 IF(if1, (i >> j) & 1, output.push_back(j), {});
                 j++;
             });
+            */
+            // Once you understand the framework, it's possible to use native if-statements and loops.
+            for(int j = 0; j < n; ++j) {
+                if((i >> j) & 1) {
+                    output.push_back(j);
+                }
+            }                
             YIELD(y1);
             i++;
         });
@@ -572,6 +586,7 @@ void testGuessNumber() {
 }
 
 void testGuessYourNumber() {
+    cout << "testGuessYourNumber" << endl;
     GuessYourNumber guess;
     string input;
     int output;
