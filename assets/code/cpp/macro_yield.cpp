@@ -502,7 +502,39 @@ public:
     }
 };
 
-
+// In fact, you are free to use if-statements and loops from cpp. 
+// The only rule is that local varaibles are NOT allowed in the step method!
+// It was a big surprise for me, I am going to write coroutine_in_cpp_v2...
+class BetterProdGen : public Gen<vector<int> > {
+public:
+    vector<unsigned int> s;
+    int x;
+    shared_ptr<Source<vector<int> > > iter;
+    vector<int> xs;
+    BetterProdGen(const vector<unsigned int>& _s) : s(_s) {}
+    bool step(vector<int>& output) {
+        DEC_BEG
+            DEC_YIELD(y1), DEC_YIELD(y2)
+        DEC_END
+        PRG_BEG
+        if(s.size()==0) { 
+            output.clear();
+            YIELD(y1);
+            RETURN();
+        }
+        for(x = 0; x < s[0]; ++x) {
+            iter = make_shared<OneMoreProdGen>(
+            vector<unsigned int>(s.begin() + 1, s.end()));
+            while(iter->next(xs)) {
+                output.clear();
+                output.push_back(x);
+                output.insert(output.end(), xs.begin(), xs.end());
+                YIELD(y2);
+            }
+        }
+        PRG_END
+    }
+};
 
 template<typename T>
 void print(vector<T>& vec) {
@@ -575,6 +607,20 @@ void testPermutationGen() {
     cout << "Generated " << k << " Permutations." << endl;
 }
 
+void testBetterProdGen() {
+    cout << "testBetterProdGen" << endl;
+    vector<unsigned int> dimSize({3,2,4});
+    vector<int> output(dimSize.size());
+    BetterProdGen gen(dimSize);
+    int k = 0;
+    while(gen(output)) {
+        print(output);
+        k++;
+    }
+    cout << "Generated " << k << " rows." << endl;
+}
+
+
 void testGuessNumber() {
     GuessNumber guess;
     int num, output;
@@ -607,9 +653,11 @@ int main() {
     
     testPermutationGen();
     
+    testBetterProdGen();
+    
     // testGuessNumber();
     
-    testGuessYourNumber();
+    // testGuessYourNumber();
     
     return 0;
 }
