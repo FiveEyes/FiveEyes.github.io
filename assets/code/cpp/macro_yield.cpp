@@ -248,12 +248,8 @@ public:
                 // the if_statement if2.
                 // if(x >= s[0]) jump to loop1's end.
                 IF(if2, x >= s[0], BREAK(loop1), {});
-                {
-                // if we define local variables here, sometimes it gets an error.
-                // Luckly, for this one, we can use { } to solve the error.
-                vector<unsigned int> ss(s.begin() + 1, s.end());
-                iter = make_shared<OneMoreProdGen>(ss);
-                }
+                iter = make_shared<OneMoreProdGen>(
+                    vector<unsigned int>(s.begin() + 1, s.end()));
                 // the while_statement loop2.
                 // while(iter(xs)) {...}
                 WHILE(loop2, iter->next(xs), {
