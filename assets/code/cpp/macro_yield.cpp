@@ -113,7 +113,7 @@ using namespace std;
 template<typename S>
 class Source : public std::enable_shared_from_this<Source<S>> {
 public:
-	virtual ~Source() {}
+    virtual ~Source() {}
     virtual bool operator()(S& output) = 0;
     bool next(S& output) {
         return (*this)(output);
