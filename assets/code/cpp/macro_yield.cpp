@@ -33,7 +33,7 @@ public:
     //   output: the output of your generator, set the output before doing yield.
     // Return:
     //    The return value is used by the framework.
-    //    You don't need to return true or false by yourself, and the MACRO will take care of it.
+    //    DO NOT return true or false by yourself, let the MACRO takes care of it.
     bool step(string& output) {
         // Declare all the control statements at first.
         // IMPORTANT: You can NOT use a control MACRO without declaring its name.
