@@ -50,10 +50,10 @@ case -1:; \
 default: { return false; } }
 
 #define YIELD() \
-do{ state = __LINE__; return true; case __LINE__:; }while(0)
+do { state = __LINE__; return true; case __LINE__:; } while(0)
 
 #define RETURN() \
-do{ state = -1; return false; }while(0)
+do { state = -1; return false; } while(0)
 
 /* Examples */
 
