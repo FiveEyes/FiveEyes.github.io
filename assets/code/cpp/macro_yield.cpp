@@ -469,7 +469,6 @@ public:
     GuessYourNumber() {}
     bool step(string& input, int& output) {
         DEC_BEG
-            DEC_LOOP(loop1),
             DEC_YIELD(y1), DEC_YIELD(y2), DEC_LABEL(bye)
         DEC_END
         PRG_BEG
@@ -480,7 +479,7 @@ public:
             GOTO(LAB(bye));
         }
         beg = 0, end = 101;
-        WHILE(loop1, beg < end, {
+        while(beg < end) {
             mid = (beg + end) / 2;
             cout << "Is it " << mid << "?" << endl;
             cout << "Input 's' if it is smaller than your number." << endl;
@@ -495,7 +494,7 @@ public:
                 cout << "YES! It's " << mid << "!" << endl;
                 RETURN();
             }
-        });
+        }
         cout << "No possible! The number must be " << mid << "!" << endl;
         SET_LABEL(bye);
         cout << "ByeBye!" << endl;
