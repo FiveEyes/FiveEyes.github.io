@@ -89,7 +89,7 @@ int main() {
 // You also can create a coroutine having full functionality, if you want to do some interactive operations with the coroutine.
 // The only difference is that the step method has an extra argument input now.
 // The input argument represents the input variable that you pass into the Coroutine.
-// See the example class GuessNumber to know how to use it.
+// See the example class GuessNumber to understand how to use it.
 template<typename S, typename T>
 class Coroutine : public std::enable_shared_from_this<Coroutine<S,T>> {
 public:
