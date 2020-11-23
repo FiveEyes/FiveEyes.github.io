@@ -55,6 +55,9 @@ do { state = __LINE__; return true; case __LINE__:; } while(0)
 #define RETURN() \
 do { state = -1; return false; } while(0)
 
+#define RESET() \
+do { state = 0; } while(0)
+
 /* Examples */
 
 /*
