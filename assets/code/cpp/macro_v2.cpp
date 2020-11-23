@@ -14,6 +14,23 @@
 #include <utility>
 #include <vector>
 
+#define PRG_BEG \
+switch(state) { \
+case 0:;
+
+#define PRG_END \
+case -1:; \
+default: { return false; } }
+
+#define YIELD() \
+do { state = __LINE__; return true; case __LINE__:; } while(0)
+
+#define YIELD_ALL(iter,output) \
+do { while((iter)->next((output))) { YIELD(); } } while(0)
+
+#define RETURN() \
+do { state = -1; return false; } while(0)
+
 using namespace std;
 
 template<typename T>
@@ -29,13 +46,13 @@ public:
 };
 
 template<typename T>
-class IteratorHelper : public std::enable_shared_from_this<IteratorHelper<T>> {
+class GenIter : public std::enable_shared_from_this<GenIter<T>> {
 public:
     shared_ptr<Generator<T>> gen;
     T output;
     bool pending;
-    IteratorHelper(Generator<T> &_gen) : gen(_gen.getPtr()),  pending(false) {}
-    IteratorHelper(shared_ptr<Generator<T>> _gen) : gen(_gen),  pending(false) {}
+    GenIter(Generator<T> &_gen) : gen(_gen.getPtr()),  pending(false) {}
+    GenIter(shared_ptr<Generator<T>> _gen) : gen(_gen),  pending(false) {}
     T next() {
         if(!pending) hasNext();
         if(pending) {
@@ -49,7 +66,7 @@ public:
         if(pending) return pending;
         return pending = gen->next(output);
     }
-    shared_ptr<IteratorHelper<T>> getPtr() { return this->shared_from_this(); }
+    shared_ptr<GenIter<T>> getPtr() { return this->shared_from_this(); }
 };
 
 template<typename S, typename T>
@@ -65,20 +82,6 @@ public:
     shared_ptr<Coroutine<S,T>> getPtr() { return this->shared_from_this(); }
 };
 
-
-#define PRG_BEG \
-switch(state) { \
-case 0:;
-
-#define PRG_END \
-case -1:; \
-default: { return false; } }
-
-#define YIELD() \
-do { state = __LINE__; return true; case __LINE__:; } while(0)
-
-#define RETURN() \
-do { state = -1; return false; } while(0)
 
 /* Examples */
 
