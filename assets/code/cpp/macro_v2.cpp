@@ -25,6 +25,30 @@ public:
     bool operator()(T& output) {
         return next(output);
     }
+    shared_ptr<Generator<T>> getPtr() { return this->shared_from_this(); }
+};
+
+template<typename T>
+class Iterator : public std::enable_shared_from_this<Iterator<T>> {
+public:
+    Generator<T> &gen;
+    T output;
+    bool pending;
+    Iterator(Generator<T> &_gen) : gen(_gen),  pending(false) {}
+    T next() {
+        if(!pending) hasNext();
+        if(pending) {
+            pending = false;
+        } else {
+            // Error, Iterator is done.
+        }
+        return output;
+    }
+    bool hasNext() {
+        if(pending) return pending;
+        return pending = gen.next(output);
+    }
+    shared_ptr<Iterator<T>> getPtr() { return this->shared_from_this(); }
 };
 
 template<typename S, typename T>
@@ -55,10 +79,34 @@ do { state = __LINE__; return true; case __LINE__:; } while(0)
 #define RETURN() \
 do { state = -1; return false; } while(0)
 
-#define RESET() \
-do { state = 0; } while(0)
-
 /* Examples */
+
+class FibGen : public Generator<int> {
+public:
+    int a, b;
+    FibGen() : a(1), b(1) {}
+    bool next(int &output) {
+        PRG_BEG
+        while(true) {
+            output = a;
+            a = b;
+            b = output + a;
+            YIELD();
+        }
+        PRG_END
+    }
+};
+
+void testFibGen() {
+    cout << "testFibGen" << endl;
+    FibGen gen;
+    int x;
+    for(int i = 0; i < 30; ++i) {
+        gen(x);
+        cout << x << " ";
+    }
+    cout << endl;
+}
 
 /*
 L: def prod_iter(s):
@@ -386,6 +434,8 @@ void testGuessYourNumber() {
 
 int main() {
 
+    testFibGen();
+    
     testBetterHanoiGen();
         
     testPrimeGen();
@@ -398,7 +448,7 @@ int main() {
     
     // testGuessNumber();
     
-    testGuessYourNumber();
+    // testGuessYourNumber();
     
     return 0;
 }
