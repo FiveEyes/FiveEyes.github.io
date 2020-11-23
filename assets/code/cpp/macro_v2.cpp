@@ -29,12 +29,13 @@ public:
 };
 
 template<typename T>
-class Iterator : public std::enable_shared_from_this<Iterator<T>> {
+class IteratorHelper : public std::enable_shared_from_this<IteratorHelper<T>> {
 public:
-    Generator<T> &gen;
+    shared_ptr<Generator<T>> gen;
     T output;
     bool pending;
-    Iterator(Generator<T> &_gen) : gen(_gen),  pending(false) {}
+    IteratorHelper(Generator<T> &_gen) : gen(_gen.getPtr()),  pending(false) {}
+    IteratorHelper(shared_ptr<Generator<T>> _gen) : gen(_gen),  pending(false) {}
     T next() {
         if(!pending) hasNext();
         if(pending) {
@@ -46,9 +47,9 @@ public:
     }
     bool hasNext() {
         if(pending) return pending;
-        return pending = gen.next(output);
+        return pending = gen->next(output);
     }
-    shared_ptr<Iterator<T>> getPtr() { return this->shared_from_this(); }
+    shared_ptr<IteratorHelper<T>> getPtr() { return this->shared_from_this(); }
 };
 
 template<typename S, typename T>
