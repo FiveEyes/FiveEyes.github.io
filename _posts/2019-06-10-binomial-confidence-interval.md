@@ -33,7 +33,7 @@ And also, we can relax the problem by assuming that all $R(x)-L(x)$ are the same
 
 ### Sub problem - A proof by induction.
 
-With this same length assumption, to solve the subproblem, we could construct $L(x)$ by induction. If the construction succeeds, then we get a valid CL with the length $T$, $L(x)$ by induction and $R(x) = L(x) + T, \forall x$. If the inductive construction fails, then it proves that no valid $L(x)$ exists for the given $T$.
+With this same length assumption, to solve the subproblem, we could construct $L(x)$ by induction. If the construction succeeds, then the result is a valid CL with the length $T$. If the inductive construction fails, then it proves that no valid $L(x)$ exists for the given $T$.
 
 the base case: $k = 0$, $L(k) = 0.0$ and $R(k) = T$.
 
@@ -49,7 +49,7 @@ where
 
 $$1(x) = 1 \text{ if }  L(x) \le p' \le L(x) + T, \text{else }0$$
 
-Clearly, this $p'$ could get found by binary search again, this inducative construction will give us the optimal candidate $L(x)$. To validate if it's a valid L(x), we can check if $L(N) + T \ge 1$ or not.
+Clearly, this $p'$ could get found by binary search again, this inducative construction will give us the optimal candidate $L(x)$. In order to validate if it's a valid L(x), we can check if $L(N) + T \ge 1$ or not.
 
 if $L(N) + T < 1$, then it proves that no valid solution exists.
 
@@ -63,12 +63,14 @@ Input: N, C
 
 binary_search(T, left=0.0, right=1.0)
   t = (left + right) / 2
-  L = proof_by_induction(t,N,C)
+  L(x) = proof_by_induction(t,N,C)
   if L(N) + T < 1.0
     left = t
   else:
     right = t
-return right
+L(x) = proof_by_induction(right,N,C)
+R(x) = L(x) + t
+return L, R
 ```
 
 ## Code
