@@ -5,7 +5,7 @@ date: 2019-06-10 19:30:00
 categories: Statistics Algo
 ---
 
-# A numerical algorithm to compute the optimal binomial confidence interval
+# Compute the shortest length binomial confidence interval
 
 ## Problem description
 
@@ -19,7 +19,7 @@ I didn't find out an existing algorithm to compute out an optimal confidence int
 
 One possible reason I guess is that all the existing solutions are focusing on working out an analytical solution which is in the form of math expressions.
 
-The optimal CI here means that the the maximum length among all its intervals is the smallest in all possible CIs.
+The optimal CI here means that the its maximum length interval is the shortest one among all the maximum lengths of all possible CIs.
 
 In this post, the goal is to compute out an optimal CI for given $N$ and $C$, which $\underset{(R,L) \in \text{CIs}}{\text{minimize}} \underset{x \in \\{0, \dots, N\\}}{\max}  (R(x) - L(x))$.
 
