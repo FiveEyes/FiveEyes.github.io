@@ -1,29 +1,73 @@
 ---
 layout: post
-title: "Binomial confidence interval"
+title: "The algorithm to compute the optimal binomial confidence interval"
 date: 2019-06-10 19:30:00
 categories: Statistics Algo
 ---
 
-# Binomial confidence interval with shortest length
+# Compute the optimal binomial confidence interval which has the shortest interval.
 
 ## Problem description
 
 The problem is pretty simple. Suppose we have a coin, toss it $n$ times, and observe $x$ number of heads. Now, we want to estimate the possibility $p$ of head. The best estimator is $\frac{x}{n}$. But we are also interested in providing a confidence interval(CI) of $p$, $[L(x), R(x)]$.
 
-Suppose that the confidence level is $c$. And a CI of confidence level $c$ is that ```$\forall p \in [0, 1], P(p \in [L(x), R(x)] | p) \ge c$```.
+Suppose that the confidence level is $c$. And a CI of confidence level $c$ is that $\forall p \in [0, 1], P(p \in [L(x), R(x)] | p) \ge c$.
+
+## Background
+
+I didn't find out a existing algorithm to compute out an optimal confidence interval yet. the optimal CI means that the the maximum length of all its intervals is the smallest one in all possible valid CIs. [https://en.wikipedia.org/wiki/Binomial_proportion_confidence_interval](https://en.wikipedia.org/wiki/Binomial_proportion_confidence_interval)
+
+One possible reason I guess is that all the existing solutions are focusing on working out an analytical solution which is in the form of math expressions.
+
+In this post, our target is to compute out a CI which is $\min_{R,L} \max_{x} (R(x) - L(x))$.
 
 ## Solution
 
-Unfortunately, there is no exact solution for this problem. [https://en.wikipedia.org/wiki/Binomial_proportion_confidence_interval](https://en.wikipedia.org/wiki/Binomial_proportion_confidence_interval)
+### Main problem - binary search on the maximum length.
 
-The main issue is that binomial distribution is a discrete distribution. Generally, probnlems in discrete field are more difficult than the similiar problems with continuous setting. For this problem, if we give an appropriate target for this problem, we can use computer to coimput an optimal solution.
+Let $t = \max_{x} R(x) - L(x)$, the high level idea is doing a binary search on $t$. The subproblem is that for a given $T$ and $N, C$, whether a valid $L(x)$ and $R(x)$ exists, where $\forall x \in \\{0, N\\}, R(x) - L(x) \ge T$ and $\forall p \in [0, 1], P(p \in [L(x), R(x)] | p) \ge C$.
 
-The first step is transfering the orignal problem to an optimazation problem. Given $n$ and $c$, we want to minimze the maximum length of CI, $\min \max(R(x) - L(x))$, which satisfies ```$\forall p \in [0, 1], P(p \in [L(x), R(x)] | p) \ge c$```.
+And also, we can relax the problem by assuming that all $R(x)-L(x)$ are the same length, let $T = R(x) - L(x), \forall x \in \\{0, N\\}$. Now, we are ready to move to the subprobem.
 
-To solve this optimal problem, the high level idea is binary searching $t = \max(R(x) - L(x))$. And we also can assume that $\forall x \in \\{ 0, \dots, n \\}, R(x) - L(x) = t$. Now, the sub-problem is to decide if $L(x)$ exists for a given $t$.
+### Sub problem - A proof by induction.
 
-Suppose $L(x)$ is known for all $x \le k$, we want to compute $L(k+1)$. The optimal $L(k+1)$ is the first $p'$ such that ```$P(p' \in [L(x), R(x)] | p') = c$```, and for all $p > p'$, ```$P(p \in [L(x), R(x)] | p) < c$```. Clearly, it can be done by binary search.
+With this same length assumption, to solve the subproblem, we could construct $L(x)$ by induction. If the construction succeeds, then we get a valid CL with the length $T$, $L(x)$ by induction and $R(x) = L(x) + T, \forall x$. If the inductive construction fails, then it proves that no valid $L(x)$ exists for the given $T$.
+
+the base case: $k = 0$, $L(k) = 0.0$ and $R(k) = T$.
+
+the induction step: $L(k+1)$ is $p'$ such that 
+
+$$\forall p \le p', \sum_{0 \le x \le k} 1(x) \times P(x | p') \ge C$$
+
+and 
+
+$$\forall p > p', \sum_{0 \le x \le k} 1(x) \times P(x | p') < C$$
+
+where
+
+$$1(x) = 1 \text{ if }  L(x) \le p' \le L(x) + T, \text{else }0$$
+
+Clearly, this $p'$ could get found by binary search again, this inducative construction will give us the optimal candidate $L(x)$. To validate if it's a valid L(x), we can check if $L(N) + T \ge 1$ or not.
+
+if $L(N) + T < 1$, then it proves that no valid solution exists.
+
+if $L(N) + T \ge 1$, then it's a valid CI with length T.
+
+### Summary
+
+Now, we get an optimal binomial confidence interval, :) 
+```
+Input: N, C
+
+binary_search(T, left=0.0, right=1.0)
+  t = (left + right) / 2
+  L = proof_by_induction(t,N,C)
+  if L(N) + T < 1.0
+    left = t
+  else:
+    right = t
+return right
+```
 
 ## Code
 
