@@ -21,15 +21,15 @@ One possible reason I guess is that all the existing solutions are focusing on w
 
 The optimal CI here means that the the maximum length among all its intervals is the smallest in all possible CIs.
 
-In this post, the goal is to compute out an optimal CI for given $N$ and $C$, which $\underset{(R,L) \in \text{CIs}}{\text{minimize}} \underset{x \in \\{0, N\\}}{\max}  (R(x) - L(x))$.
+In this post, the goal is to compute out an optimal CI for given $N$ and $C$, which $\underset{(R,L) \in \text{CIs}}{\text{minimize}} \underset{x \in \\{0, \dots, N\\}}{\max}  (R(x) - L(x))$.
 
 ## Solution
 
 ### Main problem - binary search on the maximum length.
 
-Let $t = \max_{x} R(x) - L(x)$, the high level idea is doing a binary search on $t$. The subproblem is that for a given $T$ and $N, C$, whether a valid $L(x)$ and $R(x)$ exists, where $\forall x \in \\{0, N\\}, R(x) - L(x) \ge T$ and ```$\forall p \in [0, 1], P(p \in [L(x), R(x)] | p) \ge C$```.
+Let $t = \max_{x} R(x) - L(x)$, the high level idea is doing a binary search on $t$. The subproblem is that for a given $T$ and $N, C$, whether a valid $L(x)$ and $R(x)$ exists, where $\forall x \in \\{0, \dots, N\\}, R(x) - L(x) \ge T$ and ```$\forall p \in [0, 1], P(p \in [L(x), R(x)] | p) \ge C$```.
 
-And also, we can relax the problem by assuming that all $R(x)-L(x)$ are the same length, let $T = R(x) - L(x), \forall x \in \\{0, N\\}$. Now, we are ready to move to the subprobem.
+And also, we can relax the problem by assuming that all $R(x)-L(x)$ are the same length, let $T = R(x) - L(x), \forall x \in \\{0, \dots, N\\}$. Now, we are ready to move to the subprobem.
 
 ### Sub problem - A proof by induction.
 
