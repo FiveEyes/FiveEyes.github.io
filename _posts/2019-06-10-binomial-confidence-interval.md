@@ -21,7 +21,7 @@ The optimal CI here means that the the maximum length among all its intervals is
 
 One possible reason I guess is that all the existing solutions are focusing on working out an analytical solution which is in the form of math expressions.
 
-In this post, the goal is to compute out a CI, L(x) and R(x), which $\underset{{(R,L) \in \text{CIs}}}{\text{minimize}} \max_{x} (R(x) - L(x))$.
+In this post, the goal is to compute out a CI, L(x) and R(x), which $\underset{(R,L) \in \text{CIs}}{\text{minimize}} \max_{x} (R(x) - L(x))$.
 
 ## Solution
 
