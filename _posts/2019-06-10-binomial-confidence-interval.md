@@ -9,17 +9,19 @@ categories: Statistics Algo
 
 ## Problem description
 
-The problem is pretty simple. Suppose we have a coin, toss it $n$ times, and observe $x$ number of heads. Now, we want to estimate the possibility $p$ of head. The best estimator is $\frac{x}{n}$. But we are also interested in providing a confidence interval(CI) of $p$, $[L(x), R(x)]$.
+The problem is pretty simple. Suppose we have a coin, toss it $n$ times, and observe $x$ number of heads. Now, we want to estimate the possibility $p$ of head. The best estimator is $\frac{x}{n}$. But we are also interested in providing a confidence interval(CI) of $p$, $L(x)$ and $R(x)$.
 
 Suppose that the confidence level is $C$. And a CI of confidence level $C$ is that ```$\forall p \in [0, 1], P(p \in [L(x), R(x)] | p) \ge C$```.
 
 ## Background
 
-I didn't find out a existing algorithm to compute out an optimal confidence interval yet. the optimal CI means that the the maximum length of all its intervals is the smallest one in all possible valid CIs. [https://en.wikipedia.org/wiki/Binomial_proportion_confidence_interval](https://en.wikipedia.org/wiki/Binomial_proportion_confidence_interval)
+I didn't find out an existing algorithm to compute out an optimal confidence interval yet. [https://en.wikipedia.org/wiki/Binomial_proportion_confidence_interval](https://en.wikipedia.org/wiki/Binomial_proportion_confidence_interval)
+
+The optimal CI here means that the the maximum length among all its intervals is the smallest in all possible CIs.
 
 One possible reason I guess is that all the existing solutions are focusing on working out an analytical solution which is in the form of math expressions.
 
-In this post, our target is to compute out a CI which is $\min_{R,L} \max_{x} (R(x) - L(x))$.
+In this post, the goal is to compute out a CI, L(x) and R(x), which $\underset{{(R,L) \in \text{CIs}}}{\text{minimize}} \max_{x} (R(x) - L(x))$.
 
 ## Solution
 
