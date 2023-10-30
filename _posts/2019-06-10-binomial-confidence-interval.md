@@ -1,11 +1,11 @@
 ---
 layout: post
-title: "An algorithm to compute the optimal binomial confidence interval"
+title: "A numerical algorithm to compute the optimal binomial confidence interval"
 date: 2019-06-10 19:30:00
 categories: Statistics Algo
 ---
 
-# An algorithm to compute the optimal binomial confidence interval which has the shortest interval.
+# A numerical algorithm to compute the optimal binomial confidence interval
 
 ## Problem description
 
