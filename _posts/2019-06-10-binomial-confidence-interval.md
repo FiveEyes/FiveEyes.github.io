@@ -21,7 +21,7 @@ One possible reason I guess is that all the existing solutions are focusing on w
 
 The optimal CI here means that the the maximum length among all its intervals is the smallest in all possible CIs.
 
-In this post, the goal is to compute out an optimal CI for given $N$ and $C$, L(x) and R(x), which $\underset{(R,L) \in \text{CIs}}{\text{minimize}} \underset{x \in \\{0, N\\}}{\max}  (R(x) - L(x))$.
+In this post, the goal is to compute out an optimal CI for given $N$ and $C$, which $\underset{(R,L) \in \text{CIs}}{\text{minimize}} \underset{x \in \\{0, N\\}}{\max}  (R(x) - L(x))$.
 
 ## Solution
 
