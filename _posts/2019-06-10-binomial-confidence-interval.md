@@ -17,9 +17,9 @@ Suppose that the confidence level is $C$. And a CI of confidence level $C$ is th
 
 I didn't find out an existing algorithm to compute out an optimal confidence interval yet. [https://en.wikipedia.org/wiki/Binomial_proportion_confidence_interval](https://en.wikipedia.org/wiki/Binomial_proportion_confidence_interval)
 
-The optimal CI here means that the the maximum length among all its intervals is the smallest in all possible CIs.
-
 One possible reason I guess is that all the existing solutions are focusing on working out an analytical solution which is in the form of math expressions.
+
+The optimal CI here means that the the maximum length among all its intervals is the smallest in all possible CIs.
 
 In this post, the goal is to compute out an optimal CI for given $N$ and $C$, L(x) and R(x), which $\underset{(R,L) \in \text{CIs}}{\text{minimize}} \underset{x \in \\{0, N\\}}{\max}  (R(x) - L(x))$.
 
