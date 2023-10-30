@@ -1,17 +1,17 @@
 ---
 layout: post
-title: "The algorithm to compute the optimal binomial confidence interval"
+title: "An algorithm to compute the optimal binomial confidence interval"
 date: 2019-06-10 19:30:00
 categories: Statistics Algo
 ---
 
-# Compute the optimal binomial confidence interval which has the shortest interval.
+# An algorithm to compute the optimal binomial confidence interval which has the shortest interval.
 
 ## Problem description
 
 The problem is pretty simple. Suppose we have a coin, toss it $n$ times, and observe $x$ number of heads. Now, we want to estimate the possibility $p$ of head. The best estimator is $\frac{x}{n}$. But we are also interested in providing a confidence interval(CI) of $p$, $[L(x), R(x)]$.
 
-Suppose that the confidence level is $c$. And a CI of confidence level $c$ is that $\forall p \in [0, 1], P(p \in [L(x), R(x)] | p) \ge c$.
+Suppose that the confidence level is $C$. And a CI of confidence level $C$ is that ```$\forall p \in [0, 1], P(p \in [L(x), R(x)] | p) \ge C$```.
 
 ## Background
 
@@ -25,7 +25,7 @@ In this post, our target is to compute out a CI which is $\min_{R,L} \max_{x} (R
 
 ### Main problem - binary search on the maximum length.
 
-Let $t = \max_{x} R(x) - L(x)$, the high level idea is doing a binary search on $t$. The subproblem is that for a given $T$ and $N, C$, whether a valid $L(x)$ and $R(x)$ exists, where $\forall x \in \\{0, N\\}, R(x) - L(x) \ge T$ and $\forall p \in [0, 1], P(p \in [L(x), R(x)] | p) \ge C$.
+Let $t = \max_{x} R(x) - L(x)$, the high level idea is doing a binary search on $t$. The subproblem is that for a given $T$ and $N, C$, whether a valid $L(x)$ and $R(x)$ exists, where $\forall x \in \\{0, N\\}, R(x) - L(x) \ge T$ and ```$\forall p \in [0, 1], P(p \in [L(x), R(x)] | p) \ge C$```.
 
 And also, we can relax the problem by assuming that all $R(x)-L(x)$ are the same length, let $T = R(x) - L(x), \forall x \in \\{0, N\\}$. Now, we are ready to move to the subprobem.
 
@@ -37,11 +37,11 @@ the base case: $k = 0$, $L(k) = 0.0$ and $R(k) = T$.
 
 the induction step: $L(k+1)$ is $p'$ such that 
 
-$$\forall p \le p', \sum_{0 \le x \le k} 1(x) \times P(x | p') \ge C$$
+```$$\forall p \le p', \sum_{0 \le x \le k} 1(x) \times P(x | p') \ge C$$```
 
 and 
 
-$$\forall p > p', \sum_{0 \le x \le k} 1(x) \times P(x | p') < C$$
+```$$\forall p > p', \sum_{0 \le x \le k} 1(x) \times P(x | p') < C$$```
 
 where
 
